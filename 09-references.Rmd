@@ -1,0 +1,23 @@
+
+# References {-}
+  
+  1. TLC Data Hub, https://tlcanalytics.shinyapps.io/tlc_dash/, Nikita Voevodin & Fausto Lopez, 2019;
+
+  2. TLC VIN Decoder, https://tlcanalytics.shinyapps.io/decoder/, Nikita Voevodin, 2019;
+  
+  3. TLC DataMeetup App, https://tlcanalytics.shinyapps.io/tasks/, Nikita Voevodin & Fausto Lopez, 2019;
+  
+  4. Some definitions, https://rstudio.github.io/leaflet/, R Leaflet GitHub;
+  
+  5. Some definitions, https://rstudio.com/, RStudio;
+  
+  6. Some definitions, https://lubridate.tidyverse.org/ Lubridate docs;
+  
+::: {.infobox .note data-latex="{note}"}
+
+If I left you out in references, please, contact me at 471central@gmail.com.
+
+:::
+  ---
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">R, Not the Best Practices</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Nikita Voevodin</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.

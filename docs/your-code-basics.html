@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Your Code Basics | R, Not the Best Practices</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Your Code Basics | R, Not the Best Practices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Your Code Basics | R, Not the Best Practices" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Nikita Voevodin" />
+
+
+<meta name="date" content="2020-02-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="first-three-months-maggot.html"/>
+<link rel="next" href="big-assignment.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R, Not the Best Practices</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#what-this-book-is-and-is-not"><i class="fa fa-check"></i><b>0.1</b> What This Book Is and Is Not</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#what-will-this-book-teach-you"><i class="fa fa-check"></i><b>0.2</b> What Will This Book Teach You</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html"><i class="fa fa-check"></i>Languages, Infrastructure, and Myself</a><ul>
+<li class="chapter" data-level="0.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#programming-languages-and-r-place-among-them"><i class="fa fa-check"></i><b>0.3</b> Programming Languages and R’ Place Among Them</a><ul>
+<li class="chapter" data-level="0.3.1" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#r"><i class="fa fa-check"></i><b>0.3.1</b> R</a></li>
+<li class="chapter" data-level="0.3.2" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#excel"><i class="fa fa-check"></i><b>0.3.2</b> Excel</a></li>
+<li class="chapter" data-level="0.3.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#stata-spss-and-sas"><i class="fa fa-check"></i><b>0.3.3</b> STATA, SPSS, and SAS</a></li>
+<li class="chapter" data-level="0.3.4" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#python"><i class="fa fa-check"></i><b>0.3.4</b> Python</a></li>
+<li class="chapter" data-level="0.3.5" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#diagram-and-related-languages"><i class="fa fa-check"></i><b>0.3.5</b> Diagram and Related Languages</a></li>
+<li class="chapter" data-level="0.3.6" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#sql"><i class="fa fa-check"></i><b>0.3.6</b> SQL</a></li>
+<li class="chapter" data-level="0.3.7" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#about-htmlcssjavascript"><i class="fa fa-check"></i><b>0.3.7</b> About HTML/CSS/JavaScript</a></li>
+<li class="chapter" data-level="0.3.8" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#using-the-htmlcssjavascript-in-this-book."><i class="fa fa-check"></i><b>0.3.8</b> Using the HTML/CSS/JavaScript in This Book.</a></li>
+</ul></li>
+<li class="chapter" data-level="0.4" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#about-infrastructure"><i class="fa fa-check"></i><b>0.4</b> About Infrastructure</a><ul>
+<li class="chapter" data-level="0.4.1" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#databases"><i class="fa fa-check"></i><b>0.4.1</b> Databases</a></li>
+<li class="chapter" data-level="0.4.2" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#hosting"><i class="fa fa-check"></i><b>0.4.2</b> Hosting</a></li>
+<li class="chapter" data-level="0.4.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#other-tools"><i class="fa fa-check"></i><b>0.4.3</b> Other tools</a></li>
+</ul></li>
+<li class="chapter" data-level="0.5" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#about-me"><i class="fa fa-check"></i><b>0.5</b> About Me</a><ul>
+<li class="chapter" data-level="0.5.1" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#tlc-datahub"><i class="fa fa-check"></i><b>0.5.1</b> TLC DataHub</a></li>
+<li class="chapter" data-level="0.5.2" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#tlc-vin-decoder"><i class="fa fa-check"></i><b>0.5.2</b> TLC VIN Decoder</a></li>
+<li class="chapter" data-level="0.5.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#tlc-datameetup-app"><i class="fa fa-check"></i><b>0.5.3</b> TLC DataMeetup App</a></li>
+<li class="chapter" data-level="0.5.4" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#flow-of-this-book"><i class="fa fa-check"></i><b>0.5.4</b> Flow of This Book</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html"><i class="fa fa-check"></i>First Three Months (Maggot)</a><ul>
+<li class="chapter" data-level="0.6" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#messing-around"><i class="fa fa-check"></i><b>0.6</b> Messing Around</a><ul>
+<li class="chapter" data-level="0.6.1" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#first-script"><i class="fa fa-check"></i><b>0.6.1</b> First Script</a></li>
+<li class="chapter" data-level="0.6.2" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#layout"><i class="fa fa-check"></i><b>0.6.2</b> Layout</a></li>
+<li class="chapter" data-level="0.6.3" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#saving-r-file"><i class="fa fa-check"></i><b>0.6.3</b> Saving R File</a></li>
+<li class="chapter" data-level="0.6.4" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#simulating-a-problem."><i class="fa fa-check"></i><b>0.6.4</b> Simulating a Problem.</a></li>
+<li class="chapter" data-level="0.6.5" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#re-installing-rstudio"><i class="fa fa-check"></i><b>0.6.5</b> Re-installing RStudio</a></li>
+<li class="chapter" data-level="0.6.6" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#messing-with-packages"><i class="fa fa-check"></i><b>0.6.6</b> Messing with Packages</a></li>
+<li class="chapter" data-level="0.6.7" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#dark-mode"><i class="fa fa-check"></i><b>0.6.7</b> Dark Mode</a></li>
+<li class="chapter" data-level="0.6.8" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#second-r-session."><i class="fa fa-check"></i><b>0.6.8</b> Second R Session.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="your-code-basics.html"><a href="your-code-basics.html"><i class="fa fa-check"></i>Your Code Basics</a><ul>
+<li class="chapter" data-level="0.7" data-path="your-code-basics.html"><a href="your-code-basics.html#data-types-structures"><i class="fa fa-check"></i><b>0.7</b> Data Types &amp; Structures</a><ul>
+<li class="chapter" data-level="0.7.1" data-path="your-code-basics.html"><a href="your-code-basics.html#characters"><i class="fa fa-check"></i><b>0.7.1</b> Characters</a></li>
+<li class="chapter" data-level="0.7.2" data-path="your-code-basics.html"><a href="your-code-basics.html#numbers"><i class="fa fa-check"></i><b>0.7.2</b> Numbers</a></li>
+<li class="chapter" data-level="0.7.3" data-path="your-code-basics.html"><a href="your-code-basics.html#booleans-or-logicals"><i class="fa fa-check"></i><b>0.7.3</b> Booleans or Logicals</a></li>
+<li class="chapter" data-level="0.7.4" data-path="your-code-basics.html"><a href="your-code-basics.html#factors"><i class="fa fa-check"></i><b>0.7.4</b> Factors</a></li>
+<li class="chapter" data-level="0.7.5" data-path="your-code-basics.html"><a href="your-code-basics.html#dates-times"><i class="fa fa-check"></i><b>0.7.5</b> Dates &amp; Times</a></li>
+<li class="chapter" data-level="0.7.6" data-path="your-code-basics.html"><a href="your-code-basics.html#type-conversions"><i class="fa fa-check"></i><b>0.7.6</b> Type Conversions</a></li>
+<li class="chapter" data-level="0.7.7" data-path="your-code-basics.html"><a href="your-code-basics.html#vectors"><i class="fa fa-check"></i><b>0.7.7</b> Vectors</a></li>
+<li class="chapter" data-level="0.7.8" data-path="your-code-basics.html"><a href="your-code-basics.html#lists"><i class="fa fa-check"></i><b>0.7.8</b> Lists</a></li>
+<li class="chapter" data-level="0.7.9" data-path="your-code-basics.html"><a href="your-code-basics.html#data-tables-data-frames"><i class="fa fa-check"></i><b>0.7.9</b> Data Tables (Data Frames)</a></li>
+</ul></li>
+<li class="chapter" data-level="0.8" data-path="your-code-basics.html"><a href="your-code-basics.html#coding-tools"><i class="fa fa-check"></i><b>0.8</b> Coding Tools</a><ul>
+<li class="chapter" data-level="0.8.1" data-path="your-code-basics.html"><a href="your-code-basics.html#functions"><i class="fa fa-check"></i><b>0.8.1</b> Functions</a></li>
+<li class="chapter" data-level="0.8.2" data-path="your-code-basics.html"><a href="your-code-basics.html#packages-libraries"><i class="fa fa-check"></i><b>0.8.2</b> Packages (Libraries)</a></li>
+<li class="chapter" data-level="0.8.3" data-path="your-code-basics.html"><a href="your-code-basics.html#data-formats"><i class="fa fa-check"></i><b>0.8.3</b> Data Formats</a></li>
+<li class="chapter" data-level="0.8.4" data-path="your-code-basics.html"><a href="your-code-basics.html#csv"><i class="fa fa-check"></i><b>0.8.4</b> CSV</a></li>
+<li class="chapter" data-level="0.8.5" data-path="your-code-basics.html"><a href="your-code-basics.html#xlsx-excel"><i class="fa fa-check"></i><b>0.8.5</b> XLSX (EXCEL)</a></li>
+<li class="chapter" data-level="0.8.6" data-path="your-code-basics.html"><a href="your-code-basics.html#fst"><i class="fa fa-check"></i><b>0.8.6</b> FST</a></li>
+<li class="chapter" data-level="0.8.7" data-path="your-code-basics.html"><a href="your-code-basics.html#sql-queries"><i class="fa fa-check"></i><b>0.8.7</b> SQL Queries</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="big-assignment.html"><a href="big-assignment.html"><i class="fa fa-check"></i>Big Assignment</a><ul>
+<li class="chapter" data-level="0.9" data-path="big-assignment.html"><a href="big-assignment.html#code-run-through"><i class="fa fa-check"></i><b>0.9</b> Code Run-Through</a><ul>
+<li class="chapter" data-level="0.9.1" data-path="big-assignment.html"><a href="big-assignment.html#step-1"><i class="fa fa-check"></i><b>0.9.1</b> Step 1</a></li>
+<li class="chapter" data-level="0.9.2" data-path="big-assignment.html"><a href="big-assignment.html#step-2"><i class="fa fa-check"></i><b>0.9.2</b> Step 2</a></li>
+<li class="chapter" data-level="0.9.3" data-path="big-assignment.html"><a href="big-assignment.html#step-3"><i class="fa fa-check"></i><b>0.9.3</b> Step 3</a></li>
+<li class="chapter" data-level="0.9.4" data-path="big-assignment.html"><a href="big-assignment.html#step-4"><i class="fa fa-check"></i><b>0.9.4</b> Step 4</a></li>
+<li class="chapter" data-level="0.9.5" data-path="big-assignment.html"><a href="big-assignment.html#step-5"><i class="fa fa-check"></i><b>0.9.5</b> Step 5</a></li>
+<li class="chapter" data-level="0.9.6" data-path="big-assignment.html"><a href="big-assignment.html#step-6"><i class="fa fa-check"></i><b>0.9.6</b> Step 6</a></li>
+</ul></li>
+<li class="chapter" data-level="0.10" data-path="big-assignment.html"><a href="big-assignment.html#figuring-it-out"><i class="fa fa-check"></i><b>0.10</b> Figuring It Out</a></li>
+<li class="chapter" data-level="0.11" data-path="big-assignment.html"><a href="big-assignment.html#tutorial-purgatory"><i class="fa fa-check"></i><b>0.11</b> Tutorial Purgatory</a></li>
+<li class="chapter" data-level="0.12" data-path="big-assignment.html"><a href="big-assignment.html#going-line-by-line"><i class="fa fa-check"></i><b>0.12</b> Going line by line</a><ul>
+<li class="chapter" data-level="0.12.1" data-path="big-assignment.html"><a href="big-assignment.html#step-1-1"><i class="fa fa-check"></i><b>0.12.1</b> Step 1</a></li>
+<li class="chapter" data-level="0.12.2" data-path="big-assignment.html"><a href="big-assignment.html#step-2-1"><i class="fa fa-check"></i><b>0.12.2</b> Step 2</a></li>
+<li class="chapter" data-level="0.12.3" data-path="big-assignment.html"><a href="big-assignment.html#step-3-1"><i class="fa fa-check"></i><b>0.12.3</b> Step 3</a></li>
+<li class="chapter" data-level="0.12.4" data-path="big-assignment.html"><a href="big-assignment.html#step-4-1"><i class="fa fa-check"></i><b>0.12.4</b> Step 4</a></li>
+<li class="chapter" data-level="0.12.5" data-path="big-assignment.html"><a href="big-assignment.html#step-5-1"><i class="fa fa-check"></i><b>0.12.5</b> Step 5</a></li>
+<li class="chapter" data-level="0.12.6" data-path="big-assignment.html"><a href="big-assignment.html#step-6-1"><i class="fa fa-check"></i><b>0.12.6</b> Step 6</a></li>
+</ul></li>
+<li class="chapter" data-level="0.13" data-path="big-assignment.html"><a href="big-assignment.html#working-with-dates"><i class="fa fa-check"></i><b>0.13</b> Working with dates</a><ul>
+<li class="chapter" data-level="0.13.1" data-path="big-assignment.html"><a href="big-assignment.html#as.date-sys.date-sys.time"><i class="fa fa-check"></i><b>0.13.1</b> as.Date(), Sys.Date() &amp; Sys.time()</a></li>
+<li class="chapter" data-level="0.13.2" data-path="big-assignment.html"><a href="big-assignment.html#lubridate"><i class="fa fa-check"></i><b>0.13.2</b> Lubridate</a></li>
+<li class="chapter" data-level="0.13.3" data-path="big-assignment.html"><a href="big-assignment.html#bonus"><i class="fa fa-check"></i><b>0.13.3</b> Bonus</a></li>
+</ul></li>
+<li class="chapter" data-level="0.14" data-path="big-assignment.html"><a href="big-assignment.html#rewriting-our-code"><i class="fa fa-check"></i><b>0.14</b> Rewriting our code</a><ul>
+<li class="chapter" data-level="0.14.1" data-path="big-assignment.html"><a href="big-assignment.html#step-1-2"><i class="fa fa-check"></i><b>0.14.1</b> Step 1</a></li>
+<li class="chapter" data-level="0.14.2" data-path="big-assignment.html"><a href="big-assignment.html#step-2-2"><i class="fa fa-check"></i><b>0.14.2</b> Step 2</a></li>
+<li class="chapter" data-level="0.14.3" data-path="big-assignment.html"><a href="big-assignment.html#step-3-2"><i class="fa fa-check"></i><b>0.14.3</b> Step 3</a></li>
+<li class="chapter" data-level="0.14.4" data-path="big-assignment.html"><a href="big-assignment.html#step-4-2"><i class="fa fa-check"></i><b>0.14.4</b> Step 4</a></li>
+<li class="chapter" data-level="0.14.5" data-path="big-assignment.html"><a href="big-assignment.html#step-5-2"><i class="fa fa-check"></i><b>0.14.5</b> Step 5</a></li>
+<li class="chapter" data-level="0.14.6" data-path="big-assignment.html"><a href="big-assignment.html#step-6-2"><i class="fa fa-check"></i><b>0.14.6</b> Step 6</a></li>
+</ul></li>
+<li class="chapter" data-level="0.15" data-path="big-assignment.html"><a href="big-assignment.html#adding-mpg"><i class="fa fa-check"></i><b>0.15</b> Adding MPG</a></li>
+<li class="chapter" data-level="0.16" data-path="big-assignment.html"><a href="big-assignment.html#charts-reports"><i class="fa fa-check"></i><b>0.16</b> Charts &amp; Reports</a><ul>
+<li class="chapter" data-level="0.16.1" data-path="big-assignment.html"><a href="big-assignment.html#the-setup"><i class="fa fa-check"></i><b>0.16.1</b> The setup</a></li>
+<li class="chapter" data-level="0.16.2" data-path="big-assignment.html"><a href="big-assignment.html#r-markdown"><i class="fa fa-check"></i><b>0.16.2</b> R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="0.17" data-path="big-assignment.html"><a href="big-assignment.html#bonus-1"><i class="fa fa-check"></i><b>0.17</b> Bonus</a></li>
+<li class="chapter" data-level="0.18" data-path="big-assignment.html"><a href="big-assignment.html#you-are-not-an-r-maggot-anymore"><i class="fa fa-check"></i><b>0.18</b> You are not an R maggot anymore</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="maps.html"><a href="maps.html"><i class="fa fa-check"></i>Maps</a><ul>
+<li class="chapter" data-level="0.19" data-path="maps.html"><a href="maps.html#maps-different-libraries"><i class="fa fa-check"></i><b>0.19</b> Maps, Different Libraries</a><ul>
+<li class="chapter" data-level="0.19.1" data-path="maps.html"><a href="maps.html#ggplot2"><i class="fa fa-check"></i><b>0.19.1</b> ggplot2</a></li>
+<li class="chapter" data-level="0.19.2" data-path="maps.html"><a href="maps.html#ggmap"><i class="fa fa-check"></i><b>0.19.2</b> ggmap</a></li>
+<li class="chapter" data-level="0.19.3" data-path="maps.html"><a href="maps.html#leaflet"><i class="fa fa-check"></i><b>0.19.3</b> Leaflet</a></li>
+</ul></li>
+<li class="chapter" data-level="0.20" data-path="maps.html"><a href="maps.html#leaflet-deeper-dive"><i class="fa fa-check"></i><b>0.20</b> Leaflet, Deeper Dive</a></li>
+<li class="chapter" data-level="0.21" data-path="maps.html"><a href="maps.html#leaflet-with-real-data"><i class="fa fa-check"></i><b>0.21</b> Leaflet with Real Data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="flexdahsboard.html"><a href="flexdahsboard.html"><i class="fa fa-check"></i>FlexDahsboard</a><ul>
+<li class="chapter" data-level="0.22" data-path="flexdahsboard.html"><a href="flexdahsboard.html#data"><i class="fa fa-check"></i><b>0.22</b> Data</a></li>
+<li class="chapter" data-level="0.23" data-path="flexdahsboard.html"><a href="flexdahsboard.html#layouts"><i class="fa fa-check"></i><b>0.23</b> Layouts</a><ul>
+<li class="chapter" data-level="0.23.1" data-path="flexdahsboard.html"><a href="flexdahsboard.html#column-based"><i class="fa fa-check"></i><b>0.23.1</b> Column based</a></li>
+<li class="chapter" data-level="0.23.2" data-path="flexdahsboard.html"><a href="flexdahsboard.html#row-based"><i class="fa fa-check"></i><b>0.23.2</b> Row based</a></li>
+</ul></li>
+<li class="chapter" data-level="0.24" data-path="flexdahsboard.html"><a href="flexdahsboard.html#conclusion"><i class="fa fa-check"></i><b>0.24</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="shiny-bonus.html"><a href="shiny-bonus.html"><i class="fa fa-check"></i>Shiny (Bonus)</a></li>
+<li class="chapter" data-level="" data-path="final-thoughts.html"><a href="final-thoughts.html"><i class="fa fa-check"></i>Final Thoughts</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R, Not the Best Practices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="your-code-basics" class="section level1 unnumbered">
+<h1>Your Code Basics</h1>
+<p>This section covers the fundamentals of the R language. Things like data types and structures, functions and libraries, data formats, loops and more, are all the horrible things that you need to have some understanding of right now. I wish we could skip this shit and go straight to good stuff, but unfortunately, we can’t. These topics will come up again and again and you will just fuck yourself up if you don’t at least know about them. I will try to keep it as interesting as possible so bear with me on the adult material.</p>
+<p>Remember, you’re still sitting in your cubicle at work familiarizing yourself with R. Your boss is out for a while and gave you a few days to settle down and get more comfortable with R in particular. Nobody else has really bothered you up until now, but you suspect that it might change soon. You don’t want to look like an incompetent degenerate, so you jump back into learning R.</p>
+<div id="data-types-structures" class="section level2">
+<h2><span class="header-section-number">0.7</span> Data Types &amp; Structures</h2>
+<p>We have already written a few lines of code. Let’s just erase all that trash and start over.</p>
+<div class="infobox note" data-latex="{note}">
+<p>Erasing and starting over is very useful in the beginning because it helps you get better. Rewriting the same stuff over and over with some minor improvements really cements the fundamentals in your head.</p>
+</div>
+<p>Start a new script and write the following lines of code:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">president &lt;-<span class="st"> &#39;Trump&#39;</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">age &lt;-<span class="st"> </span><span class="dv">70</span></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5">goodPresident &lt;-<span class="st"> </span><span class="ot">TRUE</span> </a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="co"># Or you can write false here, it is up to you</span></a></code></pre></div>
+<p>There are four simple data types in R. Characters, numbers, booleans (logical), and stupid factors. Nerds will tell you that there are more types. There are, they are called complex, integers and some other nonsense. Leave these types to them, you do not need them right now. Let’s go in order.</p>
+<div class="infobox important" data-latex="{important}">
+<p>In this book, I’ve tried to illustrate code the way it looks in real life. However, sometimes a line of code can be too long and won’t fit on a single line of a book (even digital), resulting in a scroll view, which isn’t a good reading experience. Therefore, from time to time, you will see me breaking a single code line in two or three lines. Don’t worry, it will work just the same in Rstudio. It might just look weird at first.</p>
+<p>Example:</p>
+<p>Something that looks like this:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">president &lt;-<span class="st"> &#39;Trump&#39;</span></a></code></pre></div>
+<p>Will sometimes look like this:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">president &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="st">  &#39;Trump&#39;</span></a></code></pre></div>
+</div>
+<div id="characters" class="section level3">
+<h3><span class="header-section-number">0.7.1</span> Characters</h3>
+<p>Character type is just that – characters, letters, text, sentences, names and so forth. There is not much to it. Any text that you print or store in a variable or table is a character. Numbers can be characters, dates can be characters, factors and logicals can be converted to characters. A simple example is the line of code we wrote earlier:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">president &lt;-<span class="st"> &#39;Trump&#39;</span></a></code></pre></div>
+<p>The character string ‘Trump’ is stored inside of the variable ‘president’. What is a character string? It is just a bunch of characters put together. The, character string ‘Trump’ is a combination of characters ‘T’,’r’,’u’,’m’,’p’. What can we do with characters? Lots of things, actually. Characters store names, descriptions, text, and other things of that nature, nothing special here. Some interesting things that we can do with characters are counting them, chopping them up and combining different strings together; we can also filter by characters or by a number of characters in a string and we can group by characters. Let’s just look at some of those. In the following chunk, we will paste two strings together and print the result.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="co"># Storing &#39;Donald&#39; inside of the variable &#39;presidentFirst&#39;</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">presidentFirst &lt;-<span class="st"> &#39;Donald&#39;</span></a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="co"># Storing &#39;Trump&#39; inside of the variable &#39;presidentLast&#39;</span></a>
+<a class="sourceLine" id="cb17-5" data-line-number="5">presidentLast &lt;-<span class="st"> &#39;Trump&#39;</span></a>
+<a class="sourceLine" id="cb17-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb17-7" data-line-number="7"><span class="co">#Now, lets put them together and store them in the third variable</span></a>
+<a class="sourceLine" id="cb17-8" data-line-number="8">presidentFull &lt;-<span class="st"> </span><span class="kw">paste</span>(presidentFirst,presidentLast)</a>
+<a class="sourceLine" id="cb17-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb17-10" data-line-number="10"><span class="co">#Print the result</span></a>
+<a class="sourceLine" id="cb17-11" data-line-number="11"><span class="kw">print</span>(presidentFull)</a></code></pre></div>
+<pre><code>## [1] &quot;Donald Trump&quot;</code></pre>
+<p>We just created two-character strings, stored them into two separate variables, and pasted them together into the variable as one string. Simple and cool. We did not necessarily need to store the strings in the variables. You can also do it like this:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">presidentFull &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&#39;Donald&#39;</span>,<span class="st">&#39;Trump&#39;</span>)</a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="kw">print</span>(presidentFull)</a></code></pre></div>
+<pre><code>## [1] &quot;Donald Trump&quot;</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="co"># Or even shorter, like this:</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&#39;Donald&#39;</span>,<span class="st">&#39;Trump&#39;</span>))</a></code></pre></div>
+<pre><code>## [1] &quot;Donald Trump&quot;</code></pre>
+<p>As you can see, the results of all three methods are the same. Here, we used the function paste(). It’s a very useful function, and we will be using it a lot. Have you noticed that when we pasted those strings together, there was a space automatically added? We pasted ‘Donald’ and ‘Trump’ together and got ‘Donald Trump’? If you are not a programmer, this is something you would expect. Because, why the hell not? In programming, you have to be precise, because a computer does not know what the fuck is going on. It just interprets your commands. This time, it just so happened, that this particular function paste() automatically adds a space between the things that you are trying to put together. But what if you did not want that space there? For that, there is a second variation of the paste() function called paste0(). Let’s see how it works.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="co"># Check it out. This prints them together without a space.</span></a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">presidentFull &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&#39;Donald&#39;</span>,<span class="st">&#39;Trump&#39;</span>)</a>
+<a class="sourceLine" id="cb23-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb23-4" data-line-number="4"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb23-5" data-line-number="5"><span class="kw">print</span>(presidentFull)</a></code></pre></div>
+<pre><code>## [1] &quot;DonaldTrump&quot;</code></pre>
+<p>Very nice.</p>
+<div class="infobox tip" data-latex="{tip}">
+<p>You probably won’t understand why at the moment, but the paste0() function is much cooler and we’ll use it more often than ‘paste,’ because it gives us more control. It allows us to add a space whenever we want, and by avoiding that default setting it runs faster.</p>
+</div>
+<p>Now, look at how you can add that space using paste0().</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="co"># Here, we are basically pasting a third string </span></a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="co"># (which is an empty space) in between &#39;Donald&#39; and &#39;Trump&#39;</span></a>
+<a class="sourceLine" id="cb25-3" data-line-number="3">presidentFull &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&#39;Donald&#39;</span>,<span class="st">&#39; &#39;</span>,<span class="st">&#39;Trump&#39;</span>)</a>
+<a class="sourceLine" id="cb25-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="co"># Printing</span></a>
+<a class="sourceLine" id="cb25-6" data-line-number="6"><span class="kw">print</span>(presidentFull)</a></code></pre></div>
+<pre><code>## [1] &quot;Donald Trump&quot;</code></pre>
+<p>Pasting things together is very useful and simple thing. I want to show you a couple more things that we can do with characters. Chopping character strings up will be something we will be doing a lot. Here is how it works. Let’s say we have ‘Donald’ and ‘Trump’, but we want to convert it into ‘Dump’.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="co"># First, lets store the names</span></a>
+<a class="sourceLine" id="cb27-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb27-3" data-line-number="3">first &lt;-<span class="st"> &#39;Donald&#39;</span></a>
+<a class="sourceLine" id="cb27-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb27-5" data-line-number="5">last &lt;-<span class="st"> &#39;Trump&#39;</span></a></code></pre></div>
+<p>To get ‘Dump’ out of ‘Donald’ and ‘Trump’, we are going to need to get the first letter of the first name and the last three letters of the last name. We will be using function substr() for this.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">D &lt;-<span class="st"> </span><span class="kw">substr</span>(first,<span class="dv">1</span>,<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb28-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb28-3" data-line-number="3"><span class="kw">print</span>(D)</a></code></pre></div>
+<pre><code>## [1] &quot;D&quot;</code></pre>
+<p>Function substr() takes a character string, a character’s position to start chopping, and a finish position. So, we basically said: take ‘Donald’, start with ‘D’ and finish at ‘D’ and store that in the variable ‘D’. Let’s do it again, but without storing and variables, and in one line:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">print</span>(<span class="kw">substr</span>(<span class="st">&#39;Donald&#39;</span>,<span class="dv">1</span>,<span class="dv">1</span>))</a></code></pre></div>
+<pre><code>## [1] &quot;D&quot;</code></pre>
+<p>Good, now we need the ‘ump’ part. Same thing, but different numbers.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">ump &lt;-<span class="st"> </span><span class="kw">substr</span>(last,<span class="dv">3</span>,<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="kw">print</span>(ump)</a></code></pre></div>
+<pre><code>## [1] &quot;ump&quot;</code></pre>
+<p>Now, we need to paste these together and we already know how to do it.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">Dump &lt;-<span class="st"> </span><span class="kw">paste0</span>(D,ump)</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="kw">print</span>(Dump)</a></code></pre></div>
+<pre><code>## [1] &quot;Dump&quot;</code></pre>
+<div class="infobox tip" data-latex="{tip}">
+<p>Substr() will be a big part of your day to day programming. It is a very simple but very important function. It can be a little confusing in the beginning. Are these positions inclusive or exclusive? They are inclusive, but you’re likely to forget that. Don’t worry, it will become natural later.</p>
+</div>
+<p>As you might have noticed, every time I execute a function, I print the result. I’m only doing it for you, and you don’t really have to do it. In real life, I don’t print the results of every single operation, because I understand what the code output will be. However, it’s still a good practice to print your result, at least in the beginning. Let’s move on.</p>
+<p>One last function I want to show you that you will be using a lot is trimws(). This function eliminates white spaces around a character string that you are passing to it. As you should remember from our paste() exercise, R can treat an empty space as a separate character. Imagine that you are dealing with some hand typed data; instead of typing ‘Donald’, someone typed ‘Donald’ or’ Donald’. These empty spaces make those two entries almost unusable because they won’t match the proper ‘Donald’ entry. That is where we’ll absolutely need functions like trimws(). Let’s simulate a situation to see how it works:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="co"># Normal</span></a>
+<a class="sourceLine" id="cb36-2" data-line-number="2">first1 &lt;-<span class="st"> &#39;Donald&#39;</span></a>
+<a class="sourceLine" id="cb36-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb36-4" data-line-number="4"><span class="co"># With space after.</span></a>
+<a class="sourceLine" id="cb36-5" data-line-number="5">first2 &lt;-<span class="st"> &#39;Donald &#39;</span></a></code></pre></div>
+<p>Now, let’s check if they are the same shit; for this we need a logical equality operator ‘==’. It works just like a regular equal ‘=’ sign but returns true or false. This is how we can compare characters and other non-numbers. Do not worry about it now, we will talk about it in depth later. So, let’s see if ‘Donald’ equals ‘Donald’:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">first1 <span class="op">==</span><span class="st"> </span>first2</a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<p>As you can see, they are not. Lets fix it.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="co"># Eliminating white spaces.</span></a>
+<a class="sourceLine" id="cb39-2" data-line-number="2">first2 &lt;-<span class="st"> </span><span class="kw">trimws</span>(first2)</a>
+<a class="sourceLine" id="cb39-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb39-4" data-line-number="4"><span class="co"># Printing</span></a>
+<a class="sourceLine" id="cb39-5" data-line-number="5"><span class="kw">print</span>(first2)</a></code></pre></div>
+<pre><code>## [1] &quot;Donald&quot;</code></pre>
+<p>Lets check again:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1">first1 <span class="op">==</span><span class="st"> </span>first2</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Now they are, because we trimmed that empty space. Perfect.</p>
+<p>This sums up characters for now; I showed you a few things that we can do with them. There are many more functions, and many interesting things we can do with characters, but the main point of this introduction is to get you to see the distinction between different data types. As we move along, you will see these functions more often along with other new functions.</p>
+</div>
+<div id="numbers" class="section level3">
+<h3><span class="header-section-number">0.7.2</span> Numbers</h3>
+<p>In R, numbers are called numerics. There are also integers and complex numbers, but don’t even worry about this right now as we won’t be working with them. For us, right now, numbers are numbers, and that is it. As far as you are concerned, 15.5 is a number, 5 is a number, 0 is a number. Everything you can do with numbers anywhere else; you can also do here. Let’s take a look at some basic operations. One distinction to get out of the way. Check this out:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="co">#This is a number and the function class() lets us check that:</span></a>
+<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="kw">class</span>(<span class="dv">70</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="co">#This is a character:</span></a>
+<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="kw">class</span>(<span class="st">&#39;70&#39;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="infobox tip" data-latex="{tip}">
+<p>Sage Tip: Adding parenthesis around a number will make it a character. Remember!</p>
+</div>
+<p>Now, back to the operatons:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="co"># Storing age in &#39;age&#39;.</span></a>
+<a class="sourceLine" id="cb47-2" data-line-number="2">age &lt;-<span class="st"> </span><span class="dv">70</span></a>
+<a class="sourceLine" id="cb47-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb47-4" data-line-number="4"><span class="co"># Storing term length in &#39;presidencyTerm&#39;.</span></a>
+<a class="sourceLine" id="cb47-5" data-line-number="5">presidencyTerm &lt;-<span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<p>Adding the two variables to get Trump’s age by the end of the first term.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="co"># Adding and storing.</span></a>
+<a class="sourceLine" id="cb48-2" data-line-number="2">finalAge &lt;-<span class="st"> </span>age <span class="op">+</span><span class="st"> </span>presidencyTerm</a>
+<a class="sourceLine" id="cb48-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb48-4" data-line-number="4"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb48-5" data-line-number="5"><span class="kw">print</span>(finalAge)</a></code></pre></div>
+<pre><code>## [1] 74</code></pre>
+<p>Or simply:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1">finalAge &lt;-<span class="st"> </span><span class="dv">70</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb50-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb50-3" data-line-number="3"><span class="kw">print</span>(finalAge)</a></code></pre></div>
+<pre><code>## [1] 74</code></pre>
+<p>Lets print his year of birth:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="kw">print</span>(<span class="dv">2019</span> <span class="op">-</span><span class="st"> </span>age)</a></code></pre></div>
+<pre><code>## [1] 1949</code></pre>
+<p>Hopefully, you get the idea; hopefully I don’t have to teach you basic math or statistics. You can definitely do more with numbers in R, but the main point of this part is to show you that numbers in R are the same as the numbers anywhere else.</p>
+</div>
+<div id="booleans-or-logicals" class="section level3">
+<h3><span class="header-section-number">0.7.3</span> Booleans or Logicals</h3>
+<p>You probably haven’t noticed, but we already used this variable type when checking if ‘Donald’ was equal to ‘Donald’ with space in the end. Booleans are also called ‘Logicals,’ and they are quite simple, because there are only two of them: ‘True’ and ‘False’. Also, you should know that, both, True and False have the corresponding numbers 1 and 0 that basically mean the same thing. Don’t worry about the numbers part; I’ll show you how that works.</p>
+<p>First, let’s see if TRUE and 1 and FALSE and 0 are the same things.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="dv">0</span> <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>As you can see, both returned as TRUE, which means they’re equal to each other. Now, let’s prove that not every number is equal to TRUE:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="dv">25</span> <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span></a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="dv">32</span> <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span></a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<p>See? We are not going to be using 0 and 1 as true or false really, but you should be aware that there is such a thing.</p>
+<p>Let’s see how we WILL be using Booleans:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1"><span class="st">&#39;Trump&#39;</span> <span class="op">==</span><span class="st"> &#39;Trump&#39;</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="st">&#39;Trump&#39;</span> <span class="op">==</span><span class="st"> &#39;Obama&#39;</span></a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="dv">7</span> <span class="op">==</span><span class="st"> </span><span class="dv">7</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Now, to the big one:</p>
+<p>I’m going to show you an {if else} operation here. I will briefly explain what it does, but you don’t have to remember it right now. We’ll get into ‘if else’ later.</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="co">#0</span></a>
+<a class="sourceLine" id="cb68-2" data-line-number="2">president &lt;-<span class="st"> &#39;Trump&#39;</span> </a>
+<a class="sourceLine" id="cb68-3" data-line-number="3"><span class="co">#1</span></a>
+<a class="sourceLine" id="cb68-4" data-line-number="4"><span class="cf">if</span> (president <span class="op">==</span><span class="st"> &#39;Trump&#39;</span>){ </a>
+<a class="sourceLine" id="cb68-5" data-line-number="5"><span class="co">#2  </span></a>
+<a class="sourceLine" id="cb68-6" data-line-number="6">  <span class="kw">print</span>(<span class="kw">paste</span>(president, <span class="st">&#39;is the president&#39;</span>)) </a>
+<a class="sourceLine" id="cb68-7" data-line-number="7"><span class="co">#3  </span></a>
+<a class="sourceLine" id="cb68-8" data-line-number="8">  <span class="kw">print</span>(president <span class="op">==</span><span class="st"> &#39;Trump&#39;</span>) </a>
+<a class="sourceLine" id="cb68-9" data-line-number="9"><span class="co">#4  </span></a>
+<a class="sourceLine" id="cb68-10" data-line-number="10">} <span class="cf">else</span> { </a>
+<a class="sourceLine" id="cb68-11" data-line-number="11"><span class="co">#5  </span></a>
+<a class="sourceLine" id="cb68-12" data-line-number="12">  <span class="kw">print</span>(<span class="kw">paste</span>(president, <span class="st">&#39;is not the president&#39;</span>)) </a>
+<a class="sourceLine" id="cb68-13" data-line-number="13">}</a></code></pre></div>
+<pre><code>## [1] &quot;Trump is the president&quot;
+## [1] TRUE</code></pre>
+<p>What the fuck just happened here? Number 0: we stored ‘Trump’ in the president variable. Number 1: in the {if else statement} we basically asked: ‘does variable president equal ’Trump’?’ and if it does, run the Number 2 and Number 3. Number 2: paste together the contents of the variable president and the character string ‘is the president’ and print it. Number 3 Print a logical expression comparing the contents of the variable president to ‘Trump,’ it only has 2 options as you remember. In Number 4 we basically check what should happen if Number 1 is FALSE. If the variable president doesn’t equal ‘Trump’, Number 5 should kick in. Number 5 here is pretty much the same as Number 2. The main point of the {if else} statements is that only one of these two options can be TRUE and therefore, only one gets executed, in this case it is the Number 2 and Number 3.</p>
+<p>Now, let’s change the president variable to good old Obama, and see if he is still president.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1">president &lt;-<span class="st"> &#39;Obama&#39;</span></a>
+<a class="sourceLine" id="cb70-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb70-3" data-line-number="3"><span class="cf">if</span> (president <span class="op">==</span><span class="st"> &#39;Trump&#39;</span>){</a>
+<a class="sourceLine" id="cb70-4" data-line-number="4">  <span class="kw">print</span>(<span class="kw">paste</span>(president, <span class="st">&#39;is the president&#39;</span>))</a>
+<a class="sourceLine" id="cb70-5" data-line-number="5">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb70-6" data-line-number="6">  <span class="kw">print</span>(<span class="kw">paste</span>(president, <span class="st">&#39;is not the president&#39;</span>))</a>
+<a class="sourceLine" id="cb70-7" data-line-number="7">}</a></code></pre></div>
+<pre><code>## [1] &quot;Obama is not the president&quot;</code></pre>
+<p>If all of that sounded like a lot of nonsense to you, do not worry about it. The ‘if else’ example is too much for now anyway. Just remember that Booleans (Logicals) consist of only two values, TRUE and FALSE. They exist so we could compare not only numbers but characters and other data types as well.</p>
+</div>
+<div id="factors" class="section level3">
+<h3><span class="header-section-number">0.7.4</span> Factors</h3>
+<div class="infobox warning" data-latex="{warning}">
+<p>As I mentioned before, factors are stupid and we are going to try to avoid them as much as possible. If you want to learn about factors, you’re not going to do it here. I am going to give you a basic explanation and some examples; I will also explain why I think they are stupid.</p>
+</div>
+<p>Think of factors as categories or levels. Genders would be a factor; colors would be factors as well.</p>
+<p>We haven’t reached ‘vectors’ and other data structures yet, but I need to use a vector here to show you factors. So, don’t worry if you can’t follow 100%.</p>
+<p>Let’s store some colors in a vector of character strings.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="co"># c() is how you specify a vector.</span></a>
+<a class="sourceLine" id="cb72-2" data-line-number="2">colors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;red&#39;</span>,<span class="st">&#39;blue&#39;</span>,<span class="st">&#39;green&#39;</span>,<span class="st">&#39;red&#39;</span>,<span class="st">&#39;blue&#39;</span>,</a>
+<a class="sourceLine" id="cb72-3" data-line-number="3">              <span class="st">&#39;green&#39;</span>,<span class="st">&#39;red&#39;</span>,<span class="st">&#39;blue&#39;</span>,<span class="st">&#39;green&#39;</span>)</a></code></pre></div>
+<p>This string is not a factor yet, but it’s a good candidate to be one. There are a limited number of colors and colors can be treated as categories.</p>
+<p>Let’s first check what is colors.</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="co"># Checking the class.</span></a>
+<a class="sourceLine" id="cb73-2" data-line-number="2"><span class="kw">class</span>(colors)</a></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>As you can see, it says ‘character’, more like a group of characters, but it will say character. Fine.</p>
+<p>Let’s convert it to a factor. I will use the function ‘factor()’, but do not try to remember it, we will never use it. Never!</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="co"># Converting to factor and storing.</span></a>
+<a class="sourceLine" id="cb75-2" data-line-number="2">fColors &lt;-<span class="st"> </span><span class="kw">factor</span>(colors)</a>
+<a class="sourceLine" id="cb75-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb75-4" data-line-number="4"><span class="co"># Lets check again.</span></a>
+<a class="sourceLine" id="cb75-5" data-line-number="5"><span class="kw">class</span>(fColors)</a></code></pre></div>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<p>As you can see, it is a factor now. Finally, I want to print them side by side to show the difference:</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="co"># Printing the vector &#39;colors&#39;</span></a>
+<a class="sourceLine" id="cb77-2" data-line-number="2"><span class="kw">print</span>(colors)</a></code></pre></div>
+<pre><code>## [1] &quot;red&quot;   &quot;blue&quot;  &quot;green&quot; &quot;red&quot;   &quot;blue&quot;  &quot;green&quot; &quot;red&quot;   &quot;blue&quot;  &quot;green&quot;</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="co"># Printing the factor &#39;fColors&#39;</span></a>
+<a class="sourceLine" id="cb79-2" data-line-number="2"><span class="kw">print</span>(fColors)</a></code></pre></div>
+<pre><code>## [1] red   blue  green red   blue  green red   blue  green
+## Levels: blue green red</code></pre>
+<p>Factors group categories into levels, characters do not.</p>
+<div class="infobox warning" data-latex="{warning}">
+<p>Factors are useful for some advanced statistical operations. Once you reach that level, by all means, go ahead and start using them. Right now, factors will only get in the way. They will mess up your code. I am pretty sure; you’ll be hating them just like I do. Whatever factors are accomplishing with their levels can be accomplished by grouping regular characters without the worries of a messed-up code. Again, we will be avoiding factors as much as possible, but at least you are aware of them.</p>
+</div>
+</div>
+<div id="dates-times" class="section level3">
+<h3><span class="header-section-number">0.7.5</span> Dates &amp; Times</h3>
+<p>This one is a big topic by itself, and we will spend good time diving deeper into it later in this book. Dates are important. One of the best things about R is how well it handles dates and how much flexibility it offers when dealing with them. That flexibility, though, does not come without cost. The cost is complexity. You will be dealing with dates and times a lot, and it will become a big source of frustration for you. However, once you master R and start looking into some other languages, you will appreciate how many options and how much flexibility R gives you. There are so many packages that deal with dates that if I start going over all of them, you will close this book. Therefore, I will show you just the one that I found to be the most universal. It is called ‘lubridate’. Let me show you a few examples of dates and what we can do with them. First thing we need to do is to install the package.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&#39;lubridate&#39;</span>)</a></code></pre></div>
+<p>Now, load it.</p>
+<p>You are doing great! Just messing with you, you have not really done shit yet!</p>
+<p>Lets first create a date:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1">date &lt;-<span class="st"> &#39;2019-01-01&#39;</span></a></code></pre></div>
+<p>We just stored a character string that looks like date inside of the date variable. Let’s double check:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1"><span class="kw">class</span>(date)</a></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>Just a character right now. Let’s convert using the function ymd() from the package ‘lubridate’:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="co"># Converting and storing.</span></a>
+<a class="sourceLine" id="cb85-2" data-line-number="2">date1 &lt;-<span class="st"> </span><span class="kw">ymd</span>(date) </a></code></pre></div>
+<p>Ymd here stands for year month and day. Lubridate has other variations as well.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="kw">class</span>(date1)</a></code></pre></div>
+<pre><code>## [1] &quot;Date&quot;</code></pre>
+<p>You would ask, ‘How is it different from having a date as a character?’ Sometimes it isn’t, but, at some point, you’ll want to do some math with your dates. For example, adding a day to a date. It’s impossible to do with a character, unless you want to manually retype shit every time.</p>
+<p>Let’s see how it works with dates:</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1"><span class="co"># Adding a day to our date.</span></a>
+<a class="sourceLine" id="cb88-2" data-line-number="2">newDate &lt;-<span class="st"> </span>date1 <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb88-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb88-4" data-line-number="4"><span class="kw">print</span>(newDate)</a></code></pre></div>
+<pre><code>## [1] &quot;2019-01-02&quot;</code></pre>
+<p>This was just a short introduction to the topic of dates. I only showed you one function of one package. Dates are perfect for working with charts and graphs, projections and other calculations involving time. We are going to dive deeper into dates later in this book, but not untill we really need that knowledge.</p>
+</div>
+<div id="type-conversions" class="section level3">
+<h3><span class="header-section-number">0.7.6</span> Type Conversions</h3>
+<p>You are going to encounter many instances when you will be trying to match one dataset with another and it just won’t match. You look at your data, and it seems fine and clean. You check the column names, and they seem good for matching. What is going on? In many cases, it is just your data types are different. For example, a column where you have dates got converted to a character type, or some column where you had colors stored as character got converted to a factor type. It’s super annoying and it happens more often than you think. You need to be able to deal with that shit. Besides fixing types when they are causing you problems, there are going to be even more cases when you’re going to want to convert types for your analysis or something, so, don’t worry, it is not all bad. Let’s see how it works:</p>
+<p>::: {.infobox .caution data-latex=“{caution}”}
+Luckily, conversions are quite simple and very uniform across different types, meaning that the functions are kind of similar.</p>
+<ol style="list-style-type: decimal">
+<li>Number to Character.</li>
+</ol>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1"><span class="co"># Storing.</span></a>
+<a class="sourceLine" id="cb90-2" data-line-number="2">number &lt;-<span class="st"> </span><span class="dv">60</span></a>
+<a class="sourceLine" id="cb90-3" data-line-number="3"><span class="co"># Checking class.</span></a>
+<a class="sourceLine" id="cb90-4" data-line-number="4"><span class="kw">class</span>(number)</a></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1"><span class="co"># Converting</span></a>
+<a class="sourceLine" id="cb92-2" data-line-number="2">character &lt;-<span class="st"> </span><span class="kw">as.character</span>(number)</a>
+<a class="sourceLine" id="cb92-3" data-line-number="3"><span class="co"># Checking class.</span></a>
+<a class="sourceLine" id="cb92-4" data-line-number="4"><span class="kw">class</span>(character)</a></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Character back to Number.</li>
+</ol>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1"><span class="co"># Storing.</span></a>
+<a class="sourceLine" id="cb94-2" data-line-number="2">number &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(character)</a>
+<a class="sourceLine" id="cb94-3" data-line-number="3"><span class="co"># Checking class.</span></a>
+<a class="sourceLine" id="cb94-4" data-line-number="4"><span class="kw">class</span>(number)</a></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Stupid Factor to Character and Numbers (will be doing this a lot).</li>
+</ol>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="co"># Storing.</span></a>
+<a class="sourceLine" id="cb96-2" data-line-number="2">factor &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb96-3" data-line-number="3"><span class="co"># Checking class.</span></a>
+<a class="sourceLine" id="cb96-4" data-line-number="4"><span class="kw">class</span>(factor)</a></code></pre></div>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1"><span class="co"># Converting.</span></a>
+<a class="sourceLine" id="cb98-2" data-line-number="2">character &lt;-<span class="st"> </span><span class="kw">as.character</span>(factor)</a>
+<a class="sourceLine" id="cb98-3" data-line-number="3"><span class="co"># Checking class.</span></a>
+<a class="sourceLine" id="cb98-4" data-line-number="4"><span class="kw">class</span>(character)</a></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>I want you to pay attention here:</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1"><span class="co"># Converting factor to numeric.</span></a>
+<a class="sourceLine" id="cb100-2" data-line-number="2">number &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(factor) </a>
+<a class="sourceLine" id="cb100-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb100-4" data-line-number="4"><span class="kw">print</span>(number) </a></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>The number that we stored in the factor was 5, so why is it printing 1 now? Because it’s a fucking factor. It will mess you up! I’ll tell you why. Instead of printing the number that we stored, it printed the level associated with that number. The only thing that you need to remember, besides not using factors is the following:</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="co"># Converting factor to character first and then to number.</span></a>
+<a class="sourceLine" id="cb102-2" data-line-number="2">number &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">as.character</span>(factor))</a>
+<a class="sourceLine" id="cb102-3" data-line-number="3"><span class="co"># Printing</span></a>
+<a class="sourceLine" id="cb102-4" data-line-number="4"><span class="kw">print</span>(number)</a></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" data-line-number="1"><span class="co"># Checking class.</span></a>
+<a class="sourceLine" id="cb104-2" data-line-number="2"><span class="kw">class</span>(number)</a></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<p>If you are converting a number that is a factor back into a number, you must first convert it into a character!</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Dates to Characters and Back</li>
+</ol>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" data-line-number="1"><span class="co"># This function gives us today&#39;s date (handy)</span></a>
+<a class="sourceLine" id="cb106-2" data-line-number="2">date &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>() </a>
+<a class="sourceLine" id="cb106-3" data-line-number="3"><span class="co"># Printing</span></a>
+<a class="sourceLine" id="cb106-4" data-line-number="4"><span class="kw">print</span>(date)</a></code></pre></div>
+<pre><code>## [1] &quot;2020-02-19&quot;</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" data-line-number="1"><span class="co"># Checking class.</span></a>
+<a class="sourceLine" id="cb108-2" data-line-number="2"><span class="kw">class</span>(date)</a></code></pre></div>
+<pre><code>## [1] &quot;Date&quot;</code></pre>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" data-line-number="1"><span class="co"># Converting to character.</span></a>
+<a class="sourceLine" id="cb110-2" data-line-number="2">characterDate &lt;-<span class="st"> </span><span class="kw">as.character</span>(date)</a>
+<a class="sourceLine" id="cb110-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb110-4" data-line-number="4"><span class="kw">print</span>(characterDate)</a></code></pre></div>
+<pre><code>## [1] &quot;2020-02-19&quot;</code></pre>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" data-line-number="1"><span class="co"># Checking class.</span></a>
+<a class="sourceLine" id="cb112-2" data-line-number="2"><span class="kw">class</span>(characterDate)</a></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>I want to show you two ways to convert it back to a date. The first one is the one that we used before - ymd() form the ‘lubridate’ package. It is the most intuitive so I will insist on using it. The second is from the base R, meaning that you do not need any external packages to use it.</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" data-line-number="1"><span class="co"># Converting.</span></a>
+<a class="sourceLine" id="cb114-2" data-line-number="2">dateFirst &lt;-<span class="st"> </span><span class="kw">ymd</span>(characterDate)</a>
+<a class="sourceLine" id="cb114-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb114-4" data-line-number="4"><span class="kw">print</span>(dateFirst)</a></code></pre></div>
+<pre><code>## [1] &quot;2020-02-19&quot;</code></pre>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" data-line-number="1"><span class="co"># Checking class.</span></a>
+<a class="sourceLine" id="cb116-2" data-line-number="2"><span class="kw">class</span>(dateFirst)</a></code></pre></div>
+<pre><code>## [1] &quot;Date&quot;</code></pre>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" data-line-number="1"><span class="co"># Converting using base R.</span></a>
+<a class="sourceLine" id="cb118-2" data-line-number="2">dateSecond &lt;-<span class="st"> </span><span class="kw">as.Date</span>(characterDate)</a>
+<a class="sourceLine" id="cb118-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb118-4" data-line-number="4"><span class="kw">print</span>(dateSecond)</a></code></pre></div>
+<pre><code>## [1] &quot;2020-02-19&quot;</code></pre>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="co"># Checking class.</span></a>
+<a class="sourceLine" id="cb120-2" data-line-number="2"><span class="kw">class</span>(dateSecond)</a></code></pre></div>
+<pre><code>## [1] &quot;Date&quot;</code></pre>
+<p>As you can see, they do the same shit. However, as we progress, we will be doing more sophisticated date and time operations, and you’ll see why I am insisting on lubridate.</p>
+<p>These conversions were basic, but even this basic stuff will cover 95% of what you will ever need when dealing with data type conversions. The only part that we will need to spend more time on in the next chapters is the dates and times part. Other than that, your data type conversion foundation is built.</p>
+<p>This, sort of, concludes the introduction to the basic data types that I want to cover. So far, you got to play with characters, numbers, booleans, stupid factors, and dates. These are the building blocks for the next part where we are going to look at the more complex data structures like vectors, lists, and data tables. You have already seen some of them, so it will not be anything special or complicated, but still, something that we just can’t skip. Strap in.</p>
+</div>
+<div id="vectors" class="section level3">
+<h3><span class="header-section-number">0.7.7</span> Vectors</h3>
+<p>If you are new to programming, vectors will be hard to wrap your head around right away. They are quite simple, though. However, because you are not used to working with data in that format, it will take some time to get used to. At least it was for me. I don’t know, maybe, I am so good of a teacher that you will get it right away. We will see.</p>
+<div class="infobox note" data-latex="{note}">
+<p>Anyway, we have already seen a few vectors so far. Now, I think, the easiest way to understand vectors right away is like this:</p>
+<ul>
+<li>step 1: imagine a table with some data;</li>
+<li>step 2: each column in that table is a vector;</li>
+<li>step 3: that is it!<br />
+</li>
+</ul>
+</div>
+<p>If you ever worked with excel tables, you should be able to picture one. Every column with data in that table is a separate vector, where headers are just names for those vectors. It doesn’t matter what type of data are in those columns. If it just numbers, it is a numeric vector; if it’s characters, a character vector; it can even be mixed. Let’s quickly take a look.</p>
+<p>Lets create three vectors. To create a vector you need to use the following syntax: c(…).</p>
+<ol style="list-style-type: decimal">
+<li>With characters:</li>
+</ol>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1"><span class="co"># Storing a vector.</span></a>
+<a class="sourceLine" id="cb122-2" data-line-number="2">charVector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;blue&#39;</span>, <span class="st">&#39;yellow&#39;</span>, <span class="st">&#39;green&#39;</span>,<span class="st">&#39;red&#39;</span>)</a>
+<a class="sourceLine" id="cb122-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb122-4" data-line-number="4"><span class="kw">print</span>(charVector)</a></code></pre></div>
+<pre><code>## [1] &quot;blue&quot;   &quot;yellow&quot; &quot;green&quot;  &quot;red&quot;</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>With Numbers:</li>
+</ol>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" data-line-number="1"><span class="co"># Storing a vector.</span></a>
+<a class="sourceLine" id="cb124-2" data-line-number="2">numVector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb124-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb124-4" data-line-number="4"><span class="kw">print</span>(numVector)</a></code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Mixed:</li>
+</ol>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" data-line-number="1"><span class="co"># Storing a vector.</span></a>
+<a class="sourceLine" id="cb126-2" data-line-number="2">mixVector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="st">&#39;dog&#39;</span>,<span class="dv">55</span>,<span class="st">&#39;tree&#39;</span>)</a>
+<a class="sourceLine" id="cb126-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb126-4" data-line-number="4"><span class="kw">print</span>(mixVector)</a></code></pre></div>
+<pre><code>## [1] &quot;1&quot;    &quot;dog&quot;  &quot;55&quot;   &quot;tree&quot;</code></pre>
+<p>That’s it. You are basically just storing your data in bigger data structure. If you want, you can also apply functions to them. As an example, lets convert a numeric vector to a character vector.</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" data-line-number="1"><span class="co"># Converting.</span></a>
+<a class="sourceLine" id="cb128-2" data-line-number="2">numCharVector &lt;-<span class="st"> </span><span class="kw">as.character</span>(numVector)</a>
+<a class="sourceLine" id="cb128-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb128-4" data-line-number="4"><span class="kw">print</span>(numCharVector)</a></code></pre></div>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;</code></pre>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" data-line-number="1"><span class="co"># Checking class.</span></a>
+<a class="sourceLine" id="cb130-2" data-line-number="2"><span class="kw">class</span>(numCharVector)</a></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>Whatever we did to a single number before, we are doing to every number in that vector.</p>
+<p>Now, do you remember that comparison to the columns of a data table that I brought up? Let me show you. Let’s create a table out these vectors:</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" data-line-number="1"><span class="co"># Creating a table.</span></a>
+<a class="sourceLine" id="cb132-2" data-line-number="2">table &lt;-<span class="st"> </span><span class="kw">data.frame</span>(charVector,numVector,mixVector,numCharVector)</a>
+<a class="sourceLine" id="cb132-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb132-4" data-line-number="4"><span class="kw">print</span>(table)</a></code></pre></div>
+<pre><code>##   charVector numVector mixVector numCharVector
+## 1       blue         1         1             1
+## 2     yellow         2       dog             2
+## 3      green         3        55             3
+## 4        red         4      tree             4</code></pre>
+<p>We were able to create this table because the number of records in all these vectors is the same (4). Don’t worry about it now, we will cover data tables soon. Another note though, data tables and data frames in R are used interchangeably.</p>
+<p>This is about all you need to know about vectors at the moment. I don’t know about you, but for me, it took quite some time to get them. Anyway, we will not be doing anything crazy with vectors anytime soon. I showed you that we can apply functions to them, but won’t be doing that either. We kind of will, but it will be in the context of applying them to columns of a dataframe and not just separate vectors. I think, this is enough for now.</p>
+</div>
+<div id="lists" class="section level3">
+<h3><span class="header-section-number">0.7.8</span> Lists</h3>
+<p>Lists are similar to vectors in that they also store data inside. They are more complicated and are harder to understand right away. Lists store data hierarchically and apart from storing things like characters and numbers, they can also store vectors, data tables, as well as even other lists. They become very useful when you start working with loops. To give you an example, if you had fifty data tables and you wanted to do the same operation to all of them (something like converting all headers to upper case), instead of doing that shit fifty times, you would store all these data tables in a list, loop over it and apply that operation not just once, but to all elements of the list. It is an intermediate technic, so I don’t expect you to follow too much right now. Let me show you a few examples instead, so you could see how lists are different:</p>
+<p>Now, do me a favor and create the same four vectors that we did in the previous section. Also, create a table with those four vectors, just like we did. Name it ‘table’.</p>
+<p>Now that you have prepared everything, lets create some lists.</p>
+<p>Just with simple data types:</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" data-line-number="1"><span class="co"># Creating a list.</span></a>
+<a class="sourceLine" id="cb134-2" data-line-number="2">list1 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&#39;a&#39;</span>, <span class="dv">1</span>, <span class="st">&#39;b&#39;</span>,<span class="dv">55</span>,<span class="st">&#39;100&#39;</span>)</a>
+<a class="sourceLine" id="cb134-3" data-line-number="3"><span class="co"># Checking class.</span></a>
+<a class="sourceLine" id="cb134-4" data-line-number="4"><span class="kw">class</span>(list1)</a></code></pre></div>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" data-line-number="1"><span class="co"># Printing</span></a>
+<a class="sourceLine" id="cb136-2" data-line-number="2"><span class="kw">print</span>(list1)</a></code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;a&quot;
+## 
+## [[2]]
+## [1] 1
+## 
+## [[3]]
+## [1] &quot;b&quot;
+## 
+## [[4]]
+## [1] 55
+## 
+## [[5]]
+## [1] &quot;100&quot;</code></pre>
+<p>The following structure is a bit more complex compared to the ones we looked at so far. Double square brackets there indicate the number of the item in the list. It lets us access that element for example for looping. On top of that, you can go even deeper and access the variables inside of the list’s item. To access ‘a’ we need to do the following:</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" data-line-number="1"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb138-2" data-line-number="2"><span class="kw">print</span>(list1[[<span class="dv">1</span>]][<span class="dv">1</span>]) </a></code></pre></div>
+<pre><code>## [1] &quot;a&quot;</code></pre>
+<p>Double beackets access the fist element of the list and the single brackets give us the first element inside, which is ‘a’.</p>
+<p>It will only get more complex from now, so I will stop printing the results to save space. You should still poke around and see what the following lists are all about:</p>
+<p>List of vectors:</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" data-line-number="1">list2 &lt;-<span class="st"> </span><span class="kw">list</span>(charVector,numVector,mixVector,numCharVector)</a></code></pre></div>
+<p>List of vectors + data tables:</p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" data-line-number="1">list3 &lt;-<span class="st"> </span><span class="kw">list</span>(charVector,numVector,mixVector,numCharVector, table)</a></code></pre></div>
+<p>List of tables:</p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" data-line-number="1">list4 &lt;-<span class="st"> </span><span class="kw">list</span>(table,table,table)</a></code></pre></div>
+<p>List of lists:</p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" data-line-number="1">list5 &lt;-<span class="st"> </span><span class="kw">list</span>(list1,list2,list3,list4)</a></code></pre></div>
+<p>As you can see, lists can get quite complex very quickly. They can be very useful when you are ready to use them. We aren’t ready and won’t using them any time soon. The only reason I showed them to you is for your overall understanding of the R data types. We’ll definitely come back to lists in time. For now, let’s move on to the topic of data tables. That is the one we will be using right away and a lot.</p>
+</div>
+<div id="data-tables-data-frames" class="section level3">
+<h3><span class="header-section-number">0.7.9</span> Data Tables (Data Frames)</h3>
+<p>Remember, a few topics ago, I told you to think of vectors as just columns inside data tables? Well, now, hear my (not only) definition of data frames (or data tables, as you might have noticed, we are using them interchangeably).</p>
+<div class="infobox note" data-latex="{note}">
+<p>Data frame is a collection of vectors of the same lengths. That’s it. Why the same number of rows? Because, imagine a table, it is a rectangle, right? Even if some rows are empty, you, still, have the same number of them.</p>
+</div>
+<p>One of the best things about working with R, if not the best, is its handling of data tables. If you have ever worked with Excel or some other tabular data handler, then R’s way of dealing with such data will be very intuitive for you as well. We will be working with tables a lot. We will use them for everything, even for things that we don’t really need them for. For example, sometimes, it is much faster and efficient to do things with vectors, instead, we will be converting vectors into tables and then doing things to them. But why? Because tables are intuitive and vectors are confusing. I am trying to explain things to you the way I wish they were explained to me. If you are a genius who gets everything right away, then you don’t need this book. Get out of here. For the rest of us tabular analysis is key to understanding everything. Through working with tables, you will eventually get the rest of the data structures and will decide when and what to use on your own. Let’s look at the tables that we have already created.</p>
+<p>We already have a data frame. Lets use it:</p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" data-line-number="1"><span class="co"># Storing &#39;table&#39; in &#39;newTable&#39;.</span></a>
+<a class="sourceLine" id="cb144-2" data-line-number="2">newTable &lt;-<span class="st"> </span>table</a>
+<a class="sourceLine" id="cb144-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb144-4" data-line-number="4"><span class="kw">print</span>(newTable)</a></code></pre></div>
+<pre><code>##   charVector numVector mixVector numCharVector
+## 1       blue         1         1             1
+## 2     yellow         2       dog             2
+## 3      green         3        55             3
+## 4        red         4      tree             4</code></pre>
+<p>When you use the function print(), it prints everything in the console (view 3). You can review your outputs like that, but it is not very practical. The better way is to use the Environment (view 2). Select the ‘newTable’ in your Environment. You should see the same table, but as a separate full screen tab. Point at the column names and hold your pointer there for a second, you should see the data type of that column. There isn’t much more that you can do with this view, but that’s why it’s great. It does not have a ton of options to confuse you. Close it.</p>
+<p>Let’s do a couple of things to our new table.</p>
+<p>Removing first row and fourth column:</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1">newTable &lt;-<span class="st"> </span>newTable[<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">4</span>]</a></code></pre></div>
+<p>It’s confusing in the beginning, but this syntax: ‘table[rows , columns]’ is standard and the most intuitive for dealing with tables. Within square brackets: the left side of the comma deals with rows and the right side with columns. So, if we wanted to eliminate the second row and the second column we would write: ‘newTable[-2,-2]’ and if we wanted to eliminate the first and the second rows and the first column, we would write: ‘newTable[-c(1,2),-2]’. You get the idea.</p>
+<p>Now, let’s rename the columns:</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" data-line-number="1"><span class="co"># Renaming.</span></a>
+<a class="sourceLine" id="cb147-2" data-line-number="2"><span class="kw">colnames</span>(newTable) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;col1&#39;</span>,<span class="st">&#39;col2&#39;</span>,<span class="st">&#39;col3&#39;</span>)</a></code></pre></div>
+<p>If you just want to rename just one column:</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" data-line-number="1"><span class="co"># Renaming.</span></a>
+<a class="sourceLine" id="cb148-2" data-line-number="2"><span class="kw">colnames</span>(newTable)[<span class="dv">2</span>] &lt;-<span class="st"> &#39;Sherman&#39;</span></a>
+<a class="sourceLine" id="cb148-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb148-4" data-line-number="4"><span class="kw">print</span>(newTable)</a></code></pre></div>
+<pre><code>##     col1 Sherman col3
+## 2 yellow       2  dog
+## 3  green       3   55
+## 4    red       4 tree</code></pre>
+<p>Lets also count the number of rows and columns:</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" data-line-number="1"><span class="co"># Counting rows.</span></a>
+<a class="sourceLine" id="cb150-2" data-line-number="2"><span class="kw">nrow</span>(newTable)</a></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1"><span class="co"># Counting cols.</span></a>
+<a class="sourceLine" id="cb152-2" data-line-number="2"><span class="kw">ncol</span>(newTable)</a></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<p>These were some of the basics of data frames. It’s all you need to know for now. If I start to show you more shit now, I will lose your attention, because you’ll stop following at some point. I am telling you; we are going to be working with data frames so much that it will be the first thing that you master.</p>
+<p>Let’s summarize what we have looked at, and hopefully learned, in this section. First, we looked at R’s basic data types, which are characters, numbers, booleans, factors, as well as dates. We also applied a few functions to them and saw how we can convert one type to another. Then, we looked at the main data structures. These are vectors, lists, and data frames (also known as data tables). We created them, used one as a part of the other, and saw how we can modify them at will. You might have found some of that boring as fuck, but you need to know this stuff to proceed. In the next section, we’re going to talk about functions (not the ones that you write for yourself, but the existing ones), libraries (packages), file formats, loops, and SQL queries.</p>
+</div>
+</div>
+<div id="coding-tools" class="section level2">
+<h2><span class="header-section-number">0.8</span> Coding Tools</h2>
+<p>We are done talking about the data types and structures. In this section, I would like to cover some ground on coding tools. I wasn’t sure what to name this section so I picked coding tools. Things like functions, libraries, loops, file formats, and SQL queries aren’t really data types or structures, nor are they coding, strictly speaking. Whatever, just fucking stick with coding tools.</p>
+<div id="functions" class="section level3">
+<h3><span class="header-section-number">0.8.1</span> Functions</h3>
+<p>We are going to split functions in two types: ones that you wrote, and ones that were written for you. Forget about writing your own functions for now. Here, we will be covering the second type. R has tons of functions. One of the best things about R is that it’s open source. Anybody can write a function, package it, and release. Because of that, there are functions almost for anything. The flip side of that, is that there is a bunch of functions that do same shit. This makes it almost impossible to have one guiding rule for language usage - there is no one right way to do things. It also creates a lot of competition between package creators, as each tries to be the shit who created the best tool for the job.</p>
+<div class="infobox note" data-latex="{note}">
+<p>I personally enjoy to know more than one way to skin a cat (This is a joke!!! I do not support animal cruelty!!! I am serious!!!), but you might be different. There are distinct schools of thought in R, though. It’s not complete chaos so don’t worry. We will be following the two biggest ones.</p>
+</div>
+<p>Anyway, there are also two types of functions (out of those that are written for you): built-in and from the outside. The built-in (also known as base) are the functions that come pre-installed with R. You can do a lot with just them. You can do all the math and stats operations, dates, basic plots, and more. That would be fucking stupid though. I am sure, there are purists who do that. Fuck them. R is powerful and amazing because of the wealth of third-party functions that are available for free to everyone. There are functions for everything. I, obviously, can’t show you all the functions, and there is no need to dive into them now, but I will show you a few as an example.</p>
+<p>We already installed and loaded the libraries that we will be using. But, in case you started a new session or something, lets load them again.</p>
+<p>We have already applied a few functions here and there before: print(), substr(), trimws(), ymd(), as.Date, colnames(), and others are all functions.</p>
+<p>Let’s use a few more. First, let’s create a table with three columns. One with numbers, second with characters, and third with numeric dates.</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1"><span class="co"># Creating a table.</span></a>
+<a class="sourceLine" id="cb154-2" data-line-number="2">data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(a &lt;-<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>],</a>
+<a class="sourceLine" id="cb154-3" data-line-number="3">                      b &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">1.345</span>,<span class="fl">4.345</span>),</a>
+<a class="sourceLine" id="cb154-4" data-line-number="4">                      c &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">20190101</span>, <span class="dv">20190104</span>))</a>
+<a class="sourceLine" id="cb154-5" data-line-number="5"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb154-6" data-line-number="6"><span class="kw">print</span>(data)</a></code></pre></div>
+<pre><code>##   a....letters.1.4. b....seq.1.345..4.345. c....seq.20190101..20190104.
+## 1                 a                  1.345                     20190101
+## 2                 b                  2.345                     20190102
+## 3                 c                  3.345                     20190103
+## 4                 d                  4.345                     20190104</code></pre>
+<p>We used four functions here:</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1"><span class="co"># Creates tables (rarely used)</span></a>
+<a class="sourceLine" id="cb156-2" data-line-number="2"><span class="kw">data.frame</span>() </a>
+<a class="sourceLine" id="cb156-3" data-line-number="3"><span class="co"># Converts sequence of numbers to letters (rarely used)</span></a>
+<a class="sourceLine" id="cb156-4" data-line-number="4">letters[] </a>
+<a class="sourceLine" id="cb156-5" data-line-number="5"><span class="co"># Creates a sequence of numbers (often used)</span></a>
+<a class="sourceLine" id="cb156-6" data-line-number="6"><span class="kw">seq</span>() </a>
+<a class="sourceLine" id="cb156-7" data-line-number="7"><span class="co"># Prints whatever (used all the time)</span></a>
+<a class="sourceLine" id="cb156-8" data-line-number="8"><span class="kw">print</span>() </a></code></pre></div>
+<p>Ok, two things right away. Column names are messed up, and I also want to show you how to access columns of data tables in R.</p>
+<p>Fixing column names:</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" data-line-number="1"><span class="co"># Renaming.</span></a>
+<a class="sourceLine" id="cb157-2" data-line-number="2"><span class="kw">colnames</span>(data) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;letters&#39;</span>,<span class="st">&#39;numbers&#39;</span>,<span class="st">&#39;dates&#39;</span>) </a></code></pre></div>
+<div class="infobox caution" data-latex="{caution}">
+<p>To access a column of a dataframe, you will use the $ operator between the dataframe’s name and the column’s name. Like this:</p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1"><span class="co"># Accessing the column &#39;letters&#39;</span></a>
+<a class="sourceLine" id="cb158-2" data-line-number="2">data<span class="op">$</span>letters</a></code></pre></div>
+</div>
+<p>Working with numbers. Rounding all numbers in that column to two decimals:</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" data-line-number="1"><span class="co"># Rounding.</span></a>
+<a class="sourceLine" id="cb159-2" data-line-number="2">data<span class="op">$</span>numbers &lt;-<span class="st"> </span><span class="kw">round</span>(data<span class="op">$</span>numbers,<span class="dv">2</span>)</a></code></pre></div>
+<p>This section is a good place to talk about arguments in functions. Arguments are the things that you pass to a function. There can be any number of arguments in a function, it depends on the person who wrote the function. For example, the function round() that we just used, accepts two arguments: Number 1: a number or a vector of numbers Number 2: the number of decimal points to round to. In this function, if you do not specify the second argument it defaults to 0. That is called a default argument. The first argument here is, of course, mandatory. Without it, R will kick an error. Functions can have different number of arguments. Some are more important than others. Every time you’re about to use a new function, google it first to see its main arguments and avoid unintended results.</p>
+<p>Let’s go back to the examples.</p>
+<p>Creating another column and rounding all numbers down to the whole number using the function floor().</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" data-line-number="1"><span class="co"># Rounding down.</span></a>
+<a class="sourceLine" id="cb160-2" data-line-number="2">data<span class="op">$</span>roundDown &lt;-<span class="st"> </span><span class="kw">floor</span>(data<span class="op">$</span>numbers)</a></code></pre></div>
+<p>Same, but rounded up. Using the function ceiling().</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" data-line-number="1"><span class="co"># Rounding up.</span></a>
+<a class="sourceLine" id="cb161-2" data-line-number="2">data<span class="op">$</span>roundUp &lt;-<span class="st"> </span><span class="kw">ceiling</span>(data<span class="op">$</span>numbers)</a>
+<a class="sourceLine" id="cb161-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb161-4" data-line-number="4"><span class="kw">print</span>(data)</a></code></pre></div>
+<pre><code>##   letters numbers    dates roundDown roundUp
+## 1       a    1.34 20190101         1       2
+## 2       b    2.34 20190102         2       3
+## 3       c    3.34 20190103         3       4
+## 4       d    4.34 20190104         4       5</code></pre>
+<p>Here, we are using the function mean() to print the mean of the column ‘numbers’. We are not storing the result anywhere. Instead, we printing it right away.</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" data-line-number="1"><span class="co"># Printing mean.</span></a>
+<a class="sourceLine" id="cb163-2" data-line-number="2"><span class="kw">mean</span>(data<span class="op">$</span>numbers)</a></code></pre></div>
+<pre><code>## [1] 2.84</code></pre>
+<p>Using the function sum() to print the sum without storing.</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" data-line-number="1"><span class="co"># Printing sum.</span></a>
+<a class="sourceLine" id="cb165-2" data-line-number="2"><span class="kw">sum</span>(data<span class="op">$</span>numbers)</a></code></pre></div>
+<pre><code>## [1] 11.36</code></pre>
+<p>Printing min/max without storing.</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" data-line-number="1"><span class="co"># Printing min.</span></a>
+<a class="sourceLine" id="cb167-2" data-line-number="2"><span class="kw">min</span>(data<span class="op">$</span>numbers)</a></code></pre></div>
+<pre><code>## [1] 1.34</code></pre>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" data-line-number="1"><span class="co"># Printing max.</span></a>
+<a class="sourceLine" id="cb169-2" data-line-number="2"><span class="kw">max</span>(data<span class="op">$</span>numbers)</a></code></pre></div>
+<pre><code>## [1] 4.34</code></pre>
+<p>Now, let’s do something to the character column.</p>
+<p>Using the function toupper(), we are changing the column ‘letters’ to upper case.</p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" data-line-number="1"><span class="co"># Upper case.</span></a>
+<a class="sourceLine" id="cb171-2" data-line-number="2">data<span class="op">$</span>letters &lt;-<span class="st"> </span><span class="kw">toupper</span>(data<span class="op">$</span>letters)</a>
+<a class="sourceLine" id="cb171-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb171-4" data-line-number="4"><span class="kw">print</span>(data)</a></code></pre></div>
+<pre><code>##   letters numbers    dates roundDown roundUp
+## 1       A    1.34 20190101         1       2
+## 2       B    2.34 20190102         2       3
+## 3       C    3.34 20190103         3       4
+## 4       D    4.34 20190104         4       5</code></pre>
+<p>Switching back by using the function tolower().</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" data-line-number="1"><span class="co"># Lower case.</span></a>
+<a class="sourceLine" id="cb173-2" data-line-number="2">data<span class="op">$</span>letters &lt;-<span class="st"> </span><span class="kw">tolower</span>(data<span class="op">$</span>letters)</a></code></pre></div>
+<p>Lets add the string ’ test’ to our letters by using the function paste0().</p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" data-line-number="1"><span class="co"># Pasting</span></a>
+<a class="sourceLine" id="cb174-2" data-line-number="2">data<span class="op">$</span>letters &lt;-<span class="st"> </span><span class="kw">paste0</span>(data<span class="op">$</span>letters,<span class="st">&#39; test&#39;</span>)</a>
+<a class="sourceLine" id="cb174-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb174-4" data-line-number="4"><span class="kw">print</span>(data)</a></code></pre></div>
+<pre><code>##   letters numbers    dates roundDown roundUp
+## 1  a test    1.34 20190101         1       2
+## 2  b test    2.34 20190102         2       3
+## 3  c test    3.34 20190103         3       4
+## 4  d test    4.34 20190104         4       5</code></pre>
+<p>Splitting one column into two with an empty space in the middle (little advanced).</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" data-line-number="1"><span class="co"># Piping data into the function separate() and stroting the result</span></a>
+<a class="sourceLine" id="cb176-2" data-line-number="2"><span class="co"># inside of data.</span></a>
+<a class="sourceLine" id="cb176-3" data-line-number="3">data &lt;-<span class="st"> </span>data <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb176-4" data-line-number="4"><span class="st">  </span><span class="kw">separate</span>(letters, <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;columnA&quot;</span>, <span class="st">&quot;columnB&quot;</span>), <span class="dt">by =</span> <span class="st">&#39; &#39;</span>)</a>
+<a class="sourceLine" id="cb176-5" data-line-number="5"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb176-6" data-line-number="6"><span class="kw">print</span>(data)</a></code></pre></div>
+<pre><code>##   columnA columnB numbers    dates roundDown roundUp
+## 1       a    test    1.34 20190101         1       2
+## 2       b    test    2.34 20190102         2       3
+## 3       c    test    3.34 20190103         3       4
+## 4       d    test    4.34 20190104         4       5</code></pre>
+<div class="infobox caution" data-latex="{caution}">
+<p>This is a good time to introduce the ‘%&gt;%’ (pipe operator). A pipe operator will be very important for us. We will be using it in this book a lot and will continue using it all the way through the last book where we will be doing some very advanced asynchronous programming. This glues all that. Very important.</p>
+</div>
+<p>Now, here is what it means. Think of %&gt;% (pipe) operator as the word ‘THEN’. Let’s look at the operation we executed above:</p>
+<div class="infobox note" data-latex="{note}">
+<ul>
+<li>STEP 2) data &lt;-</li>
+<li>STEP 1) data %&gt;% separate(letters, into = c(“columnA”, “columnB”), by = ’ ’)</li>
+<li>STEP 3) print(data).</li>
+</ul>
+<p>Step by step:</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>take data, then, separate the column ‘letters’ into the columns ‘columnA’ and ‘columnB’ by emply space.</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>store the result in data.</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>print data.</li>
+</ol></li>
+</ul>
+</div>
+<p>Apart from the ordering being not from left to right, it is pretty fucking straightforward. Now, on top of being somewhat easy to understand, this type of syntax is also very efficient. You can chain lots of operations like that. I know that you don’t give a shit about efficiency at the moment, you are just trying to get this to work. Therefore, here is a very simple scheme:</p>
+<div class="infobox caution" data-latex="{caution}">
+<p>dataframe &lt;- dataframe %&gt;% function(column) %&gt;% function(column) %&gt;% ….</p>
+</div>
+<p>You can basically chain as many as you want. We will see that in action later.</p>
+<p>Finally, lets convert a numeric date column into an actual date:</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" data-line-number="1"><span class="co"># Converting.</span></a>
+<a class="sourceLine" id="cb178-2" data-line-number="2">data<span class="op">$</span>dates &lt;-<span class="st"> </span><span class="kw">ymd</span>(data<span class="op">$</span>dates)</a>
+<a class="sourceLine" id="cb178-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb178-4" data-line-number="4"><span class="kw">print</span>(data)</a></code></pre></div>
+<pre><code>##   columnA columnB numbers      dates roundDown roundUp
+## 1       a    test    1.34 2019-01-01         1       2
+## 2       b    test    2.34 2019-01-02         2       3
+## 3       c    test    3.34 2019-01-03         3       4
+## 4       d    test    4.34 2019-01-04         4       5</code></pre>
+<p>I just showed you a fraction of what I usually use, and what we are going to be using in this book. Some of these functions were from the base R and some from the external packages like lubridate, tidyr, and diplyr. The concept is simple: you need to do something, you look up a function for that, you install and load the package, you use the function like this: ‘result &lt;- function(arguments)’. Next, we will look into packages.</p>
+</div>
+<div id="packages-libraries" class="section level3">
+<h3><span class="header-section-number">0.8.2</span> Packages (Libraries)</h3>
+<p>Packages or Libraries are just containers for functions. There are tons of libraries out there, and that is great. We pretty much covered this whole topic of how packages and functions are amazing and how they do all these different things. So, in this part, I am just going to give you a list of libraries that you are going to install and drag with you every time you launch a new project. You will see some people who will be like “Bro, it is wrong to have so many packages loaded all the time.” Do not listen, they do not know what they are talking about. Dragging a bunch of packages, even if you will not use some of them, will save you a lot of time. So, here:</p>
+<div class="infobox caution" data-latex="{caution}">
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" data-line-number="1">  <span class="kw">library</span>(lubridate) <span class="co"># for working with dates/times</span></a>
+<a class="sourceLine" id="cb180-2" data-line-number="2">  <span class="kw">library</span>(data.table) <span class="co"># ecosystem for working with tables</span></a>
+<a class="sourceLine" id="cb180-3" data-line-number="3"><span class="co"># and averall data manipulation</span></a>
+<a class="sourceLine" id="cb180-4" data-line-number="4">  <span class="kw">library</span>(dplyr) <span class="co"># another ecosystem for working with tables</span></a>
+<a class="sourceLine" id="cb180-5" data-line-number="5"><span class="co"># and averall data manipulation (will be our primary)</span></a>
+<a class="sourceLine" id="cb180-6" data-line-number="6">  <span class="kw">library</span>(openxlsx) <span class="co"># to load data from excel</span></a>
+<a class="sourceLine" id="cb180-7" data-line-number="7">  <span class="kw">library</span>(tidyr) <span class="co"># for data manipulation</span></a>
+<a class="sourceLine" id="cb180-8" data-line-number="8">  <span class="kw">library</span>(fst) <span class="co"># for loading fst files </span></a>
+<a class="sourceLine" id="cb180-9" data-line-number="9">  <span class="kw">library</span>(stringi) <span class="co"># for manipulating character strings</span></a>
+<a class="sourceLine" id="cb180-10" data-line-number="10">  <span class="kw">library</span>(zoo) <span class="co"># for working with dates/times</span></a>
+<a class="sourceLine" id="cb180-11" data-line-number="11">  <span class="kw">library</span>(ggplot2) <span class="co"># for nice graphs</span></a>
+<a class="sourceLine" id="cb180-12" data-line-number="12">  <span class="kw">library</span>(scales) <span class="co"># combines with ggplot2 for scaling</span></a>
+<a class="sourceLine" id="cb180-13" data-line-number="13">  <span class="kw">library</span>(tibble) <span class="co"># for working with data and tables</span></a>
+<a class="sourceLine" id="cb180-14" data-line-number="14">  <span class="kw">library</span>(RMySQL) <span class="co"># for sql queries using mysql database</span></a></code></pre></div>
+</div>
+<p>There are many more libraries we will use. I will be introducing them gradually, rather than all at once. For now, just install all of these and start dragging them from script to script when you start a new project. You don’t need to look into them now.</p>
+</div>
+<div id="data-formats" class="section level3">
+<h3><span class="header-section-number">0.8.3</span> Data Formats</h3>
+<p>If you have ever seen a computer, then data formats shouldn’t be anything new to you. You don’t have to be a programmer to know the term. There are a bunch of different formats out there. Formats like pdf, xlsx, txt, csv, doc, docx, and others are a day to day thing that you see anyway. Why do we care? You will be saving a lot of your analysis using some sort of files, right? Also, you need to get your data from somewhere, because you almost never generate your own. Here, I will show you the formats that we are going to be using the most.</p>
+<p>First, let’s create a table. Same one we did before.</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb181-1" data-line-number="1"><span class="co"># Creating a table.</span></a>
+<a class="sourceLine" id="cb181-2" data-line-number="2">data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(a &lt;-<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>],</a>
+<a class="sourceLine" id="cb181-3" data-line-number="3">                      b &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">1.345</span>,<span class="fl">4.345</span>),</a>
+<a class="sourceLine" id="cb181-4" data-line-number="4">                      c &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">20190101</span>, <span class="dv">20190104</span>))</a></code></pre></div>
+</div>
+<div id="csv" class="section level3">
+<h3><span class="header-section-number">0.8.4</span> CSV</h3>
+<p>In my experience, CSV is, by far, the most used format to store data in R. It’s compact, fast, supported by excel and other similar editors, and well supported by R. The fact that it is accessible by an Excel kind of software is very important. A lot of times you will be doing some analysis for your superiors. They might not know R, but they will know Excel. You should be able to send them your data in the format that they can consume.</p>
+<p>This is how you save your table as a CSV:</p>
+<div class="infobox tip" data-latex="{tip}">
+<ul>
+<li>1.Get the path of where you want to store the file. If you do not know how - on windows go to that folder and on top you will see the path, copy it.</li>
+<li>2.Use that path as the second argument to the function. Like this: fwrite(data, ‘path’).</li>
+<li>3.When you paste the path you will see that you have single forward slashed separating the folders. Like this : /a/b/c. You must change this to //a//b//c or \a\b\c for it to work.</li>
+</ul>
+</div>
+<p>Here is my example:</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" data-line-number="1"><span class="co"># Saving.</span></a>
+<a class="sourceLine" id="cb182-2" data-line-number="2"><span class="kw">fwrite</span>(data, <span class="st">&#39;//home//nkta//Desktop//book//bookData//data.csv&#39;</span>)</a></code></pre></div>
+<p>Lets read it back.</p>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb183-1" data-line-number="1"><span class="co"># Reading.</span></a>
+<a class="sourceLine" id="cb183-2" data-line-number="2">data1 &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&#39;//home//nkta//Desktop//book//bookData//data.csv&#39;</span>)</a>
+<a class="sourceLine" id="cb183-3" data-line-number="3"><span class="co"># Printing.</span></a>
+<a class="sourceLine" id="cb183-4" data-line-number="4"><span class="kw">print</span>(data1)</a></code></pre></div>
+<pre><code>##    a....letters.1.4. b....seq.1.345..4.345. c....seq.20190101..20190104.
+## 1:                 a                  1.345                     20190101
+## 2:                 b                  2.345                     20190102
+## 3:                 c                  3.345                     20190103
+## 4:                 d                  4.345                     20190104</code></pre>
+</div>
+<div id="xlsx-excel" class="section level3">
+<h3><span class="header-section-number">0.8.5</span> XLSX (EXCEL)</h3>
+<p>Similar to csv but can have multiple tables. Basically, an excel spreadsheet. We won’t be writing this format, but, sometimes, you have to work with this format and you need to know how to read it in.</p>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb185-1" data-line-number="1"><span class="co"># Saving.</span></a>
+<a class="sourceLine" id="cb185-2" data-line-number="2"><span class="kw">write.xlsx</span>(data1,<span class="st">&#39;//home//nkta//Desktop//book//bookData//data1.xlsx&#39;</span>)</a></code></pre></div>
+<pre><code>## Note: zip::zip() is deprecated, please use zip::zipr() instead</code></pre>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb187-1" data-line-number="1"><span class="co"># Reading.</span></a>
+<a class="sourceLine" id="cb187-2" data-line-number="2">data2 &lt;-<span class="st"> </span><span class="kw">read.xlsx</span>(<span class="st">&#39;//home//nkta//Desktop//book//bookData//data1.xlsx&#39;</span>)</a></code></pre></div>
+</div>
+<div id="fst" class="section level3">
+<h3><span class="header-section-number">0.8.6</span> FST</h3>
+<p>This one is extremely fast. I think it was developed by Facebook to store huge data fast. We will be using it down the line in the next books.</p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb188-1" data-line-number="1"><span class="co"># Saving.</span></a>
+<a class="sourceLine" id="cb188-2" data-line-number="2"><span class="kw">write.fst</span>(data2,<span class="st">&#39;//home//nkta//Desktop//book//bookData//data2.fst&#39;</span>)</a>
+<a class="sourceLine" id="cb188-3" data-line-number="3"><span class="co"># Reading.</span></a>
+<a class="sourceLine" id="cb188-4" data-line-number="4">data3 &lt;-<span class="st"> </span><span class="kw">read.fst</span>(<span class="st">&#39;//home//nkta//Desktop//book//bookData//data2.fst&#39;</span>)</a></code></pre></div>
+<p>There are also other popular formats that we will not be working with. They are RDS, JSON, and XML. You can look them up yourself.</p>
+<p>As you can see, reading and writing these formats is easy. On top of that, all these functions are pretty much the same. CSV will be our number one, fst will be the distant second. You get the idea. All these file types are good for saving and sharing your data on small and local scale. You’ll use these to save some data for a future analysis, or to send to your boss, something like that. The way big boys work with data is through databases. In the next and final introductory section, I will show you how some of that is done.</p>
+</div>
+<div id="sql-queries" class="section level3">
+<h3><span class="header-section-number">0.8.7</span> SQL Queries</h3>
+<p>SQL is extremely important. You won’t go far without it. I won’t teach you the language itself in this book, but I’ll show you the most used commands and how to execute them. Here, I want to show you how to connect to a database and retrieve some data. I’ve set up a practice MySQL database, and, from now on, we will be interacting with it a lot. Let’s connect to it and retrieve some data. Before we do though, I want to say a few things about databases.</p>
+<div class="infobox note" data-latex="{note}">
+<p>This is how I think about the types of databases out there.</p>
+<ul>
+<li>There are old piece of shit databases that, if you’re unlucky, you will be forced to work with at work. That would happen if your organization has old infrastructure and isn’t planning to change it. There won’t be a difference in SQL language between fast and slow databases so it doesn’t matter. You won’t be wasting time learning it, you will just struggle a lot with speed.</li>
+<li>If you are lucky, your database will be extremely fast, so fast that you will start to think that all databases are that fast. Such databases are not the most popular, because they are usually designed for some specific tasks and speed. They DO look like regular databases at first, but at some point, you will encounter their limitations - something small, something that you will need to do but it just will not be able to do. They might also be not free to use. I will show you such databases in the future and even teach you to set them up. Not now, though.</li>
+</ul>
+</div>
+<p>First, let’s connect to our database. For this, we will use a function from the library ‘DBI’. Even though, we never loaded this package, it got automatically added when we loaded RMySQL. This happens all the time. When you try to install a package, R checks if that package relies on some other packages to work. If it does, but they are not installed, R will automatically install them.</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb189-1" data-line-number="1"><span class="co"># Connecting.</span></a>
+<a class="sourceLine" id="cb189-2" data-line-number="2">connection =<span class="st"> </span></a>
+<a class="sourceLine" id="cb189-3" data-line-number="3"><span class="co"># specifying database type.</span></a>
+<a class="sourceLine" id="cb189-4" data-line-number="4"><span class="st">  </span><span class="kw">dbConnect</span>(<span class="dt">drv =</span> <span class="kw">MySQL</span>(),  </a>
+<a class="sourceLine" id="cb189-5" data-line-number="5"><span class="co"># username</span></a>
+<a class="sourceLine" id="cb189-6" data-line-number="6">    <span class="dt">user =</span> <span class="st">&quot;xxx&quot;</span>, </a>
+<a class="sourceLine" id="cb189-7" data-line-number="7"><span class="co"># password</span></a>
+<a class="sourceLine" id="cb189-8" data-line-number="8">    <span class="dt">password =</span> <span class="st">&#39;xxx&#39;</span>, </a>
+<a class="sourceLine" id="cb189-9" data-line-number="9"><span class="co"># address</span></a>
+<a class="sourceLine" id="cb189-10" data-line-number="10">    <span class="dt">host =</span> <span class="st">&#39;mybookdatabase.cgac79lt7rx0.us-east-2.rds.amazonaws.com&#39;</span>, </a>
+<a class="sourceLine" id="cb189-11" data-line-number="11"><span class="co"># port</span></a>
+<a class="sourceLine" id="cb189-12" data-line-number="12">    <span class="dt">port =</span> <span class="dv">3306</span>, </a>
+<a class="sourceLine" id="cb189-13" data-line-number="13"><span class="co"># name of the database</span></a>
+<a class="sourceLine" id="cb189-14" data-line-number="14">    <span class="dt">dbname =</span> <span class="st">&#39;nikita99&#39;</span>) </a></code></pre></div>
+<p>Without the confusing comments and spaces, it looks like this:</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb190-1" data-line-number="1">connection =<span class="st"> </span><span class="kw">dbConnect</span>(<span class="dt">drv =</span> <span class="kw">MySQL</span>(),</a>
+<a class="sourceLine" id="cb190-2" data-line-number="2">                       <span class="dt">user =</span> <span class="st">&quot;xxx&quot;</span>,</a>
+<a class="sourceLine" id="cb190-3" data-line-number="3">                       <span class="dt">password =</span> <span class="st">&#39;xxx&#39;</span>, </a>
+<a class="sourceLine" id="cb190-4" data-line-number="4">                       <span class="dt">host =</span> <span class="st">&#39;mybookdatabase.cgac79lt7rx0.us-east-2.rds.amazonaws.com&#39;</span>, </a>
+<a class="sourceLine" id="cb190-5" data-line-number="5">                       <span class="dt">port =</span> <span class="dv">3306</span>, </a>
+<a class="sourceLine" id="cb190-6" data-line-number="6">                       <span class="dt">dbname =</span> <span class="st">&#39;nikita99&#39;</span>) </a></code></pre></div>
+<p>I am not going to explain each argument, because you do not need that at the moment. This setup will work for now. At work, this will be provided for you by a database administrator or something. We WILL be setting up our own databases in the future books, but it is too advanced right now.</p>
+<p>So, when you execute the connection, it gets stored in your environment. It kind of just sits there until you disconnect. But now, you can use it to get the data from the database.</p>
+<p>First, lets look at the list of tables inside:</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb191-1" data-line-number="1"><span class="co"># Listing tables.</span></a>
+<a class="sourceLine" id="cb191-2" data-line-number="2">tables &lt;-<span class="st"> </span><span class="kw">dbListTables</span>(connection)</a></code></pre></div>
+<p>Now, lets take the table ‘book_table’ and check the first 5 rows in there.</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" data-line-number="1"><span class="co"># Checking first five rows.</span></a>
+<a class="sourceLine" id="cb192-2" data-line-number="2">data &lt;-<span class="st"> </span><span class="kw">dbGetQuery</span>(connection,<span class="st">&quot;SELECT * FROM book_table limit 5&quot;</span>)</a></code></pre></div>
+<p>I want to spend some time here and take a look at what we just did. The overall syntax should be more or less clear to you now: we are applying some function on the right side of the arrow ( dbGetQuery(connection,“SELECT * FROM book_table limit 5”) ) and storing the result inside of the variable on the left side (data). The function that we are using is ‘dbGetQuery’. It has two arguments: the database connection, and the actual SQL command. The connection should be clear to you: we connected to the database with the credentials and stored that connection in the variable connection. That’s it. Now, about the actual SQL command - “SELECT * FROM book_table limit 5”. This is actual SQL language. Basically, we just used another programming language inside of R. This is how SQL works: there are key commands, and there are inputs. In our case, key commands are SELECT, FROM, LIMIT. The inputs are: *, book_table, 5.</p>
+<p>Lets go line by line:</p>
+<div class="infobox note" data-latex="{note}">
+<ul>
+<li>‘SELECT’ - every sql query will start with SELECT</li>
+<li>’*’ - means all or everything</li>
+<li>‘FROM’ - will also be there every time</li>
+<li>‘book_table’ - specifying the table</li>
+<li>‘LIMIT’ - lets us set the number of rows to pull</li>
+<li>‘5’ - the number for the limit</li>
+</ul>
+</div>
+<p>The key commands let us filter the database to only extract what we need. the usual pattern is like this: SELECT something FROM datatable WHERE something GROUP BY something.</p>
+<p>If you got that, perfect. If not, does not matter. It took me a while to even be able to execute a query. I am not even talking about understanding commands. For now, we will only be using SQL to pull the entire tables from it, without filtering anything. Later, we will gradually start adding key commands to our queries. Let’s pull the whole table:</p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb193-1" data-line-number="1"><span class="co"># Pulling everything.</span></a>
+<a class="sourceLine" id="cb193-2" data-line-number="2">data &lt;-<span class="st"> </span><span class="kw">dbGetQuery</span>(connection,<span class="st">&quot;SELECT * FROM book_table&quot;</span>)</a></code></pre></div>
+<p>If we can just pull the entire table like that, why did I show you the limit thing, and why do we need SQL filtering and all that extra shit? Even with 100,000 rows, the table that we just pulled is considered tiny by the world of big data standards. This table took a second to pull and about 20mb of your RAM. Imagine you are working with a table that stores daily porn searches. It probably has billions of rows added every day. Pulling big tables like that will crash your computer every time in minutes. To avoid that, you must be able to pre-aggregate your pulls using SQL. There you go. We are not doing any porn aggregation yet so we are going to be ok with pulling the entire thing.</p>
+<p>Let me show you a few more pulls just for fun.</p>
+<p>Pulling just vin, year, and record date. I will be surrounding the name of the columns in ticks. Ticks are used when columns have spaces. Something like ‘vehicle_year’ would be ok without ticks. Generally, avoid using spaces when naming things in programming.</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb194-1" data-line-number="1"><span class="co"># Pulling.</span></a>
+<a class="sourceLine" id="cb194-2" data-line-number="2">data &lt;-<span class="st"> </span><span class="kw">dbGetQuery</span>(connection,<span class="st">&quot;SELECT </span></a>
+<a class="sourceLine" id="cb194-3" data-line-number="3"><span class="st">                   `vehicle vin number`,</span></a>
+<a class="sourceLine" id="cb194-4" data-line-number="4"><span class="st">                   `vehicle year`,</span></a>
+<a class="sourceLine" id="cb194-5" data-line-number="5"><span class="st">                   `last date updated` </span></a>
+<a class="sourceLine" id="cb194-6" data-line-number="6"><span class="st">                   FROM book_table&quot;</span>)</a></code></pre></div>
+<div class="infobox important" data-latex="{important}">
+<p>Remember! There is no comma before FROM!</p>
+</div>
+<p>Let’s see the first few rows. head() lets you select the first n rows.</p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb195-1" data-line-number="1"><span class="co"># Printing the first three.</span></a>
+<a class="sourceLine" id="cb195-2" data-line-number="2"><span class="kw">print</span>(<span class="kw">head</span>(data,<span class="dv">3</span>)) </a></code></pre></div>
+<pre><code>##   vehicle vin number vehicle year last date updated
+## 1  4T1BK1EB5FU154526         2015        10/24/2019
+## 2  2LMHJ5AT3ABJ10630         2010        10/24/2019
+## 3  5TDZK3EH0DS100457         2013        10/24/2019</code></pre>
+<p>Let’s count the number of VIN numbers by vehicles’ year.</p>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb197-1" data-line-number="1"><span class="co"># Pulling and counting.</span></a>
+<a class="sourceLine" id="cb197-2" data-line-number="2">data &lt;-<span class="st"> </span><span class="kw">dbGetQuery</span>(connection,<span class="st">&quot;SELECT </span></a>
+<a class="sourceLine" id="cb197-3" data-line-number="3"><span class="st">                   COUNT(`vehicle vin number`),</span></a>
+<a class="sourceLine" id="cb197-4" data-line-number="4"><span class="st">                   `vehicle year`</span></a>
+<a class="sourceLine" id="cb197-5" data-line-number="5"><span class="st">                   FROM book_table</span></a>
+<a class="sourceLine" id="cb197-6" data-line-number="6"><span class="st">                   GROUP BY `vehicle year`&quot;</span>)</a></code></pre></div>
+<p>You should have noticed that some years are messed up. This is called ‘dirty data’. These data are not super ‘dirty’, but it still needs cleaning.</p>
+<div class="infobox important" data-latex="{important}">
+<p>You should always disconnect from the database after you are done using it, because if you and hundreds of parasites like you do not, the database will freeze at some point.</p>
+</div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb198-1" data-line-number="1"><span class="co"># Disconnecting.</span></a>
+<a class="sourceLine" id="cb198-2" data-line-number="2"><span class="kw">dbDisconnect</span>(connection)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>This was a basic introduction to SQL. If you did not get all of it, it is fine. SQL is not hard but the number of new functions, signs, and characters can be overwhelming considering that you are also trying to memorize the rest of the stuff. When I was learning this, all these queries had layers of other functions attached to them. Very confusing. Remember me writing this: print(head(something,5))?</p>
+<p>Well, that is a chained function. When it is short like this, you still can decipher it. You are like: ‘Ok, maybe head takes first five rows and then we print it’. But now, imagine something like this:</p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb200-1" data-line-number="1"><span class="kw">setDT</span>(<span class="kw">dbGetQuery</span>(connection, <span class="kw">paste0</span>(<span class="st">&quot;SELECT </span></a>
+<a class="sourceLine" id="cb200-2" data-line-number="2"><span class="st">                                    COUNT(`vehicle vin number`),</span></a>
+<a class="sourceLine" id="cb200-3" data-line-number="3"><span class="st">                                    `vehicle year`</span></a>
+<a class="sourceLine" id="cb200-4" data-line-number="4"><span class="st">                                    FROM book_table </span></a>
+<a class="sourceLine" id="cb200-5" data-line-number="5"><span class="st">                                    GROUP BY `vehicle year`&quot;</span>)),<span class="dt">as.is =</span> T). </a></code></pre></div>
+<p>The funny thing is that this query is exactly the same as the last one that we wrote, but it has all that extra shit on top of it. Misplace one comma or parenthesis and your whole code is fucked. I would be sitting for hours getting bombarded by fucking errors because of some stupid shit like that. When you are new, you just do not know what each dot or whatever means and that is natural. We will practice with it much more in this book.</p>
+<p>You are done with the basics of R. Whatever was in this section is enough to get you started. We have looked at data types, structures, type conversions, functions, libraries, file formats, and SQL queries. That is a lot and boring, but absolutely necessary slush. There is a couple more things that I should have covered here but decided to leave them for later, loops and writing your own functions. We will not be using them any time soon. I will still talk about them later in this book, because you do need to know about them eventually. We are going back to the story. Tomorrow is Monday, you are going back to work. You have covered a lot of R ground and you think that whatever your boss throws at you tomorrow will be a piece of cake.</p>
+<hr />
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">R, Not the Best Practices</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Nikita Voevodin</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="first-three-months-maggot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="big-assignment.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-method.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+
+# Final Thoughts {-}
+
+Congradulations! You have made it to the end of the book. You have followed the first three months of my path to R proficiency. Hopefully, you armed yourself with the things that I showed you in this book. If you did, then you are not completely useless as a data something, anymore. You better not be, because three months is about all get to be tollerably useless. Beyond that, you will quickly find yourself on the bench of your data team. Believe me, in the world where this field is the new gold mine, you do not want to become a bench warmer. This is a slippery slope that will, eventually, result in you crawling on the floor of your sublet studio looking for rats to eat. There are, definitely, many job openings rignt not as there is a shortage of skill in the field, but do not give yourself too much time because of that as that shortage will quickly decrease.
+
+Before I say: "In all seriousness, you have accomplished quite a lot here. I wish you a good luck and happy birthday, you are like a brother to me, and I want to see you in the next book. Good bye!", I would, first, like to go over the things that we have covered in this book. For each thing, I will add a few personal thoughts, so it does not become a stupid repetition of the same shit.
+
+- We began with a general overview of the programming world and R's place in it. In partucular, we learned that if we want to make it in the field of data analysis or engineering, we must leave behind things like Excel, SPSS, STATA, and SAS, and focus on real languages like R, Python, and SQL. We also got more familiar with what other languages do in general and what kind of infrastructure we will ever be dealing with while learning R. Personal take on this: 
+
+::: {.infobox .note data-latex="{note}"}
+It is important to know what is out there and what surrounds the language you are learning. The faster you become aware of these things, the less distracted you will be by that temptation of unknown. By the temptation of unknown, I mean the stuff that I talked about in the 'Tutorial Purgatory' section. In my opinion, it is very important to know what you do not know, so you understand the scope of your challenge. In the beginning, anything new that you are learnign seems bigger than it is, because you do not know that scope. Once you realize that there are five, ten, or twenty things that you need to know, you can start moving towards the end more confidently. That was my experience, at least.
+:::
+
+- In the second chapter, we learned to work with the RStudio. We installed R and RStudio; got familiar with the layout; created new scripts; saved them; opened multiple sessions; installed and removed packages; wrote our first code; uninstalled and reinstalled RStudio; and messed with RStudio, in general, to see what happens. Personal take on this:
+
+::: {.infobox .note data-latex="{note}"}
+Learning basics of R and RStudio was the obvious part that any book or tutorial would teach you. There was nothing special about it, so I do not want to even mention it. The important thing that I wanted to accomplish in that part was to eliminate the fear of messing something up in your code or session. I remember the feeling of opening RStudio for the first time and being affraid to mess it up. That fear really hinders progress, so I wanted to kick it out of you straigt away. Hopefully, it worked.
+:::
+
+- Next, we covered our asses in terms of code basics. I do not really have anything special to say about that section. It was boring as fuck but necessary to cover. 
+
+::: {.infobox .note data-latex="{note}"}
+One important takeway though: factors are stupid as fuuuck, and you should stay away from them for awhile, untill you are a bulletproof programmer. Otherwise, you will suffer.
+:::
+
+- The big assignment is where the majority of learning was happening, I hope. We went from receiving the task along with the complicated code; to running it line by line in order to understand what the fuck was going on; to rewriting and simplifying it to make it ours; to modifying and adding extra stuff to it; to aggregating, graphing, and wrapping it in a nice markdown report. Along the way, we used a great number of functions for extracting, transforming, loading, using, and saving our data. The few things that stand out in my head are:
+
+    - Connecting to and using a database;
+    - Using an API (Although, might still be too advanced right now);
+    - Diving deep in the lubridate package for working with dates and times;
+    - Learning about the 'Tutorial Purgatory';
+    - Building a few plots with ggplot2 and later converting them to plotly;
+    - Creating a markdown report, ready to be presented.
+
+Personal take on this:
+
+::: {.infobox .note data-latex="{note}"}
+
+The big assignment chapter is what this book revolves around. The main part of my story happens in that part. In that chapter, I showed and described it to you 99% the way it actually happened. And if you thought that it was just one of the excercises along the way, it was not. The first assignment that I received when I just started at my job, created foundation for my overall progress as a programmer. My intention was to walk you the path that I walked, so that you start building similar foundation for yourself. Understanding this chapter is extremely important, because the stuff that we covered there will be 85-95% of what you will ever be doing as a data something guy. 
+
+:::
+ 
+- The end of the main assignment, we opened the doors to the topic of interactive and dynamic visualizations for us. We quickly skipped static maps, because they are really boring, and moved towards interactive mapping with leaflet. If you absolutely need to know static maps, there are specialized books for that topic out there. We worked with another dataset in that section. The dataset was quite big and that displayed some limitations of maps. We covered many different scenarios and found ways around the issues that we faced there. Overall, we covered the majority of the stuff that you will ever need on that topic, especially during your first year or so. Personal take on this:
+
+::: {.infobox .note data-latex="{note}"}
+
+As I said, we opened the doors to the topic of interactive and dynamic visualizations. I do not want you to close those doors any time soon. Most of the things that I worked and am still working on involved some kind of interactive visualization, be it mapping or plotting. Seeing things move on the screed and knowing that you made them is a great source of inspiration and drive. That is important, because programming can get boring, and a lot of people burn out.
+
+:::
+
+- After mapping, we got familiar with another reporting tool called flexdashboard. We learned how easy it is to, basically, create a website out of some plots and maps that we put together. We covered two types of layout, horisontal and vertical. There are more than just two, but with the foundation that you got from that chapter, you should be able to experiment with the rest of the layouts on your own, should you need to. Personal take on this:
+
+::: {.infobox .note data-latex="{note}"}
+
+Honestly, at first, I did not see too much value in flexdashboard. I though, it was limiting in what I can do. During my learning process, I got familiar with it, did two or three small projects and brushed it aside. My eyes were on the bigger fish, RShiny. However, after some time, I began to understand the importance of being able to generate a quick and well laid out report or dashboard. At first, as a stand alone tool, it might not be super valuable, but once you learn things like dynamic steaming and data pyping, you will be able to combine them with flexdashboard, which will make you unstoppable. Overall, it is good that we learned it now. 
+
+:::
+
+- Finally, as a bonus, I showed you glimpse of what RShiny can do. We have not covered almost anything there as it is not the intention of this book. The next books are the ones where we will invest heavily into learning Shiny.
+
+We are done here. If you would like to report an issue, correction, or something else, here is the GitHub of this book: 
+
+And, as promissed: 
+
+::: {.infobox .caution data-latex="{caution}"}
+
+In all seriousness, you have accomplished quite a lot here. I wish you good luck and happy birthday, you are like a brother to me, and I want to see you in the next book. Good bye!
+
+:::
+
+---
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">R, Not the Best Practices</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Nikita Voevodin</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+

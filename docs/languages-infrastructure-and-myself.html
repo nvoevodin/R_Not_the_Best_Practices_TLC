@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Languages, Infrastructure, and Myself | R, Not the Best Practices</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Languages, Infrastructure, and Myself | R, Not the Best Practices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Languages, Infrastructure, and Myself | R, Not the Best Practices" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Nikita Voevodin" />
+
+
+<meta name="date" content="2020-02-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="first-three-months-maggot.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R, Not the Best Practices</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#what-this-book-is-and-is-not"><i class="fa fa-check"></i><b>0.1</b> What This Book Is and Is Not</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#what-will-this-book-teach-you"><i class="fa fa-check"></i><b>0.2</b> What Will This Book Teach You</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html"><i class="fa fa-check"></i>Languages, Infrastructure, and Myself</a><ul>
+<li class="chapter" data-level="0.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#programming-languages-and-r-place-among-them"><i class="fa fa-check"></i><b>0.3</b> Programming Languages and R’ Place Among Them</a><ul>
+<li class="chapter" data-level="0.3.1" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#r"><i class="fa fa-check"></i><b>0.3.1</b> R</a></li>
+<li class="chapter" data-level="0.3.2" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#excel"><i class="fa fa-check"></i><b>0.3.2</b> Excel</a></li>
+<li class="chapter" data-level="0.3.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#stata-spss-and-sas"><i class="fa fa-check"></i><b>0.3.3</b> STATA, SPSS, and SAS</a></li>
+<li class="chapter" data-level="0.3.4" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#python"><i class="fa fa-check"></i><b>0.3.4</b> Python</a></li>
+<li class="chapter" data-level="0.3.5" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#diagram-and-related-languages"><i class="fa fa-check"></i><b>0.3.5</b> Diagram and Related Languages</a></li>
+<li class="chapter" data-level="0.3.6" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#sql"><i class="fa fa-check"></i><b>0.3.6</b> SQL</a></li>
+<li class="chapter" data-level="0.3.7" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#about-htmlcssjavascript"><i class="fa fa-check"></i><b>0.3.7</b> About HTML/CSS/JavaScript</a></li>
+<li class="chapter" data-level="0.3.8" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#using-the-htmlcssjavascript-in-this-book."><i class="fa fa-check"></i><b>0.3.8</b> Using the HTML/CSS/JavaScript in This Book.</a></li>
+</ul></li>
+<li class="chapter" data-level="0.4" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#about-infrastructure"><i class="fa fa-check"></i><b>0.4</b> About Infrastructure</a><ul>
+<li class="chapter" data-level="0.4.1" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#databases"><i class="fa fa-check"></i><b>0.4.1</b> Databases</a></li>
+<li class="chapter" data-level="0.4.2" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#hosting"><i class="fa fa-check"></i><b>0.4.2</b> Hosting</a></li>
+<li class="chapter" data-level="0.4.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#other-tools"><i class="fa fa-check"></i><b>0.4.3</b> Other tools</a></li>
+</ul></li>
+<li class="chapter" data-level="0.5" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#about-me"><i class="fa fa-check"></i><b>0.5</b> About Me</a><ul>
+<li class="chapter" data-level="0.5.1" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#tlc-datahub"><i class="fa fa-check"></i><b>0.5.1</b> TLC DataHub</a></li>
+<li class="chapter" data-level="0.5.2" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#tlc-vin-decoder"><i class="fa fa-check"></i><b>0.5.2</b> TLC VIN Decoder</a></li>
+<li class="chapter" data-level="0.5.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#tlc-datameetup-app"><i class="fa fa-check"></i><b>0.5.3</b> TLC DataMeetup App</a></li>
+<li class="chapter" data-level="0.5.4" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#flow-of-this-book"><i class="fa fa-check"></i><b>0.5.4</b> Flow of This Book</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html"><i class="fa fa-check"></i>First Three Months (Maggot)</a><ul>
+<li class="chapter" data-level="0.6" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#messing-around"><i class="fa fa-check"></i><b>0.6</b> Messing Around</a><ul>
+<li class="chapter" data-level="0.6.1" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#first-script"><i class="fa fa-check"></i><b>0.6.1</b> First Script</a></li>
+<li class="chapter" data-level="0.6.2" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#layout"><i class="fa fa-check"></i><b>0.6.2</b> Layout</a></li>
+<li class="chapter" data-level="0.6.3" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#saving-r-file"><i class="fa fa-check"></i><b>0.6.3</b> Saving R File</a></li>
+<li class="chapter" data-level="0.6.4" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#simulating-a-problem."><i class="fa fa-check"></i><b>0.6.4</b> Simulating a Problem.</a></li>
+<li class="chapter" data-level="0.6.5" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#re-installing-rstudio"><i class="fa fa-check"></i><b>0.6.5</b> Re-installing RStudio</a></li>
+<li class="chapter" data-level="0.6.6" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#messing-with-packages"><i class="fa fa-check"></i><b>0.6.6</b> Messing with Packages</a></li>
+<li class="chapter" data-level="0.6.7" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#dark-mode"><i class="fa fa-check"></i><b>0.6.7</b> Dark Mode</a></li>
+<li class="chapter" data-level="0.6.8" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#second-r-session."><i class="fa fa-check"></i><b>0.6.8</b> Second R Session.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="your-code-basics.html"><a href="your-code-basics.html"><i class="fa fa-check"></i>Your Code Basics</a><ul>
+<li class="chapter" data-level="0.7" data-path="your-code-basics.html"><a href="your-code-basics.html#data-types-structures"><i class="fa fa-check"></i><b>0.7</b> Data Types &amp; Structures</a><ul>
+<li class="chapter" data-level="0.7.1" data-path="your-code-basics.html"><a href="your-code-basics.html#characters"><i class="fa fa-check"></i><b>0.7.1</b> Characters</a></li>
+<li class="chapter" data-level="0.7.2" data-path="your-code-basics.html"><a href="your-code-basics.html#numbers"><i class="fa fa-check"></i><b>0.7.2</b> Numbers</a></li>
+<li class="chapter" data-level="0.7.3" data-path="your-code-basics.html"><a href="your-code-basics.html#booleans-or-logicals"><i class="fa fa-check"></i><b>0.7.3</b> Booleans or Logicals</a></li>
+<li class="chapter" data-level="0.7.4" data-path="your-code-basics.html"><a href="your-code-basics.html#factors"><i class="fa fa-check"></i><b>0.7.4</b> Factors</a></li>
+<li class="chapter" data-level="0.7.5" data-path="your-code-basics.html"><a href="your-code-basics.html#dates-times"><i class="fa fa-check"></i><b>0.7.5</b> Dates &amp; Times</a></li>
+<li class="chapter" data-level="0.7.6" data-path="your-code-basics.html"><a href="your-code-basics.html#type-conversions"><i class="fa fa-check"></i><b>0.7.6</b> Type Conversions</a></li>
+<li class="chapter" data-level="0.7.7" data-path="your-code-basics.html"><a href="your-code-basics.html#vectors"><i class="fa fa-check"></i><b>0.7.7</b> Vectors</a></li>
+<li class="chapter" data-level="0.7.8" data-path="your-code-basics.html"><a href="your-code-basics.html#lists"><i class="fa fa-check"></i><b>0.7.8</b> Lists</a></li>
+<li class="chapter" data-level="0.7.9" data-path="your-code-basics.html"><a href="your-code-basics.html#data-tables-data-frames"><i class="fa fa-check"></i><b>0.7.9</b> Data Tables (Data Frames)</a></li>
+</ul></li>
+<li class="chapter" data-level="0.8" data-path="your-code-basics.html"><a href="your-code-basics.html#coding-tools"><i class="fa fa-check"></i><b>0.8</b> Coding Tools</a><ul>
+<li class="chapter" data-level="0.8.1" data-path="your-code-basics.html"><a href="your-code-basics.html#functions"><i class="fa fa-check"></i><b>0.8.1</b> Functions</a></li>
+<li class="chapter" data-level="0.8.2" data-path="your-code-basics.html"><a href="your-code-basics.html#packages-libraries"><i class="fa fa-check"></i><b>0.8.2</b> Packages (Libraries)</a></li>
+<li class="chapter" data-level="0.8.3" data-path="your-code-basics.html"><a href="your-code-basics.html#data-formats"><i class="fa fa-check"></i><b>0.8.3</b> Data Formats</a></li>
+<li class="chapter" data-level="0.8.4" data-path="your-code-basics.html"><a href="your-code-basics.html#csv"><i class="fa fa-check"></i><b>0.8.4</b> CSV</a></li>
+<li class="chapter" data-level="0.8.5" data-path="your-code-basics.html"><a href="your-code-basics.html#xlsx-excel"><i class="fa fa-check"></i><b>0.8.5</b> XLSX (EXCEL)</a></li>
+<li class="chapter" data-level="0.8.6" data-path="your-code-basics.html"><a href="your-code-basics.html#fst"><i class="fa fa-check"></i><b>0.8.6</b> FST</a></li>
+<li class="chapter" data-level="0.8.7" data-path="your-code-basics.html"><a href="your-code-basics.html#sql-queries"><i class="fa fa-check"></i><b>0.8.7</b> SQL Queries</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="big-assignment.html"><a href="big-assignment.html"><i class="fa fa-check"></i>Big Assignment</a><ul>
+<li class="chapter" data-level="0.9" data-path="big-assignment.html"><a href="big-assignment.html#code-run-through"><i class="fa fa-check"></i><b>0.9</b> Code Run-Through</a><ul>
+<li class="chapter" data-level="0.9.1" data-path="big-assignment.html"><a href="big-assignment.html#step-1"><i class="fa fa-check"></i><b>0.9.1</b> Step 1</a></li>
+<li class="chapter" data-level="0.9.2" data-path="big-assignment.html"><a href="big-assignment.html#step-2"><i class="fa fa-check"></i><b>0.9.2</b> Step 2</a></li>
+<li class="chapter" data-level="0.9.3" data-path="big-assignment.html"><a href="big-assignment.html#step-3"><i class="fa fa-check"></i><b>0.9.3</b> Step 3</a></li>
+<li class="chapter" data-level="0.9.4" data-path="big-assignment.html"><a href="big-assignment.html#step-4"><i class="fa fa-check"></i><b>0.9.4</b> Step 4</a></li>
+<li class="chapter" data-level="0.9.5" data-path="big-assignment.html"><a href="big-assignment.html#step-5"><i class="fa fa-check"></i><b>0.9.5</b> Step 5</a></li>
+<li class="chapter" data-level="0.9.6" data-path="big-assignment.html"><a href="big-assignment.html#step-6"><i class="fa fa-check"></i><b>0.9.6</b> Step 6</a></li>
+</ul></li>
+<li class="chapter" data-level="0.10" data-path="big-assignment.html"><a href="big-assignment.html#figuring-it-out"><i class="fa fa-check"></i><b>0.10</b> Figuring It Out</a></li>
+<li class="chapter" data-level="0.11" data-path="big-assignment.html"><a href="big-assignment.html#tutorial-purgatory"><i class="fa fa-check"></i><b>0.11</b> Tutorial Purgatory</a></li>
+<li class="chapter" data-level="0.12" data-path="big-assignment.html"><a href="big-assignment.html#going-line-by-line"><i class="fa fa-check"></i><b>0.12</b> Going line by line</a><ul>
+<li class="chapter" data-level="0.12.1" data-path="big-assignment.html"><a href="big-assignment.html#step-1-1"><i class="fa fa-check"></i><b>0.12.1</b> Step 1</a></li>
+<li class="chapter" data-level="0.12.2" data-path="big-assignment.html"><a href="big-assignment.html#step-2-1"><i class="fa fa-check"></i><b>0.12.2</b> Step 2</a></li>
+<li class="chapter" data-level="0.12.3" data-path="big-assignment.html"><a href="big-assignment.html#step-3-1"><i class="fa fa-check"></i><b>0.12.3</b> Step 3</a></li>
+<li class="chapter" data-level="0.12.4" data-path="big-assignment.html"><a href="big-assignment.html#step-4-1"><i class="fa fa-check"></i><b>0.12.4</b> Step 4</a></li>
+<li class="chapter" data-level="0.12.5" data-path="big-assignment.html"><a href="big-assignment.html#step-5-1"><i class="fa fa-check"></i><b>0.12.5</b> Step 5</a></li>
+<li class="chapter" data-level="0.12.6" data-path="big-assignment.html"><a href="big-assignment.html#step-6-1"><i class="fa fa-check"></i><b>0.12.6</b> Step 6</a></li>
+</ul></li>
+<li class="chapter" data-level="0.13" data-path="big-assignment.html"><a href="big-assignment.html#working-with-dates"><i class="fa fa-check"></i><b>0.13</b> Working with dates</a><ul>
+<li class="chapter" data-level="0.13.1" data-path="big-assignment.html"><a href="big-assignment.html#as.date-sys.date-sys.time"><i class="fa fa-check"></i><b>0.13.1</b> as.Date(), Sys.Date() &amp; Sys.time()</a></li>
+<li class="chapter" data-level="0.13.2" data-path="big-assignment.html"><a href="big-assignment.html#lubridate"><i class="fa fa-check"></i><b>0.13.2</b> Lubridate</a></li>
+<li class="chapter" data-level="0.13.3" data-path="big-assignment.html"><a href="big-assignment.html#bonus"><i class="fa fa-check"></i><b>0.13.3</b> Bonus</a></li>
+</ul></li>
+<li class="chapter" data-level="0.14" data-path="big-assignment.html"><a href="big-assignment.html#rewriting-our-code"><i class="fa fa-check"></i><b>0.14</b> Rewriting our code</a><ul>
+<li class="chapter" data-level="0.14.1" data-path="big-assignment.html"><a href="big-assignment.html#step-1-2"><i class="fa fa-check"></i><b>0.14.1</b> Step 1</a></li>
+<li class="chapter" data-level="0.14.2" data-path="big-assignment.html"><a href="big-assignment.html#step-2-2"><i class="fa fa-check"></i><b>0.14.2</b> Step 2</a></li>
+<li class="chapter" data-level="0.14.3" data-path="big-assignment.html"><a href="big-assignment.html#step-3-2"><i class="fa fa-check"></i><b>0.14.3</b> Step 3</a></li>
+<li class="chapter" data-level="0.14.4" data-path="big-assignment.html"><a href="big-assignment.html#step-4-2"><i class="fa fa-check"></i><b>0.14.4</b> Step 4</a></li>
+<li class="chapter" data-level="0.14.5" data-path="big-assignment.html"><a href="big-assignment.html#step-5-2"><i class="fa fa-check"></i><b>0.14.5</b> Step 5</a></li>
+<li class="chapter" data-level="0.14.6" data-path="big-assignment.html"><a href="big-assignment.html#step-6-2"><i class="fa fa-check"></i><b>0.14.6</b> Step 6</a></li>
+</ul></li>
+<li class="chapter" data-level="0.15" data-path="big-assignment.html"><a href="big-assignment.html#adding-mpg"><i class="fa fa-check"></i><b>0.15</b> Adding MPG</a></li>
+<li class="chapter" data-level="0.16" data-path="big-assignment.html"><a href="big-assignment.html#charts-reports"><i class="fa fa-check"></i><b>0.16</b> Charts &amp; Reports</a><ul>
+<li class="chapter" data-level="0.16.1" data-path="big-assignment.html"><a href="big-assignment.html#the-setup"><i class="fa fa-check"></i><b>0.16.1</b> The setup</a></li>
+<li class="chapter" data-level="0.16.2" data-path="big-assignment.html"><a href="big-assignment.html#r-markdown"><i class="fa fa-check"></i><b>0.16.2</b> R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="0.17" data-path="big-assignment.html"><a href="big-assignment.html#bonus-1"><i class="fa fa-check"></i><b>0.17</b> Bonus</a></li>
+<li class="chapter" data-level="0.18" data-path="big-assignment.html"><a href="big-assignment.html#you-are-not-an-r-maggot-anymore"><i class="fa fa-check"></i><b>0.18</b> You are not an R maggot anymore</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="maps.html"><a href="maps.html"><i class="fa fa-check"></i>Maps</a><ul>
+<li class="chapter" data-level="0.19" data-path="maps.html"><a href="maps.html#maps-different-libraries"><i class="fa fa-check"></i><b>0.19</b> Maps, Different Libraries</a><ul>
+<li class="chapter" data-level="0.19.1" data-path="maps.html"><a href="maps.html#ggplot2"><i class="fa fa-check"></i><b>0.19.1</b> ggplot2</a></li>
+<li class="chapter" data-level="0.19.2" data-path="maps.html"><a href="maps.html#ggmap"><i class="fa fa-check"></i><b>0.19.2</b> ggmap</a></li>
+<li class="chapter" data-level="0.19.3" data-path="maps.html"><a href="maps.html#leaflet"><i class="fa fa-check"></i><b>0.19.3</b> Leaflet</a></li>
+</ul></li>
+<li class="chapter" data-level="0.20" data-path="maps.html"><a href="maps.html#leaflet-deeper-dive"><i class="fa fa-check"></i><b>0.20</b> Leaflet, Deeper Dive</a></li>
+<li class="chapter" data-level="0.21" data-path="maps.html"><a href="maps.html#leaflet-with-real-data"><i class="fa fa-check"></i><b>0.21</b> Leaflet with Real Data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="flexdahsboard.html"><a href="flexdahsboard.html"><i class="fa fa-check"></i>FlexDahsboard</a><ul>
+<li class="chapter" data-level="0.22" data-path="flexdahsboard.html"><a href="flexdahsboard.html#data"><i class="fa fa-check"></i><b>0.22</b> Data</a></li>
+<li class="chapter" data-level="0.23" data-path="flexdahsboard.html"><a href="flexdahsboard.html#layouts"><i class="fa fa-check"></i><b>0.23</b> Layouts</a><ul>
+<li class="chapter" data-level="0.23.1" data-path="flexdahsboard.html"><a href="flexdahsboard.html#column-based"><i class="fa fa-check"></i><b>0.23.1</b> Column based</a></li>
+<li class="chapter" data-level="0.23.2" data-path="flexdahsboard.html"><a href="flexdahsboard.html#row-based"><i class="fa fa-check"></i><b>0.23.2</b> Row based</a></li>
+</ul></li>
+<li class="chapter" data-level="0.24" data-path="flexdahsboard.html"><a href="flexdahsboard.html#conclusion"><i class="fa fa-check"></i><b>0.24</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="shiny-bonus.html"><a href="shiny-bonus.html"><i class="fa fa-check"></i>Shiny (Bonus)</a></li>
+<li class="chapter" data-level="" data-path="final-thoughts.html"><a href="final-thoughts.html"><i class="fa fa-check"></i>Final Thoughts</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R, Not the Best Practices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="languages-infrastructure-and-myself" class="section level1 unnumbered">
+<h1>Languages, Infrastructure, and Myself</h1>
+<div id="programming-languages-and-r-place-among-them" class="section level2">
+<h2><span class="header-section-number">0.3</span> Programming Languages and R’ Place Among Them</h2>
+<div id="r" class="section level3">
+<h3><span class="header-section-number">0.3.1</span> R</h3>
+<p>Let’s face it, you are new to programming and explaining that R is a functional language and that Java is an object-oriented language won’t make any sense to you. Instead, I’ll give you a few of my thoughts on how I see the R universe, and how it interacts with other languages. I will not cover all the languages, not even close, and I might not even be hundred percent accurate all the time; however, I will cover everything that I think you need to start with R and reach a solid post-noob level.</p>
+<p>The goal here is to make sure you have an overall understanding of the environment you are working in. I want to make sure that you retain as much information as possible. Once you feel comfortable with your level, obviously, go ahead and learn some advanced geek stuff about different languages, the who the what the why.</p>
+<p>Firstly, R is an open-source aka free programming language that focuses on working with data, statistical computation, and graphical visualization. It is widely used by academics, statisticians, data miners, and big data companies to work with all sorts of information. Just to give you a perspective of how popular it is in its field, here is a list of 10 largest R users:</p>
+<div class="infobox caution" data-latex="{caution}">
+<ul>
+<li>Facebook</li>
+<li>Google</li>
+<li>Twitter</li>
+<li>Microsoft</li>
+<li>Uber</li>
+<li>Airbnb</li>
+<li>IBM</li>
+<li>HP</li>
+<li>Ford</li>
+<li>New York Times</li>
+</ul>
+</div>
+<p>Some of these might not exist when you are reading this (UBER lol). These companies use R for things like behavior analysis, data forecasting, advanced visualizations and statistical modeling. We will not be doing those things, but it is good to know that the language that you are using is popular with some of the big names.</p>
+<p>Secondly, R is different from most other languages because of how it works with data; this is its main advantage and appeal. The following diagram spells out my thoughts on this point:</p>
+<center>
+<div class="figure">
+<img src="trash.png" alt="Important Diagram." />
+<p class="caption">Important Diagram.</p>
+</div>
+</center>
+</div>
+<div id="excel" class="section level3">
+<h3><span class="header-section-number">0.3.2</span> Excel</h3>
+<p>You’re probably familiar with Excel and know what an excel table looks like. When you start working with R, you’ll notice that tables are your bread and butter, just like in excel. Next you’ll probably think that tables are supported by every language, for example JavaScript, Java, PHP and other big ones. You are wrong. These languages do not work with data like Excel or R. Simple operations like joining two tables and aggregating, something that would take two or three lines of code in R, will require some substantial coding and time in those languages, especially if you are new. But how DO those languages work with data? It’s possible to use them for data analysis, but it’s simply not their specialty. Most of the time, these languages connect to a SQL database and use the SQL language to interact with tabular data. You don’t need to worry about that right now. All you need to remember is that R is designed to work with data, and you will be much more efficient using R compared to the languages mentioned above. But what about these other languages in the diagram?</p>
+</div>
+<div id="stata-spss-and-sas" class="section level3">
+<h3><span class="header-section-number">0.3.3</span> STATA, SPSS, and SAS</h3>
+<p>STATA, SPSS, and SAS are powerful but outdated and expensive statistical packages that also work with tabular data just like excel and R. They are not programming languages and unless you want to find yourself hungry, crawling on the floor looking for rats to eat in your studio that you share with some unemployed actor, because nobody wants that shit, I would recommend to stay away from them.</p>
+</div>
+<div id="python" class="section level3">
+<h3><span class="header-section-number">0.3.4</span> Python</h3>
+<p>Python is a full-fledged general-purpose programming language. It’s very hot right now and it seems like every homeless guy knows it already. That, plus the fact that Python is not specifically built to work with data makes me think that a combination of R with something like JavaScript makes more sense. Don’t get me wrong, Python is a great and powerful language and is really dominating R at the moment. I used both and found R easier to set up and start working with. To put it simply, Python tries to mimic what R does natively by creating additional packages that are just not as powerful. Pythonistas might dispute that but if you are reading this, I am assuming that you have made your choice, at least for the moment, and I’m just trying to confirm that thought.</p>
+</div>
+<div id="diagram-and-related-languages" class="section level3">
+<h3><span class="header-section-number">0.3.5</span> Diagram and Related Languages</h3>
+<p>So to sum this up, if you look at the diagram again from right to left:</p>
+<div class="infobox note" data-latex="{note}">
+<p>Excel is a point and click tool and you should only use it for some final touches; STATA, SPSS, and SAS are the bottom of the barrel and you should stay away from them; and R and Python are both programming languages that you really can’t go wrong with.</p>
+</div>
+<p>This was an overview of what R is and how it compares to some other similar and not so similar languages. Right now, though, we don’t need to know anything else about them, because we won’t be interacting with any of them for the first half of the book.</p>
+<p>There are four languages that we will be interacting with throughout this book. Don’t get scared, as they will be introduced very slowly. These languages are SQL, HTML, CSS, and JavaScript. If you never heard of them, don’t start googling them as you do not need them now. Maybe, google SQL, but that’s it. By the time you are finished with this book, you will have a some understanding of SQL. CSS, HTML and JavaScript will be introduced in the next books. However, I’ll still explain what they all do in this chapter. That’ll serve you well as an entry point to these languages should you decide to branch out beyond R.</p>
+</div>
+<div id="sql" class="section level3">
+<h3><span class="header-section-number">0.3.6</span> SQL</h3>
+<p>Let’s start with SQL. One of the things you’ll be doing almost every day is interacting with a database or databases. I know, because that’s what I’ve doing since the second day at my R-requiring job. That is what I’m still doing today and that’s what I’ll be doing for as long as I am programming in any language. Here is a brief intro to SQL: SQL is sort of a programming language, but it really isn’t. It’s a language that you’ll use to interact with databases.</p>
+<div class="infobox caution" data-latex="{caution}">
+<p>You can’t really avoid using SQL as it’s the only way to get or add data from or to a database, and if there is another way that I don’t know about, then you don’t need to know about it at the moment either, because it’s definitely some bullshit way nobody uses. Just remember, SQL is your language for database interaction. SQL is important, and the best thing about it is that it is quite easy to pick up, at least the basics.</p>
+</div>
+<p>SQL is quite easy. Obviously, there is a bunch of complicated and advanced stuff that you can do with SQL, but you will not need that now. Instead, we will do some very simple pulls in SQL and compliment it with some R language to clean and aggregate our data. After you finish the book and build a few small apps requiring some basic SQL, you will obviously spread your wings and learn some advanced SQL, but that will be later.</p>
+<p>So, that was SQL. If you’re new like I was a couple of years ago you also want to know what a database is and why we need it.</p>
+<div class="infobox tip" data-latex="{tip}">
+<p>A database is just that, a base with data, storage where you keep all kinds of information in the form of tables. Imagine an Excel table.</p>
+</div>
+<div class="infobox warning" data-latex="{warning}">
+<p>If you can’t imagine an excel spreadsheet, then you should really take some prerequisites before continuing.</p>
+</div>
+<p>Well, database is just a collection of such tables. Why can’t we just use an excel file for our data storage needs? We could, but an excel table can only hold so much. Imagine you’re running a store that sells 1 million bananas every day. You’ll have to create a new spreadsheet every day just to keep your banana selling records. What if you’re also selling some rifles? Your records will get out of hand very quickly and you’ll start losing a lot of information. Instead of paying attention to your weird banana/rifle selling business, you’ll be worrying about your excel spreadsheets not opening. Databases solve that problem. They are built specifically to store virtually infinite number of banana and rifle records and they help us link information across those tables. On top of that, databases are fast, and the SQL language makes working with them easy. So, remember, for a lot of data (millions of rows) we are using databases and SQL. You can still use an excel type of file to do some small jobs and share them via emails and so forth, nothing wrong with that; we will in fact do some of that.</p>
+</div>
+<div id="about-htmlcssjavascript" class="section level3">
+<h3><span class="header-section-number">0.3.7</span> About HTML/CSS/JavaScript</h3>
+<p>Cascading Style Sheets. Fancy, right? CSS is not really a programming language; it’s a styling language. Every color, every curved line, sliding panel, animation, and all the fancy stuff that you see when you browse the internet or use apps is styled using CSS or at least some implementation of CSS. I mentioned that CSS is not a programming language; it’s instead a part of the family of three languages, HTML/CSS/JavaScript. Basically, these three languages power the modern internet. Nearly 100% of what you see when opening your browser is these languages. They DO work with other languages to do some stuff behind the scenes like shopping carts, statistics, machine learning, etc. but, generally, whatever you see in front of you is some combination of these three languages.</p>
+<div class="infobox note" data-latex="{note}">
+<p>To cement it in your head, I want you to think about these languages as a sentence structure. HTML is a noun; it defines the object. The object being a web page. So, HTML creates a web page, just an empty skeleton, no colors, no pop ups, no styling, nothing really works yet. All you are seeing are some text, some buttons, drop downs maybe, unformatted pictures, but they aren’t really doing anything yet. Hopefully, you get the picture. If not, check out the one below.</p>
+</div>
+<center>
+<div class="figure">
+<img src="jshtmlcss.png" alt="JS/HTML/CSS as a sentence." />
+<p class="caption">JS/HTML/CSS as a sentence.</p>
+</div>
+</center>
+<p>CSS in this setup is the adjective; CSS adds colors, lines, animation, and other visuals to that empty web page that we created with HTML. At this point we have a nicely styled web page that doesn’t really do much, which you can get away with in some cases. Below is one of the Amazon pages. You can sometimes experience the view on the right when, let’s say, you lose internet connection. A server, first, loads the structure of a page and then applies the CSS. Below, the un-styled page is on the right and styled on the left.</p>
+<center>
+<div class="figure">
+<img src="csshtml.png" alt="Html ith and without CSS." />
+<p class="caption">Html ith and without CSS.</p>
+</div>
+</center>
+<p>If you want your website or your app to do something, you’re going to need JavaScript. JavaScript in this setup is the verb that defines the actions of the page, the page that we just made with HTML and styled with CSS. A simple example of what JavaScript does in combination with the other two is the following:</p>
+<div class="infobox note" data-latex="{note}">
+<p>HTML creates a button; CSS makes it blue and its text white and adds animation to it when its clicked; JavaScript makes sure that when you click that button something happens, a plot is generated or a set of data is printed, or some calculation is happening and the result is shown on the screen.</p>
+</div>
+<p>I hope this paints a clear picture of this family of languages and how they interact with each other, and with you.</p>
+</div>
+<div id="using-the-htmlcssjavascript-in-this-book." class="section level3">
+<h3><span class="header-section-number">0.3.8</span> Using the HTML/CSS/JavaScript in This Book.</h3>
+<p>We are not going to touch on any of these in the first book. You will be learning the fundamentals of R and won’t be creating any web pages or web apps that would require styling or interactivity. You will start seeing some CSS styling starting with the second book, where we’ll start introducing you to the R library for creating web apps called Shiny.</p>
+<p>The third and fourth books will mostly revolve around Shiny and web apps, and that is where we will be using CSS, HTML, and JavaScript. Fortunately, Shiny is HTML/CSS/JavaScript all wrapped up in one, and that is its beauty. Using Shiny, you don’t need any prior knowledge of HTML, CSS, or JavaScript. Everything is wrapped for you in the nice package, and the only things that you need to worry about are the data, logic, and functionality of your app. Having said that, Shiny does limit you to its built-in styles and functionality. There are many auxiliary libraries surrounding Shiny that expand its functionality but sometimes, it won’t be possible to find exactly what we want. That’s where we’ll need CSS and a little bit of HTML and JavaScript. I’m letting you know right now, ahead of time that we won’t be doing a lot of HTML and JavaScript. We will use these two in small amounts, mostly in the form of tricks and hacks to make our apps look cool. Most of our customization will be done using CSS. Don’t sweat researching HTML and JavaScript, you won’t need any knowledge to keep up when we use it.</p>
+<p>To sum up: we’ll focus on R fundamentals and some SQL at first. In the later books, as we move into web applications and start using Shiny library, we’ll introduce some CSS; and once we move deeper and get better, we’ll be using much more CSS and adding some HTML and JavaScript hacks and tricks to make our apps look amazing.</p>
+</div>
+</div>
+<div id="about-infrastructure" class="section level2">
+<h2><span class="header-section-number">0.4</span> About Infrastructure</h2>
+<p>Apart from R itself, Shiny tools, SQL, and the side languages mentioned in the previous section, there is infrastructure. Infrastructure is everything that makes the production and consumption of your product possible.</p>
+<div class="infobox caution" data-latex="{caution}">
+<p>Infrastructure is very important. The infrastructure we cover in this and later books will include database and storage and hosting options, API calls, optimization, and some other tools like docker and electron, which also fall under the category of infrastructure.</p>
+</div>
+<div id="databases" class="section level3">
+<h3><span class="header-section-number">0.4.1</span> Databases</h3>
+<p>We’ve already covered some ground on databases and SQL. However, there is a second side to databases, building your own database. In that scenario, you’re serving as a data engineer providing infrastructure for yourself or for others. I will teach you to do that in the next books. You’ll use our database in this book. But I’m jumping ahead right now, you don’t need to worry about this for now.</p>
+</div>
+<div id="hosting" class="section level3">
+<h3><span class="header-section-number">0.4.2</span> Hosting</h3>
+<p>Imagine that you’ve just built your first app. It’s now on your computer and you can play with it. Very cool, except, nobody else can really see it besides you. Your app must live somewhere else besides your computer, and hosting accomplishes just that. Hosting lets you release your product to the public. Same applies to web sites and databases. Good news is that there are free options for your hosting, and you can even set up your own straight from your home computer. Hosting and databases go hand in hand and will be two of the most important infrastructure topics in the following books. Other things will revolve around these two.</p>
+</div>
+<div id="other-tools" class="section level3">
+<h3><span class="header-section-number">0.4.3</span> Other tools</h3>
+<p>In the fourth book, we will start introducing more advanced concepts and tools like API calls, dockerized apps, optimization and some others. Even though I call these tools advanced, it doesn’t mean they are inherently hard to learn. In fact, they are much easier to pick up once you’re ready. The reason they’re in the advanced category is that you must first learn all the things that I’ve been talking about up until now before you even need to know what these advanced things do. The reality is you just don’t need them in the beginning.</p>
+<p>That was our brief introduction into the topic of infrastructure. The coolest thing about infrastructure is that it, maybe, sounds boring at first. You’re thinking, I just want to create something cool. And apps are what I and everybody see and that is why it is cool.</p>
+<div class="infobox note" data-latex="{note}">
+<p>Well, my answer to you is, You will be surprised, by how exciting it is to build your own database for the first time, connect to it, load and pull some data, and for all this to work. Or to set up your hosting, put your app there and open it from your phone and start sending that shit to your friends to brag. You will see, just like I did!</p>
+</div>
+<p>All I’m saying is do not assume that back end (nerd’s term for the infrastructure that we are talking about now) is something boring or something you do not want to be doing. I can almost guarantee that once you’ve built your first few apps and showed them to people, you’ll be more exited to talk about the stuff behind that app, the stuff that makes it run. The picture in front of peoples’ eyes, the front-end, will become a noob thing at that point.</p>
+</div>
+</div>
+<div id="about-me" class="section level2">
+<h2><span class="header-section-number">0.5</span> About Me</h2>
+<p>In this section, I think, I’m trying to relate to you, a person with no computer science degree. It is a general idea that coding is hard. And what I say to this is, It is absolutely CORRECT! Coding is incredibly hard and all those asshole-pretend-gurus on YouTube that say learn xyz language in 20 minutes or 5 hours or 1 month are fucking lying. Those videos are click bait that won’t teach you shit. It will take you at least 4-5 months of consistent everyday work to get to an initial comfort level.</p>
+<p>Now, having said all that downbeat stuff, I want to assure you that you don’t need a computer science degree to become a professional software engineer or a data engineer or a database engineer. I don’t hold a computer science degree; yet, I’ve been quite successful with coding and feel qualified to teach you. But what about those people who went to school for this?</p>
+<div class="infobox caution" data-latex="{caution}">
+<p>Firstly, you should only worry about your own skills as there will always be better programmers than you. So what? The demand for coding specialists will only increase and there will never be enough people who programmed since kindergarten. That’s where YOU come in. Secondly, what do you think kids at college do? At best, if they’re full-time, they go to school twice a week, take two coding classes at best (A WEEK), then some other two useless classes like underwater poetry and hipster studies just to graduate. After that, they go home and jerk off for the rest of the week or play video games or both. Only a minority will commit an appropriate amount of time to learning code. What do you think they know in the end? Obviously, they’re going to have some fancy resume that will say something like Python, C++, JavaScript, PHP, Spark mumbo jumbo. But when you sit them down and ask them to build something, they’ll be lost. It’s not to say that there is much wrong with learning at the job, it’s just I don’t want you to operate under assumption that you’re so far behind its impossible to catch up.</p>
+</div>
+<p>I recently watched a documentary about hackers and the companies guarding against them. In that documentary they showed unpaid guys in their hoodies, hacking and learning from home every day, almost all day, way past nine to five with real commitment and intent, just for fun. At the same time, they show a private company with a bunch of college graduates-programmers struggling to prevent their clients from hacker attacks. You can see all that nice equipment, interactive maps, and so forth. But they still lose to those hackers a lot of times. Why is that? The reason is dedication. I am sure there are exceptions, but just like with college students, majority of employees are there nine to five, they will take any break possible and are really looking forward to the end of the day, or to accumulate enough vacation days to get the fuck out for a while. The hacker bro, on the other hand, sits there and learns relentlessly about some new cool way to fuck someone up. You might say, but he is outnumbered.</p>
+<div class="infobox caution" data-latex="{caution}">
+<p>In programming, you are only as good as the number of hours that you have coded, not the number of degrees you got or years you have spent to get them. A hacker doesn’t need to spend more hours programming than the whole team of that company combined, just more than their best programmer. In that situation, it’s like a case of zero multiplied by any number is still zero. If that hacker is much better than their best person, he will run circles around them, and they won’t be able to do much. This little story is just my way to cement something in your head. Unlike medical or legal fields, in coding, you are only as good as your code. And the only way to improve is to code. Certificates alone will not get you very far.</p>
+</div>
+<p>So, what makes me say with confidence that you do not need a degree to succeed at this, and moreover, what makes me qualified to teach you all these things? Well allow me to introduce myself, the anti-hero of this book. My name is Nikita Voevodin, I am a professional data analyst and software developer with a concentration in interactive visualizations and database infrastructure. I spent the last half of the decade doing legislative, budget, policy, and data analysis for New York City and New York State. My work involved developing and automating big data processes, building and interacting with databases, creating apps and dashboards for my superiors and the public, as well as conducting high level research to empower legislation in the area of city transportation. I hold three separate degrees, BS in economics, BA in political science, and MPA in public policy. As you can see, I don’t hold a degree in computer science, or anything related. In fact, apart from having a PC since I was nine and using it mostly for games, and learning some excel in college, I had no coding background of any kind. I never even knew anybody who coded. This book is the chronological representation of my progress from zero to a quite high level of proficiency. Now, what makes me qualified to teach you? Ultimately, you will be the judge of that, but I would also like to list some of my portfolio items in R. First, I went from knowing practically nothing about programming to doing some advanced stuff within a year. Secondly, I am an author or co-author of R Shiny apps like:</p>
+<div id="tlc-datahub" class="section level3">
+<h3><span class="header-section-number">0.5.1</span> TLC DataHub</h3>
+<p>The ‘Hub’ as I call it, is by far the most complete and advanced thing that I created. It is used by hundreds of users every day and is listed on the front page of the Taxi &amp; Limousine Commission of New York City. Here is the intro about it:</p>
+<div class="infobox tip" data-latex="{tip}">
+<p>TLC Data Hub offers users a new and convenient location to access and visualize taxi and for hire industry data. TLC Data Hub uses public data available on NYC Open Data and the TLC website and does not use, track or display any private information of the drivers or companies. The Hub currently consists of two dashboards. The Trip Viz dashboard allows the public to run queries on TLC-collected trip data while the ‘Industry metrics’ dashboard provides standard visualizations of monthly industry trends.</p>
+</div>
+<div class="infobox note" data-latex="{note}">
+<p><a href="https://tlcanalytics.shinyapps.io/tlc_dash/">TLC Data Hub</a>
+<img src="datahub.png" width="781" /></p>
+</div>
+</div>
+<div id="tlc-vin-decoder" class="section level3">
+<h3><span class="header-section-number">0.5.2</span> TLC VIN Decoder</h3>
+<p>The decoder is a utility app that utilizes the NHTSA API to give you a lot of useful information about either a single vehicle or a list of vehicles that you pass into it. It is used by the Taxi &amp; Limousine Commission of New York City to keep track of electric vehicles, for example.</p>
+<div class="infobox note" data-latex="{note}">
+<p><a href="https://tlcanalytics.shinyapps.io/decoder/">TLC VIN Decoder</a>
+<img src="vindecoder.png" width="782" /></p>
+</div>
+</div>
+<div id="tlc-datameetup-app" class="section level3">
+<h3><span class="header-section-number">0.5.3</span> TLC DataMeetup App</h3>
+<p>I am or used to be a host of monthly data meetups at TLC. TLC Data Meetup is or was a venue where employees interested in technology would come together to share ideas, tips, and tricks in relation to technology and their research. My manager Fausto Lopez and I created the following app to streamline the processes of registration and presentation.</p>
+<div class="infobox note" data-latex="{note}">
+<p><a href="https://tlcanalytics.shinyapps.io/tasks/">TLC Data Meetup App</a>
+<img src="meetup.png" width="775" /></p>
+</div>
+<p>Components from these apps will become the base for this and the following books.</p>
+<p>Finally, I have built databases, countless algorithms, and have completed multiple large data analysis projects for different agencies within the City of New York. Most importantly, I taught all these things to myself, I have clear understanding of what it is like to start from scratch, and I have a vision of how a completely new-to-programming person should start learning code.</p>
+</div>
+<div id="flow-of-this-book" class="section level3">
+<h3><span class="header-section-number">0.5.4</span> Flow of This Book</h3>
+<p>As I said before, coding is mostly dry and dull subject for most people. My goal, therefore, is to keep your attention and interest for as long as possible. Besides bad words and seasoned jokes, I decided to add an element of a story telling. The story will not be present everywhere, because there are some basics that we just must run through. However, I’ll try to keep the whole thing in the boundaries of the story, which, in the first book, is based on my first three - four months of learning R. Let the game begin! Or, RELEASE the KRAKEN!</p>
+<hr />
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">R, Not the Best Practices</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Nikita Voevodin</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="first-three-months-maggot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-literature.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

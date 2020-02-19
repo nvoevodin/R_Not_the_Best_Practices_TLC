@@ -1,0 +1,102 @@
+---
+title: "Our Report"
+author: "Joe Shmoe"
+date: "1/13/2020"
+output:
+  html_document:
+    toc: true
+---
+
+```{r, libraries, include=FALSE}
+  knitr::opts_chunk$set(fig.width = 9.5, fig.height = 7.5)
+  
+  library(lubridate) 
+  library(data.table) 
+  library(dplyr) 
+  library(openxlsx) 
+  library(tidyr) 
+  library(fst) 
+  library(stringi)
+  library(zoo) 
+  library(ggplot2) 
+  library(scales) 
+  library(tibble) 
+  library(RMySQL)
+  library(pbapply)
+  library(jsonlite)
+  library(ggplot2)
+  library(ggthemes)
+  library(scales)
+  library(plotly)
+```
+
+## Intro
+
+`r stri_rand_lipsum(nparagraphs = 1)`
+
+## Line Plot
+
+`r stri_rand_lipsum(nparagraphs = 1)`
+
+```{r, echo=FALSE, error=F, message=F, warning=F, fig.align='center'}
+
+dataForLine <- fread('dataForLine.csv')
+
+dataForLine$date <- lubridate::ymd(dataForLine$date)
+
+ourLinePlot <- ggplot(dataForLine, aes(date, n)) +
+  geom_line(size = 1.5, color = 'red') +
+  labs(title="Incoming Cars (by month)", x="Date (month)", y="New Cars") +
+  scale_x_date(labels = date_format("%Y-%b"), breaks = date_breaks("1 months"), limits = as.Date(c('2016-12-01','2017-12-01'))) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme_hc()
+
+ggplotly(ourLinePlot) 
+
+```
+
+## Line Plot (by fuel)
+
+`r stri_rand_lipsum(nparagraphs = 1)`
+
+```{r, echo=FALSE, error=F, message=F, warning=F, fig.align='center'}
+
+dataForFuelLine <- fread('dataForFuelLine.csv')
+
+dataForFuelLine$date <- lubridate::ymd(dataForFuelLine$date)
+
+ourLineFuelPlot <- ggplot(dataForFuelLine, aes(date, n, color = Type)) +
+  geom_line(size = 1.5) +
+  labs(title="Incoming Cars (by fuel type)", x="Date (month)", y="New Cars") +
+  scale_x_date(labels = date_format("%Y-%b"), breaks = date_breaks("1 months"), limits = as.Date(c('2016-12-01','2017-12-01'))) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme_hc()
+
+ggplotly(ourLineFuelPlot)
+
+```
+
+## Bar Plot
+
+`r stri_rand_lipsum(nparagraphs = 1)`
+
+```{r, echo=FALSE, error=F, message=F, warning=F, fig.align='center'}
+
+dataForBarPlot <- fread('dataForBarPlot.csv')
+
+dataForBarPlot$date <- lubridate::ymd(dataForBarPlot$date)
+
+ourBarPlot <- ggplot(dataForBarPlot, aes(date, age)) +
+  geom_bar(stat = "identity") +
+  labs(title="Incoming Cars (by age)", x="Date (month)", y="Age") +
+  scale_x_date(labels = date_format("%Y-%b"), breaks = date_breaks("1 months")) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme_hc()
+
+ggplotly(ourBarPlot)
+
+```
+
+## Conclusion
+
+`r stri_rand_lipsum(nparagraphs = 1)`

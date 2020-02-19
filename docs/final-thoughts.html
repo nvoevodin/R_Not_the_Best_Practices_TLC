@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Final Thoughts | R, Not the Best Practices</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Final Thoughts | R, Not the Best Practices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Final Thoughts | R, Not the Best Practices" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Nikita Voevodin" />
+
+
+<meta name="date" content="2020-02-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="shiny-bonus.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R, Not the Best Practices</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#what-this-book-is-and-is-not"><i class="fa fa-check"></i><b>0.1</b> What This Book Is and Is Not</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#what-will-this-book-teach-you"><i class="fa fa-check"></i><b>0.2</b> What Will This Book Teach You</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html"><i class="fa fa-check"></i>Languages, Infrastructure, and Myself</a><ul>
+<li class="chapter" data-level="0.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#programming-languages-and-r-place-among-them"><i class="fa fa-check"></i><b>0.3</b> Programming Languages and R’ Place Among Them</a><ul>
+<li class="chapter" data-level="0.3.1" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#r"><i class="fa fa-check"></i><b>0.3.1</b> R</a></li>
+<li class="chapter" data-level="0.3.2" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#excel"><i class="fa fa-check"></i><b>0.3.2</b> Excel</a></li>
+<li class="chapter" data-level="0.3.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#stata-spss-and-sas"><i class="fa fa-check"></i><b>0.3.3</b> STATA, SPSS, and SAS</a></li>
+<li class="chapter" data-level="0.3.4" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#python"><i class="fa fa-check"></i><b>0.3.4</b> Python</a></li>
+<li class="chapter" data-level="0.3.5" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#diagram-and-related-languages"><i class="fa fa-check"></i><b>0.3.5</b> Diagram and Related Languages</a></li>
+<li class="chapter" data-level="0.3.6" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#sql"><i class="fa fa-check"></i><b>0.3.6</b> SQL</a></li>
+<li class="chapter" data-level="0.3.7" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#about-htmlcssjavascript"><i class="fa fa-check"></i><b>0.3.7</b> About HTML/CSS/JavaScript</a></li>
+<li class="chapter" data-level="0.3.8" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#using-the-htmlcssjavascript-in-this-book."><i class="fa fa-check"></i><b>0.3.8</b> Using the HTML/CSS/JavaScript in This Book.</a></li>
+</ul></li>
+<li class="chapter" data-level="0.4" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#about-infrastructure"><i class="fa fa-check"></i><b>0.4</b> About Infrastructure</a><ul>
+<li class="chapter" data-level="0.4.1" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#databases"><i class="fa fa-check"></i><b>0.4.1</b> Databases</a></li>
+<li class="chapter" data-level="0.4.2" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#hosting"><i class="fa fa-check"></i><b>0.4.2</b> Hosting</a></li>
+<li class="chapter" data-level="0.4.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#other-tools"><i class="fa fa-check"></i><b>0.4.3</b> Other tools</a></li>
+</ul></li>
+<li class="chapter" data-level="0.5" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#about-me"><i class="fa fa-check"></i><b>0.5</b> About Me</a><ul>
+<li class="chapter" data-level="0.5.1" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#tlc-datahub"><i class="fa fa-check"></i><b>0.5.1</b> TLC DataHub</a></li>
+<li class="chapter" data-level="0.5.2" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#tlc-vin-decoder"><i class="fa fa-check"></i><b>0.5.2</b> TLC VIN Decoder</a></li>
+<li class="chapter" data-level="0.5.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#tlc-datameetup-app"><i class="fa fa-check"></i><b>0.5.3</b> TLC DataMeetup App</a></li>
+<li class="chapter" data-level="0.5.4" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#flow-of-this-book"><i class="fa fa-check"></i><b>0.5.4</b> Flow of This Book</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html"><i class="fa fa-check"></i>First Three Months (Maggot)</a><ul>
+<li class="chapter" data-level="0.6" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#messing-around"><i class="fa fa-check"></i><b>0.6</b> Messing Around</a><ul>
+<li class="chapter" data-level="0.6.1" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#first-script"><i class="fa fa-check"></i><b>0.6.1</b> First Script</a></li>
+<li class="chapter" data-level="0.6.2" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#layout"><i class="fa fa-check"></i><b>0.6.2</b> Layout</a></li>
+<li class="chapter" data-level="0.6.3" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#saving-r-file"><i class="fa fa-check"></i><b>0.6.3</b> Saving R File</a></li>
+<li class="chapter" data-level="0.6.4" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#simulating-a-problem."><i class="fa fa-check"></i><b>0.6.4</b> Simulating a Problem.</a></li>
+<li class="chapter" data-level="0.6.5" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#re-installing-rstudio"><i class="fa fa-check"></i><b>0.6.5</b> Re-installing RStudio</a></li>
+<li class="chapter" data-level="0.6.6" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#messing-with-packages"><i class="fa fa-check"></i><b>0.6.6</b> Messing with Packages</a></li>
+<li class="chapter" data-level="0.6.7" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#dark-mode"><i class="fa fa-check"></i><b>0.6.7</b> Dark Mode</a></li>
+<li class="chapter" data-level="0.6.8" data-path="first-three-months-maggot.html"><a href="first-three-months-maggot.html#second-r-session."><i class="fa fa-check"></i><b>0.6.8</b> Second R Session.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="your-code-basics.html"><a href="your-code-basics.html"><i class="fa fa-check"></i>Your Code Basics</a><ul>
+<li class="chapter" data-level="0.7" data-path="your-code-basics.html"><a href="your-code-basics.html#data-types-structures"><i class="fa fa-check"></i><b>0.7</b> Data Types &amp; Structures</a><ul>
+<li class="chapter" data-level="0.7.1" data-path="your-code-basics.html"><a href="your-code-basics.html#characters"><i class="fa fa-check"></i><b>0.7.1</b> Characters</a></li>
+<li class="chapter" data-level="0.7.2" data-path="your-code-basics.html"><a href="your-code-basics.html#numbers"><i class="fa fa-check"></i><b>0.7.2</b> Numbers</a></li>
+<li class="chapter" data-level="0.7.3" data-path="your-code-basics.html"><a href="your-code-basics.html#booleans-or-logicals"><i class="fa fa-check"></i><b>0.7.3</b> Booleans or Logicals</a></li>
+<li class="chapter" data-level="0.7.4" data-path="your-code-basics.html"><a href="your-code-basics.html#factors"><i class="fa fa-check"></i><b>0.7.4</b> Factors</a></li>
+<li class="chapter" data-level="0.7.5" data-path="your-code-basics.html"><a href="your-code-basics.html#dates-times"><i class="fa fa-check"></i><b>0.7.5</b> Dates &amp; Times</a></li>
+<li class="chapter" data-level="0.7.6" data-path="your-code-basics.html"><a href="your-code-basics.html#type-conversions"><i class="fa fa-check"></i><b>0.7.6</b> Type Conversions</a></li>
+<li class="chapter" data-level="0.7.7" data-path="your-code-basics.html"><a href="your-code-basics.html#vectors"><i class="fa fa-check"></i><b>0.7.7</b> Vectors</a></li>
+<li class="chapter" data-level="0.7.8" data-path="your-code-basics.html"><a href="your-code-basics.html#lists"><i class="fa fa-check"></i><b>0.7.8</b> Lists</a></li>
+<li class="chapter" data-level="0.7.9" data-path="your-code-basics.html"><a href="your-code-basics.html#data-tables-data-frames"><i class="fa fa-check"></i><b>0.7.9</b> Data Tables (Data Frames)</a></li>
+</ul></li>
+<li class="chapter" data-level="0.8" data-path="your-code-basics.html"><a href="your-code-basics.html#coding-tools"><i class="fa fa-check"></i><b>0.8</b> Coding Tools</a><ul>
+<li class="chapter" data-level="0.8.1" data-path="your-code-basics.html"><a href="your-code-basics.html#functions"><i class="fa fa-check"></i><b>0.8.1</b> Functions</a></li>
+<li class="chapter" data-level="0.8.2" data-path="your-code-basics.html"><a href="your-code-basics.html#packages-libraries"><i class="fa fa-check"></i><b>0.8.2</b> Packages (Libraries)</a></li>
+<li class="chapter" data-level="0.8.3" data-path="your-code-basics.html"><a href="your-code-basics.html#data-formats"><i class="fa fa-check"></i><b>0.8.3</b> Data Formats</a></li>
+<li class="chapter" data-level="0.8.4" data-path="your-code-basics.html"><a href="your-code-basics.html#csv"><i class="fa fa-check"></i><b>0.8.4</b> CSV</a></li>
+<li class="chapter" data-level="0.8.5" data-path="your-code-basics.html"><a href="your-code-basics.html#xlsx-excel"><i class="fa fa-check"></i><b>0.8.5</b> XLSX (EXCEL)</a></li>
+<li class="chapter" data-level="0.8.6" data-path="your-code-basics.html"><a href="your-code-basics.html#fst"><i class="fa fa-check"></i><b>0.8.6</b> FST</a></li>
+<li class="chapter" data-level="0.8.7" data-path="your-code-basics.html"><a href="your-code-basics.html#sql-queries"><i class="fa fa-check"></i><b>0.8.7</b> SQL Queries</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="big-assignment.html"><a href="big-assignment.html"><i class="fa fa-check"></i>Big Assignment</a><ul>
+<li class="chapter" data-level="0.9" data-path="big-assignment.html"><a href="big-assignment.html#code-run-through"><i class="fa fa-check"></i><b>0.9</b> Code Run-Through</a><ul>
+<li class="chapter" data-level="0.9.1" data-path="big-assignment.html"><a href="big-assignment.html#step-1"><i class="fa fa-check"></i><b>0.9.1</b> Step 1</a></li>
+<li class="chapter" data-level="0.9.2" data-path="big-assignment.html"><a href="big-assignment.html#step-2"><i class="fa fa-check"></i><b>0.9.2</b> Step 2</a></li>
+<li class="chapter" data-level="0.9.3" data-path="big-assignment.html"><a href="big-assignment.html#step-3"><i class="fa fa-check"></i><b>0.9.3</b> Step 3</a></li>
+<li class="chapter" data-level="0.9.4" data-path="big-assignment.html"><a href="big-assignment.html#step-4"><i class="fa fa-check"></i><b>0.9.4</b> Step 4</a></li>
+<li class="chapter" data-level="0.9.5" data-path="big-assignment.html"><a href="big-assignment.html#step-5"><i class="fa fa-check"></i><b>0.9.5</b> Step 5</a></li>
+<li class="chapter" data-level="0.9.6" data-path="big-assignment.html"><a href="big-assignment.html#step-6"><i class="fa fa-check"></i><b>0.9.6</b> Step 6</a></li>
+</ul></li>
+<li class="chapter" data-level="0.10" data-path="big-assignment.html"><a href="big-assignment.html#figuring-it-out"><i class="fa fa-check"></i><b>0.10</b> Figuring It Out</a></li>
+<li class="chapter" data-level="0.11" data-path="big-assignment.html"><a href="big-assignment.html#tutorial-purgatory"><i class="fa fa-check"></i><b>0.11</b> Tutorial Purgatory</a></li>
+<li class="chapter" data-level="0.12" data-path="big-assignment.html"><a href="big-assignment.html#going-line-by-line"><i class="fa fa-check"></i><b>0.12</b> Going line by line</a><ul>
+<li class="chapter" data-level="0.12.1" data-path="big-assignment.html"><a href="big-assignment.html#step-1-1"><i class="fa fa-check"></i><b>0.12.1</b> Step 1</a></li>
+<li class="chapter" data-level="0.12.2" data-path="big-assignment.html"><a href="big-assignment.html#step-2-1"><i class="fa fa-check"></i><b>0.12.2</b> Step 2</a></li>
+<li class="chapter" data-level="0.12.3" data-path="big-assignment.html"><a href="big-assignment.html#step-3-1"><i class="fa fa-check"></i><b>0.12.3</b> Step 3</a></li>
+<li class="chapter" data-level="0.12.4" data-path="big-assignment.html"><a href="big-assignment.html#step-4-1"><i class="fa fa-check"></i><b>0.12.4</b> Step 4</a></li>
+<li class="chapter" data-level="0.12.5" data-path="big-assignment.html"><a href="big-assignment.html#step-5-1"><i class="fa fa-check"></i><b>0.12.5</b> Step 5</a></li>
+<li class="chapter" data-level="0.12.6" data-path="big-assignment.html"><a href="big-assignment.html#step-6-1"><i class="fa fa-check"></i><b>0.12.6</b> Step 6</a></li>
+</ul></li>
+<li class="chapter" data-level="0.13" data-path="big-assignment.html"><a href="big-assignment.html#working-with-dates"><i class="fa fa-check"></i><b>0.13</b> Working with dates</a><ul>
+<li class="chapter" data-level="0.13.1" data-path="big-assignment.html"><a href="big-assignment.html#as.date-sys.date-sys.time"><i class="fa fa-check"></i><b>0.13.1</b> as.Date(), Sys.Date() &amp; Sys.time()</a></li>
+<li class="chapter" data-level="0.13.2" data-path="big-assignment.html"><a href="big-assignment.html#lubridate"><i class="fa fa-check"></i><b>0.13.2</b> Lubridate</a></li>
+<li class="chapter" data-level="0.13.3" data-path="big-assignment.html"><a href="big-assignment.html#bonus"><i class="fa fa-check"></i><b>0.13.3</b> Bonus</a></li>
+</ul></li>
+<li class="chapter" data-level="0.14" data-path="big-assignment.html"><a href="big-assignment.html#rewriting-our-code"><i class="fa fa-check"></i><b>0.14</b> Rewriting our code</a><ul>
+<li class="chapter" data-level="0.14.1" data-path="big-assignment.html"><a href="big-assignment.html#step-1-2"><i class="fa fa-check"></i><b>0.14.1</b> Step 1</a></li>
+<li class="chapter" data-level="0.14.2" data-path="big-assignment.html"><a href="big-assignment.html#step-2-2"><i class="fa fa-check"></i><b>0.14.2</b> Step 2</a></li>
+<li class="chapter" data-level="0.14.3" data-path="big-assignment.html"><a href="big-assignment.html#step-3-2"><i class="fa fa-check"></i><b>0.14.3</b> Step 3</a></li>
+<li class="chapter" data-level="0.14.4" data-path="big-assignment.html"><a href="big-assignment.html#step-4-2"><i class="fa fa-check"></i><b>0.14.4</b> Step 4</a></li>
+<li class="chapter" data-level="0.14.5" data-path="big-assignment.html"><a href="big-assignment.html#step-5-2"><i class="fa fa-check"></i><b>0.14.5</b> Step 5</a></li>
+<li class="chapter" data-level="0.14.6" data-path="big-assignment.html"><a href="big-assignment.html#step-6-2"><i class="fa fa-check"></i><b>0.14.6</b> Step 6</a></li>
+</ul></li>
+<li class="chapter" data-level="0.15" data-path="big-assignment.html"><a href="big-assignment.html#adding-mpg"><i class="fa fa-check"></i><b>0.15</b> Adding MPG</a></li>
+<li class="chapter" data-level="0.16" data-path="big-assignment.html"><a href="big-assignment.html#charts-reports"><i class="fa fa-check"></i><b>0.16</b> Charts &amp; Reports</a><ul>
+<li class="chapter" data-level="0.16.1" data-path="big-assignment.html"><a href="big-assignment.html#the-setup"><i class="fa fa-check"></i><b>0.16.1</b> The setup</a></li>
+<li class="chapter" data-level="0.16.2" data-path="big-assignment.html"><a href="big-assignment.html#r-markdown"><i class="fa fa-check"></i><b>0.16.2</b> R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="0.17" data-path="big-assignment.html"><a href="big-assignment.html#bonus-1"><i class="fa fa-check"></i><b>0.17</b> Bonus</a></li>
+<li class="chapter" data-level="0.18" data-path="big-assignment.html"><a href="big-assignment.html#you-are-not-an-r-maggot-anymore"><i class="fa fa-check"></i><b>0.18</b> You are not an R maggot anymore</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="maps.html"><a href="maps.html"><i class="fa fa-check"></i>Maps</a><ul>
+<li class="chapter" data-level="0.19" data-path="maps.html"><a href="maps.html#maps-different-libraries"><i class="fa fa-check"></i><b>0.19</b> Maps, Different Libraries</a><ul>
+<li class="chapter" data-level="0.19.1" data-path="maps.html"><a href="maps.html#ggplot2"><i class="fa fa-check"></i><b>0.19.1</b> ggplot2</a></li>
+<li class="chapter" data-level="0.19.2" data-path="maps.html"><a href="maps.html#ggmap"><i class="fa fa-check"></i><b>0.19.2</b> ggmap</a></li>
+<li class="chapter" data-level="0.19.3" data-path="maps.html"><a href="maps.html#leaflet"><i class="fa fa-check"></i><b>0.19.3</b> Leaflet</a></li>
+</ul></li>
+<li class="chapter" data-level="0.20" data-path="maps.html"><a href="maps.html#leaflet-deeper-dive"><i class="fa fa-check"></i><b>0.20</b> Leaflet, Deeper Dive</a></li>
+<li class="chapter" data-level="0.21" data-path="maps.html"><a href="maps.html#leaflet-with-real-data"><i class="fa fa-check"></i><b>0.21</b> Leaflet with Real Data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="flexdahsboard.html"><a href="flexdahsboard.html"><i class="fa fa-check"></i>FlexDahsboard</a><ul>
+<li class="chapter" data-level="0.22" data-path="flexdahsboard.html"><a href="flexdahsboard.html#data"><i class="fa fa-check"></i><b>0.22</b> Data</a></li>
+<li class="chapter" data-level="0.23" data-path="flexdahsboard.html"><a href="flexdahsboard.html#layouts"><i class="fa fa-check"></i><b>0.23</b> Layouts</a><ul>
+<li class="chapter" data-level="0.23.1" data-path="flexdahsboard.html"><a href="flexdahsboard.html#column-based"><i class="fa fa-check"></i><b>0.23.1</b> Column based</a></li>
+<li class="chapter" data-level="0.23.2" data-path="flexdahsboard.html"><a href="flexdahsboard.html#row-based"><i class="fa fa-check"></i><b>0.23.2</b> Row based</a></li>
+</ul></li>
+<li class="chapter" data-level="0.24" data-path="flexdahsboard.html"><a href="flexdahsboard.html#conclusion"><i class="fa fa-check"></i><b>0.24</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="shiny-bonus.html"><a href="shiny-bonus.html"><i class="fa fa-check"></i>Shiny (Bonus)</a></li>
+<li class="chapter" data-level="" data-path="final-thoughts.html"><a href="final-thoughts.html"><i class="fa fa-check"></i>Final Thoughts</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R, Not the Best Practices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="final-thoughts" class="section level1 unnumbered">
+<h1>Final Thoughts</h1>
+<p>Congradulations! You have made it to the end of the book. You have followed the first three months of my path to R proficiency. Hopefully, you armed yourself with the things that I showed you in this book. If you did, then you are not completely useless as a data something, anymore. You better not be, because three months is about all get to be tollerably useless. Beyond that, you will quickly find yourself on the bench of your data team. Believe me, in the world where this field is the new gold mine, you do not want to become a bench warmer. This is a slippery slope that will, eventually, result in you crawling on the floor of your sublet studio looking for rats to eat. There are, definitely, many job openings rignt not as there is a shortage of skill in the field, but do not give yourself too much time because of that as that shortage will quickly decrease.</p>
+<p>Before I say: “In all seriousness, you have accomplished quite a lot here. I wish you a good luck and happy birthday, you are like a brother to me, and I want to see you in the next book. Good bye!”, I would, first, like to go over the things that we have covered in this book. For each thing, I will add a few personal thoughts, so it does not become a stupid repetition of the same shit.</p>
+<ul>
+<li>We began with a general overview of the programming world and R’s place in it. In partucular, we learned that if we want to make it in the field of data analysis or engineering, we must leave behind things like Excel, SPSS, STATA, and SAS, and focus on real languages like R, Python, and SQL. We also got more familiar with what other languages do in general and what kind of infrastructure we will ever be dealing with while learning R. Personal take on this:</li>
+</ul>
+<div class="infobox note" data-latex="{note}">
+<p>It is important to know what is out there and what surrounds the language you are learning. The faster you become aware of these things, the less distracted you will be by that temptation of unknown. By the temptation of unknown, I mean the stuff that I talked about in the ‘Tutorial Purgatory’ section. In my opinion, it is very important to know what you do not know, so you understand the scope of your challenge. In the beginning, anything new that you are learnign seems bigger than it is, because you do not know that scope. Once you realize that there are five, ten, or twenty things that you need to know, you can start moving towards the end more confidently. That was my experience, at least.</p>
+</div>
+<ul>
+<li>In the second chapter, we learned to work with the RStudio. We installed R and RStudio; got familiar with the layout; created new scripts; saved them; opened multiple sessions; installed and removed packages; wrote our first code; uninstalled and reinstalled RStudio; and messed with RStudio, in general, to see what happens. Personal take on this:</li>
+</ul>
+<div class="infobox note" data-latex="{note}">
+<p>Learning basics of R and RStudio was the obvious part that any book or tutorial would teach you. There was nothing special about it, so I do not want to even mention it. The important thing that I wanted to accomplish in that part was to eliminate the fear of messing something up in your code or session. I remember the feeling of opening RStudio for the first time and being affraid to mess it up. That fear really hinders progress, so I wanted to kick it out of you straigt away. Hopefully, it worked.</p>
+</div>
+<ul>
+<li>Next, we covered our asses in terms of code basics. I do not really have anything special to say about that section. It was boring as fuck but necessary to cover.</li>
+</ul>
+<div class="infobox note" data-latex="{note}">
+<p>One important takeway though: factors are stupid as fuuuck, and you should stay away from them for awhile, untill you are a bulletproof programmer. Otherwise, you will suffer.</p>
+</div>
+<ul>
+<li><p>The big assignment is where the majority of learning was happening, I hope. We went from receiving the task along with the complicated code; to running it line by line in order to understand what the fuck was going on; to rewriting and simplifying it to make it ours; to modifying and adding extra stuff to it; to aggregating, graphing, and wrapping it in a nice markdown report. Along the way, we used a great number of functions for extracting, transforming, loading, using, and saving our data. The few things that stand out in my head are:</p>
+<ul>
+<li>Connecting to and using a database;</li>
+<li>Using an API (Although, might still be too advanced right now);</li>
+<li>Diving deep in the lubridate package for working with dates and times;</li>
+<li>Learning about the ‘Tutorial Purgatory’;</li>
+<li>Building a few plots with ggplot2 and later converting them to plotly;</li>
+<li>Creating a markdown report, ready to be presented.</li>
+</ul></li>
+</ul>
+<p>Personal take on this:</p>
+<div class="infobox note" data-latex="{note}">
+<p>The big assignment chapter is what this book revolves around. The main part of my story happens in that part. In that chapter, I showed and described it to you 99% the way it actually happened. And if you thought that it was just one of the excercises along the way, it was not. The first assignment that I received when I just started at my job, created foundation for my overall progress as a programmer. My intention was to walk you the path that I walked, so that you start building similar foundation for yourself. Understanding this chapter is extremely important, because the stuff that we covered there will be 85-95% of what you will ever be doing as a data something guy.</p>
+</div>
+<ul>
+<li>The end of the main assignment, we opened the doors to the topic of interactive and dynamic visualizations for us. We quickly skipped static maps, because they are really boring, and moved towards interactive mapping with leaflet. If you absolutely need to know static maps, there are specialized books for that topic out there. We worked with another dataset in that section. The dataset was quite big and that displayed some limitations of maps. We covered many different scenarios and found ways around the issues that we faced there. Overall, we covered the majority of the stuff that you will ever need on that topic, especially during your first year or so. Personal take on this:</li>
+</ul>
+<div class="infobox note" data-latex="{note}">
+<p>As I said, we opened the doors to the topic of interactive and dynamic visualizations. I do not want you to close those doors any time soon. Most of the things that I worked and am still working on involved some kind of interactive visualization, be it mapping or plotting. Seeing things move on the screed and knowing that you made them is a great source of inspiration and drive. That is important, because programming can get boring, and a lot of people burn out.</p>
+</div>
+<ul>
+<li>After mapping, we got familiar with another reporting tool called flexdashboard. We learned how easy it is to, basically, create a website out of some plots and maps that we put together. We covered two types of layout, horisontal and vertical. There are more than just two, but with the foundation that you got from that chapter, you should be able to experiment with the rest of the layouts on your own, should you need to. Personal take on this:</li>
+</ul>
+<div class="infobox note" data-latex="{note}">
+<p>Honestly, at first, I did not see too much value in flexdashboard. I though, it was limiting in what I can do. During my learning process, I got familiar with it, did two or three small projects and brushed it aside. My eyes were on the bigger fish, RShiny. However, after some time, I began to understand the importance of being able to generate a quick and well laid out report or dashboard. At first, as a stand alone tool, it might not be super valuable, but once you learn things like dynamic steaming and data pyping, you will be able to combine them with flexdashboard, which will make you unstoppable. Overall, it is good that we learned it now.</p>
+</div>
+<ul>
+<li>Finally, as a bonus, I showed you glimpse of what RShiny can do. We have not covered almost anything there as it is not the intention of this book. The next books are the ones where we will invest heavily into learning Shiny.</li>
+</ul>
+<p>We are done here. If you would like to report an issue, correction, or something else, here is the GitHub of this book:</p>
+<p>And, as promissed:</p>
+<div class="infobox caution" data-latex="{caution}">
+<p>In all seriousness, you have accomplished quite a lot here. I wish you good luck and happy birthday, you are like a brother to me, and I want to see you in the next book. Good bye!</p>
+</div>
+<hr />
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">R, Not the Best Practices</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Nikita Voevodin</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="shiny-bonus.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/08-FinalThoughts.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
