@@ -12,7 +12,7 @@ link-citations: yes
 colorlinks: yes
 graphics: yes
 github-repo: rstudio/bookdown-demo
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+description: "R, Not the Best Practices (TLC version)."
 ---
 
 # Preface {-}
@@ -28,9 +28,9 @@ description: "This is a minimal example of using the bookdown package to write a
 knitr::include_graphics("R.jpg")
 ``` 
 
-Welcome to R, Not the Best Practices. You, probably, selected this book for one of the following three reasons; one, you saw the title, the cover and thought well this might be interesting. Two, you know that books that are called something something, best practices are hard to follow, because they are written by someone who already forgot how it feels to not know shit. Third, someone referred you to this book, because they learned a lot from it themselves. My hope is that your reason is somewhere between the second and third points; although even if it is the first, you will not regret it. 
+Welcome to R, Not the Best Practices. You, probably, selected this book for one of the following three reasons; one, you saw the title, the cover and thought well this might be interesting. Two, you know that books that are called something something, best practices are hard to follow, because they are written by someone who already forgot how it feels to not know anything. Third, someone referred you to this book, because they learned a lot from it themselves. My hope is that your reason is somewhere between the second and third points; although even if it is the first, you will not regret it. 
 
-Why is this book called Not the Best Practices? Simple; you do not learn by looking at perfect code. If I wrote a vectorized loop with a custom function and told you that it was the most efficient way and best practice, you likely would never understand what the fuck was going on and probably would quit. That was my experience with the majority of tutorials that I went through; at some point I would just stop getting what was going on. But because I had invested some time and money into a course, I would force myself through it regardless. Unfortunately, that tactic results in very little progress and a lot of frustration and discouragement. Writing this book, I want it to be nothing like those experiences. There will be some boring, basic shit that I just have to cover, but the majority of it will be practical and interactive. 
+Why is this book called Not the Best Practices? Simple; you do not learn by looking at perfect code. If I wrote a vectorized loop with a custom function and told you that it was the most efficient way and best practice, you likely would never understand what the hell was going on and probably would quit. That was my experience with the majority of tutorials that I went through; at some point I would just stop getting what was going on. But because I had invested some time and money into a course, I would force myself through it regardless. Unfortunately, that tactic results in very little progress and a lot of frustration and discouragement. Writing this book, I want it to be nothing like those experiences. There will be some boring, basic things that I just have to cover, but the majority of it will be practical and interactive. 
 
 ## What This Book Is and Is Not
 - This book is not written by an academic.
@@ -43,18 +43,18 @@ I do not care about the cleanliness of your code, especially at this stage in yo
 
 - This book will not filter words.
 
-I believe that learning to code can be dull, boring, and discouraging. Therefore, I will try to maintain your interest by using some seasoned language, so if you are extra sensitive, this one might not be for you. 
+I believe that learning to code can be dull, boring, and discouraging. Therefore, I will try to maintain your interest by using some seasoned language.
 
-::: {.infobox .warning data-latex="{warning}"}
+::: {.infobox .caution data-latex="{caution}"}
 
-In fact, there is a Vanilla version of this book available. Ultimately you will learn about R and it’s components and how they can be frustrating but I will give you anecdotal tips on how to go about the grind.
+In fact, this is the 'Vanilla' version of this book available. I if prefer spicy language, go to the [18+](https://nvoevodin.github.io/R_Not_the_Best_Practices) version of this book.
 
 ::: 
 
 
 - This book will not use stupid generic data.
 
-I have seen and practiced with a bunch of stupid and semi-generic data that makes no fucking sense. It really traumatized me and I do not want you to experience the same pain. Not only will we be working with real data (real vehicles vin numbers, and NYPD car crash data), but also, we will be pulling that data from a real SQL database that I specifically set up for this book. You can be sure that we will not be writing stupid hello world examples at every turn. By the end of this book you will have something interesting to show for the time that you invested.
+I have seen and practiced with a bunch of stupid and semi-generic data that makes no sense. It really traumatized me and I do not want you to experience the same pain. Not only will we be working with real data (real vehicles vin numbers, and NYPD car crash data), but also, we will be pulling that data from a real SQL database that I specifically set up for this book. You can be sure that we will not be writing stupid 'hello world' examples at every turn. By the end of this book you will have something interesting to show for the time that you invested.
 
 - This book is not only about R.
 
@@ -66,13 +66,13 @@ When coding, after a while, you will begin to forget everything you learned; as 
 
 ## What Will This Book Teach You
 
-This book will follow the first three months of learning R at my new job. Before that I was just okay at computers. I played games, used the interweb and Microsoft Word and Excel for professional stuff. I did not know anything about programming nor did I know a single programmer. Code for me was just that, code, a random string of matrix letters that meant nothing. Since the memories of not knowing shit are still fresh, I feel quite confident that I should be able to put myself in your shoes and bring you to the level of proficiency that you should be after learning R for three months. Yes, three months. This book will cover my first quarter of dealing with R and programming in general.
+This book will follow the first three months of learning R at my new job. Before that I was just okay at computers. I played games, used the interweb and Microsoft Word and Excel for professional stuff. I did not know anything about programming nor did I know a single programmer. Code for me was just that, code, a random string of matrix letters that meant nothing. Since the memories of not knowing anything are still fresh, I feel quite confident that I should be able to put myself in your shoes and bring you to the level of proficiency that you should be after learning R for three months. Yes, three months. This book will cover my first quarter of dealing with R and programming in general.
 
-You may be thinking, oh shit, this guy will only show me some real basic stuff! You are wrong. I will show you basic stuff, there is no way around it, if you want to learn. However, most of this book deals with practical examples, things that you face ninety five percent of the time. For instance, the core of this book revolves around the main assignment I received on the second week of my job. That assignment took me off guard and it took me two months of non-stop learning in R and SQL to complete. By the end of that assignment I felt comfortable with most basic tasks where I needed to work with data. 
+You may be thinking, oh man, this guy will only show me some real basic stuff! You are wrong. I will show you basic stuff, there is no way around it, if you want to learn. However, most of this book deals with practical examples, things that you face ninety five percent of the time. For instance, the core of this book revolves around the main assignment I received on the second week of my job. That assignment took me off guard and it took me two months of non-stop learning in R and SQL to complete. By the end of that assignment I felt comfortable with most basic tasks where I needed to work with data. 
 
-I will lead you through the same experience with many tips and tricks along the way. You will learn how to interact with databases in R, pull data, aggregate and reshape it to your liking; merge it with other data; save it; work with different data and time formats; create useful static and dynamic plots; fit all that nice stuff into presentable reports; create shitty and great maps; use all that again to create dashboards; and finally build a simple web app as a bonus. Along the way, I will be telling you about mine and other programmers’ experiences and touch on some peripheral programming topics.
+I will lead you through the same experience with many tips and tricks along the way. You will learn how to interact with databases in R, pull data, aggregate and reshape it to your liking; merge it with other data; save it; work with different data and time formats; create useful static and dynamic plots; fit all that nice stuff into presentable reports; create bad and great maps; use all that again to create dashboards; and finally build a simple web app as a bonus. Along the way, I will be telling you about mine and other programmers’ experiences and touch on some peripheral programming topics.
 
-If all that is not enough for you, feel free to close this book and get yourself something like R for Dummies or some shit. This book is, ultimately, what and how I wanted to be taught when I was a noob.
+If all that is not enough for you, feel free to close this book and get yourself something like R for Dummies or something. This book is, ultimately, what and how I wanted to be taught when I was a noob.
 
 ::: {.infobox .important data-latex="{important}"}
 

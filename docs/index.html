@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>R, Not the Best Practices</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="description" content="R, Not the Best Practices (TLC version)." />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
   <meta property="og:title" content="R, Not the Best Practices" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="R, Not the Best Practices (TLC version)." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="R, Not the Best Practices" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="R, Not the Best Practices (TLC version)." />
   
 
 <meta name="author" content="Nikita Voevodin" />
 
 
-<meta name="date" content="2020-02-19" />
+<meta name="date" content="2020-02-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -290,7 +290,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">R, Not the Best Practices</h1>
 <p class="author"><em>Nikita Voevodin</em></p>
-<p class="date"><em>2020-02-19</em></p>
+<p class="date"><em>2020-02-20</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
@@ -298,8 +298,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">R, Not the Best Practices</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Nikita Voevodin</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
 </div>
 <p><img src="R.jpg" width="65%" style="float:right; padding:10px" /></p>
-<p>Welcome to R, Not the Best Practices. You, probably, selected this book for one of the following three reasons; one, you saw the title, the cover and thought well this might be interesting. Two, you know that books that are called something something, best practices are hard to follow, because they are written by someone who already forgot how it feels to not know shit. Third, someone referred you to this book, because they learned a lot from it themselves. My hope is that your reason is somewhere between the second and third points; although even if it is the first, you will not regret it.</p>
-<p>Why is this book called Not the Best Practices? Simple; you do not learn by looking at perfect code. If I wrote a vectorized loop with a custom function and told you that it was the most efficient way and best practice, you likely would never understand what the fuck was going on and probably would quit. That was my experience with the majority of tutorials that I went through; at some point I would just stop getting what was going on. But because I had invested some time and money into a course, I would force myself through it regardless. Unfortunately, that tactic results in very little progress and a lot of frustration and discouragement. Writing this book, I want it to be nothing like those experiences. There will be some boring, basic shit that I just have to cover, but the majority of it will be practical and interactive.</p>
+<p>Welcome to R, Not the Best Practices. You, probably, selected this book for one of the following three reasons; one, you saw the title, the cover and thought well this might be interesting. Two, you know that books that are called something something, best practices are hard to follow, because they are written by someone who already forgot how it feels to not know anything. Third, someone referred you to this book, because they learned a lot from it themselves. My hope is that your reason is somewhere between the second and third points; although even if it is the first, you will not regret it.</p>
+<p>Why is this book called Not the Best Practices? Simple; you do not learn by looking at perfect code. If I wrote a vectorized loop with a custom function and told you that it was the most efficient way and best practice, you likely would never understand what the hell was going on and probably would quit. That was my experience with the majority of tutorials that I went through; at some point I would just stop getting what was going on. But because I had invested some time and money into a course, I would force myself through it regardless. Unfortunately, that tactic results in very little progress and a lot of frustration and discouragement. Writing this book, I want it to be nothing like those experiences. There will be some boring, basic things that I just have to cover, but the majority of it will be practical and interactive.</p>
 <div id="what-this-book-is-and-is-not" class="section level2">
 <h2><span class="header-section-number">0.1</span> What This Book Is and Is Not</h2>
 <ul>
@@ -313,14 +313,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>This book will not filter words.</li>
 </ul>
-<p>I believe that learning to code can be dull, boring, and discouraging. Therefore, I will try to maintain your interest by using some seasoned language, so if you are extra sensitive, this one might not be for you.</p>
-<div class="infobox warning" data-latex="{warning}">
-<p>In fact, there is a Vanilla version of this book available. Ultimately you will learn about R and it’s components and how they can be frustrating but I will give you anecdotal tips on how to go about the grind.</p>
+<p>I believe that learning to code can be dull, boring, and discouraging. Therefore, I will try to maintain your interest by using some seasoned language.</p>
+<div class="infobox caution" data-latex="{caution}">
+<p>In fact, this is the ‘Vanilla’ version of this book available. I if prefer spicy language, go to the <a href="https://nvoevodin.github.io/R_Not_the_Best_Practices">18+</a> version of this book.</p>
 </div>
 <ul>
 <li>This book will not use stupid generic data.</li>
 </ul>
-<p>I have seen and practiced with a bunch of stupid and semi-generic data that makes no fucking sense. It really traumatized me and I do not want you to experience the same pain. Not only will we be working with real data (real vehicles vin numbers, and NYPD car crash data), but also, we will be pulling that data from a real SQL database that I specifically set up for this book. You can be sure that we will not be writing stupid hello world examples at every turn. By the end of this book you will have something interesting to show for the time that you invested.</p>
+<p>I have seen and practiced with a bunch of stupid and semi-generic data that makes no sense. It really traumatized me and I do not want you to experience the same pain. Not only will we be working with real data (real vehicles vin numbers, and NYPD car crash data), but also, we will be pulling that data from a real SQL database that I specifically set up for this book. You can be sure that we will not be writing stupid ‘hello world’ examples at every turn. By the end of this book you will have something interesting to show for the time that you invested.</p>
 <ul>
 <li>This book is not only about R.</li>
 </ul>
@@ -332,10 +332,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="what-will-this-book-teach-you" class="section level2">
 <h2><span class="header-section-number">0.2</span> What Will This Book Teach You</h2>
-<p>This book will follow the first three months of learning R at my new job. Before that I was just okay at computers. I played games, used the interweb and Microsoft Word and Excel for professional stuff. I did not know anything about programming nor did I know a single programmer. Code for me was just that, code, a random string of matrix letters that meant nothing. Since the memories of not knowing shit are still fresh, I feel quite confident that I should be able to put myself in your shoes and bring you to the level of proficiency that you should be after learning R for three months. Yes, three months. This book will cover my first quarter of dealing with R and programming in general.</p>
-<p>You may be thinking, oh shit, this guy will only show me some real basic stuff! You are wrong. I will show you basic stuff, there is no way around it, if you want to learn. However, most of this book deals with practical examples, things that you face ninety five percent of the time. For instance, the core of this book revolves around the main assignment I received on the second week of my job. That assignment took me off guard and it took me two months of non-stop learning in R and SQL to complete. By the end of that assignment I felt comfortable with most basic tasks where I needed to work with data.</p>
-<p>I will lead you through the same experience with many tips and tricks along the way. You will learn how to interact with databases in R, pull data, aggregate and reshape it to your liking; merge it with other data; save it; work with different data and time formats; create useful static and dynamic plots; fit all that nice stuff into presentable reports; create shitty and great maps; use all that again to create dashboards; and finally build a simple web app as a bonus. Along the way, I will be telling you about mine and other programmers’ experiences and touch on some peripheral programming topics.</p>
-<p>If all that is not enough for you, feel free to close this book and get yourself something like R for Dummies or some shit. This book is, ultimately, what and how I wanted to be taught when I was a noob.</p>
+<p>This book will follow the first three months of learning R at my new job. Before that I was just okay at computers. I played games, used the interweb and Microsoft Word and Excel for professional stuff. I did not know anything about programming nor did I know a single programmer. Code for me was just that, code, a random string of matrix letters that meant nothing. Since the memories of not knowing anything are still fresh, I feel quite confident that I should be able to put myself in your shoes and bring you to the level of proficiency that you should be after learning R for three months. Yes, three months. This book will cover my first quarter of dealing with R and programming in general.</p>
+<p>You may be thinking, oh man, this guy will only show me some real basic stuff! You are wrong. I will show you basic stuff, there is no way around it, if you want to learn. However, most of this book deals with practical examples, things that you face ninety five percent of the time. For instance, the core of this book revolves around the main assignment I received on the second week of my job. That assignment took me off guard and it took me two months of non-stop learning in R and SQL to complete. By the end of that assignment I felt comfortable with most basic tasks where I needed to work with data.</p>
+<p>I will lead you through the same experience with many tips and tricks along the way. You will learn how to interact with databases in R, pull data, aggregate and reshape it to your liking; merge it with other data; save it; work with different data and time formats; create useful static and dynamic plots; fit all that nice stuff into presentable reports; create bad and great maps; use all that again to create dashboards; and finally build a simple web app as a bonus. Along the way, I will be telling you about mine and other programmers’ experiences and touch on some peripheral programming topics.</p>
+<p>If all that is not enough for you, feel free to close this book and get yourself something like R for Dummies or something. This book is, ultimately, what and how I wanted to be taught when I was a noob.</p>
 <div class="infobox important" data-latex="{important}">
 <p>Special thanks go to Fausto Lopez for proofreading this book. Fausto is a Director of Data Engineering &amp; Analytics at NYC Taxi and Limousine Commission.</p>
 </div>

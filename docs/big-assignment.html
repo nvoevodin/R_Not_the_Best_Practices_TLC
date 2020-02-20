@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Big Assignment | R, Not the Best Practices</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="description" content="Big Assignment | R, Not the Best Practices (TLC version)." />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Big Assignment | R, Not the Best Practices" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="Big Assignment | R, Not the Best Practices (TLC version)." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Big Assignment | R, Not the Best Practices" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="Big Assignment | R, Not the Best Practices (TLC version)." />
   
 
 <meta name="author" content="Nikita Voevodin" />
 
 
-<meta name="date" content="2020-02-19" />
+<meta name="date" content="2020-02-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -693,14 +693,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If we print it, we will see that it prints as a character string.</p>
 <div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb230-1" data-line-number="1"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb230-2" data-line-number="2"><span class="kw">print</span>(timeStamp)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-19 16:11:39 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-20 00:20:31 EST&quot;</code></pre>
 <p>It is not though. How can we check? One would be to use the function class(), but those classifications might be confusing for you now. Lets experiment with it. Generate a new stamp.</p>
 <div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb232-1" data-line-number="1"><span class="co"># Timestamp.</span></a>
 <a class="sourceLine" id="cb232-2" data-line-number="2">newTimeStamp &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</a></code></pre></div>
 <p>Now, lets see how many seconds passed between these two. Just deduct the timeStamp from the newTimeStamp.</p>
 <div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb233-1" data-line-number="1"><span class="co"># Calculating timediff.</span></a>
 <a class="sourceLine" id="cb233-2" data-line-number="2"><span class="kw">print</span>(newTimeStamp <span class="op">-</span><span class="st"> </span>timeStamp)</a></code></pre></div>
-<pre><code>## Time difference of 0.01671982 secs</code></pre>
+<pre><code>## Time difference of 0.01477456 secs</code></pre>
 <p>It should print ‘time difference of … mins (or seconds)’. We just performed a mathematical operation on characters. Right? Not really. Although it printed the timeStamps as characters, under the hood they are still in the time format. Lets see what happens when we explicitly generate a character string that only looks like a timestamp. For this just copy and paste the strings that we generated in the terminal.</p>
 <div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb235-1" data-line-number="1"><span class="co"># Character time 1.</span></a>
 <a class="sourceLine" id="cb235-2" data-line-number="2">charTimeStamp &lt;-<span class="st"> &quot;2020-01-04 14:21:45 EST&quot;</span></a>
@@ -741,25 +741,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb246-2" data-line-number="2">today &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>()</a>
 <a class="sourceLine" id="cb246-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb246-4" data-line-number="4"><span class="kw">print</span>(today)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-19&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-20&quot;</code></pre>
 <p>The format right now is ‘%Y-%m-%d’. Lets change it to ‘%Y/%m/%d’.</p>
 <div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb248-1" data-line-number="1"><span class="co"># Formatting.</span></a>
 <a class="sourceLine" id="cb248-2" data-line-number="2">todaySlash &lt;-<span class="st"> </span><span class="kw">format</span>(today, <span class="dt">format =</span> <span class="st">&#39;%Y/%m/%d&#39;</span>)</a>
 <a class="sourceLine" id="cb248-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb248-4" data-line-number="4"><span class="kw">print</span>(todaySlash)</a></code></pre></div>
-<pre><code>## [1] &quot;2020/02/19&quot;</code></pre>
+<pre><code>## [1] &quot;2020/02/20&quot;</code></pre>
 <p>Lets do something different. Like this: January 05, 2020.</p>
 <div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb250-1" data-line-number="1"><span class="co"># Formatting.</span></a>
 <a class="sourceLine" id="cb250-2" data-line-number="2">todayBigDate &lt;-<span class="st"> </span><span class="kw">format</span>(today, <span class="dt">format =</span> <span class="st">&quot;%B %d, %Y&quot;</span>)</a>
 <a class="sourceLine" id="cb250-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb250-4" data-line-number="4"><span class="kw">print</span>(todayBigDate)</a></code></pre></div>
-<pre><code>## [1] &quot;February 19, 2020&quot;</code></pre>
+<pre><code>## [1] &quot;February 20, 2020&quot;</code></pre>
 <p>This would be a nice lable, but because we are using format() it is just a character. Lets format it back to date.</p>
 <div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb252-1" data-line-number="1"><span class="co"># Converting.</span></a>
 <a class="sourceLine" id="cb252-2" data-line-number="2">dateAgain &lt;-<span class="st"> </span><span class="kw">as.Date</span>(todayBigDate, <span class="dt">format =</span> <span class="st">&quot;%B %d, %Y&quot;</span>) </a>
 <a class="sourceLine" id="cb252-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb252-4" data-line-number="4"><span class="kw">print</span>(dateAgain)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-19&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-20&quot;</code></pre>
 <div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb254-1" data-line-number="1"><span class="co"># Class.</span></a>
 <a class="sourceLine" id="cb254-2" data-line-number="2"><span class="kw">class</span>(dateAgain)</a></code></pre></div>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
@@ -812,8 +812,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The second one is the garbage collection function (gc()). It will free up memrory and report the memory usage.</p>
 <div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb267-1" data-line-number="1"><span class="kw">gc</span>() </a></code></pre></div>
 <pre><code>##           used (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells 1097159 58.6    2070421 110.6  2070421 110.6
-## Vcells 2393212 18.3   10146329  77.5 10084360  77.0</code></pre>
+## Ncells 1097159 58.6    2070325 110.6  2070325 110.6
+## Vcells 2393137 18.3   10146329  77.5 10083381  77.0</code></pre>
 <p>This function is extremely useful when you are working with large objects or optimizing you code and applications.</p>
 </div>
 <p>Now, lets recreate our dates and see how lubridate will handle conversions.</p>
@@ -856,38 +856,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb279-2" data-line-number="2">now &lt;-<span class="st"> </span><span class="kw">now</span>()</a>
 <a class="sourceLine" id="cb279-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb279-4" data-line-number="4"><span class="kw">print</span>(now)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-19 16:11:40 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-20 00:20:31 EST&quot;</code></pre>
 <div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb281-1" data-line-number="1"><span class="co"># Date.</span></a>
 <a class="sourceLine" id="cb281-2" data-line-number="2">today &lt;-<span class="st"> </span><span class="kw">today</span>()</a>
 <a class="sourceLine" id="cb281-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb281-4" data-line-number="4"><span class="kw">print</span>(today)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-19&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-20&quot;</code></pre>
 <p>These two are just lubridate’s substitutes for Sys.Date() &amp; Sys.time() functions. From now on lets stick with the datetime that we just generated with the function now(). The following two function are extremely important and useful. You will be using them a lot.</p>
 <div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb283-1" data-line-number="1"><span class="co"># Floor to seconds.</span></a>
 <a class="sourceLine" id="cb283-2" data-line-number="2">flooredToSecond &lt;-<span class="st"> </span><span class="kw">floor_date</span>(now, <span class="st">&#39;second&#39;</span>)</a>
 <a class="sourceLine" id="cb283-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb283-4" data-line-number="4"><span class="kw">print</span>(flooredToSecond)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-19 16:11:40 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-20 00:20:31 EST&quot;</code></pre>
 <div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb285-1" data-line-number="1"><span class="co"># Floor to minutes.</span></a>
 <a class="sourceLine" id="cb285-2" data-line-number="2">flooredToMinite &lt;-<span class="st"> </span><span class="kw">floor_date</span>(now, <span class="st">&#39;minute&#39;</span>)</a>
 <a class="sourceLine" id="cb285-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb285-4" data-line-number="4"><span class="kw">print</span>(flooredToMinite)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-19 16:11:00 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-20 00:20:00 EST&quot;</code></pre>
 <div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb287-1" data-line-number="1"><span class="co"># Floor to every 15 minutes.</span></a>
 <a class="sourceLine" id="cb287-2" data-line-number="2">flooredTo15Minites &lt;-<span class="st"> </span><span class="kw">floor_date</span>(now, <span class="st">&#39;15 minutes&#39;</span>)</a>
 <a class="sourceLine" id="cb287-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb287-4" data-line-number="4"><span class="kw">print</span>(flooredTo15Minites)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-19 16:00:00 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-20 00:15:00 EST&quot;</code></pre>
 <div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb289-1" data-line-number="1"><span class="co"># Floor to an hour.</span></a>
 <a class="sourceLine" id="cb289-2" data-line-number="2">flooredToHour &lt;-<span class="st"> </span><span class="kw">floor_date</span>(now, <span class="st">&#39;hour&#39;</span>)</a>
 <a class="sourceLine" id="cb289-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb289-4" data-line-number="4"><span class="kw">print</span>(flooredToHour)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-19 16:00:00 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-20 EST&quot;</code></pre>
 <div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb291-1" data-line-number="1"><span class="co"># Floor to a day.</span></a>
 <a class="sourceLine" id="cb291-2" data-line-number="2">flooredToDay &lt;-<span class="st"> </span><span class="kw">floor_date</span>(now, <span class="st">&#39;day&#39;</span>)</a>
 <a class="sourceLine" id="cb291-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb291-4" data-line-number="4"><span class="kw">print</span>(flooredToDay)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-19 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-20 EST&quot;</code></pre>
 <div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb293-1" data-line-number="1"><span class="co"># Floor to a month.</span></a>
 <a class="sourceLine" id="cb293-2" data-line-number="2">flooredToMonth &lt;-<span class="st"> </span><span class="kw">floor_date</span>(now, <span class="st">&#39;month&#39;</span>)</a>
 <a class="sourceLine" id="cb293-3" data-line-number="3"><span class="co"># Printing.</span></a>
@@ -915,53 +915,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb301-2" data-line-number="2">day &lt;-<span class="st"> </span><span class="kw">day</span>(now)</a>
 <a class="sourceLine" id="cb301-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb301-4" data-line-number="4"><span class="kw">print</span>(day)</a></code></pre></div>
-<pre><code>## [1] 19</code></pre>
+<pre><code>## [1] 20</code></pre>
 <div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb303-1" data-line-number="1"><span class="co"># Extracting hour.</span></a>
 <a class="sourceLine" id="cb303-2" data-line-number="2">hour &lt;-<span class="st"> </span>lubridate<span class="op">::</span><span class="kw">hour</span>(now)</a>
 <a class="sourceLine" id="cb303-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb303-4" data-line-number="4"><span class="kw">print</span>(hour)</a></code></pre></div>
-<pre><code>## [1] 16</code></pre>
+<pre><code>## [1] 0</code></pre>
 <div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb305-1" data-line-number="1"><span class="co"># Extracting minute.</span></a>
 <a class="sourceLine" id="cb305-2" data-line-number="2">minute &lt;-<span class="st"> </span>lubridate<span class="op">::</span><span class="kw">minute</span>(now)</a>
 <a class="sourceLine" id="cb305-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb305-4" data-line-number="4"><span class="kw">print</span>(minute)</a></code></pre></div>
-<pre><code>## [1] 11</code></pre>
+<pre><code>## [1] 20</code></pre>
 <div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb307-1" data-line-number="1"><span class="co"># Extracting second.</span></a>
 <a class="sourceLine" id="cb307-2" data-line-number="2">second &lt;-<span class="st"> </span>lubridate<span class="op">::</span><span class="kw">second</span>(now)</a>
 <a class="sourceLine" id="cb307-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb307-4" data-line-number="4"><span class="kw">print</span>(second)</a></code></pre></div>
-<pre><code>## [1] 40.01769</code></pre>
+<pre><code>## [1] 31.65593</code></pre>
 <p>Finally, lets see how lubridate handles mathematical operations with dates and times.</p>
 <div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb309-1" data-line-number="1"><span class="co"># Adding five years.</span></a>
 <a class="sourceLine" id="cb309-2" data-line-number="2">nowPlus5Years &lt;-<span class="st"> </span>now <span class="op">+</span><span class="st"> </span><span class="kw">years</span>(<span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb309-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb309-4" data-line-number="4"><span class="kw">print</span>(nowPlus5Years)</a></code></pre></div>
-<pre><code>## [1] &quot;2025-02-19 16:11:40 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2025-02-20 00:20:31 EST&quot;</code></pre>
 <div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb311-1" data-line-number="1"><span class="co"># Adding five months.</span></a>
 <a class="sourceLine" id="cb311-2" data-line-number="2">nowPlus5Months &lt;-<span class="st"> </span>now <span class="op">+</span><span class="st"> </span><span class="kw">months</span>(<span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb311-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb311-4" data-line-number="4"><span class="kw">print</span>(nowPlus5Months)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-07-19 16:11:40 EDT&quot;</code></pre>
+<pre><code>## [1] &quot;2020-07-20 00:20:31 EDT&quot;</code></pre>
 <div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb313-1" data-line-number="1"><span class="co"># Adding five days.</span></a>
 <a class="sourceLine" id="cb313-2" data-line-number="2">nowPlus5Days &lt;-<span class="st"> </span>now <span class="op">+</span><span class="st"> </span><span class="kw">days</span>(<span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb313-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb313-4" data-line-number="4"><span class="kw">print</span>(nowPlus5Days)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-24 16:11:40 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-25 00:20:31 EST&quot;</code></pre>
 <div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb315-1" data-line-number="1"><span class="co"># Adding five hours.</span></a>
 <a class="sourceLine" id="cb315-2" data-line-number="2">nowPlus5Hours &lt;-<span class="st"> </span>now <span class="op">+</span><span class="st"> </span><span class="kw">hours</span>(<span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb315-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb315-4" data-line-number="4"><span class="kw">print</span>(nowPlus5Hours)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-19 21:11:40 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-20 05:20:31 EST&quot;</code></pre>
 <div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb317-1" data-line-number="1"><span class="co"># Adding five minutes.</span></a>
 <a class="sourceLine" id="cb317-2" data-line-number="2">nowPlus5Minutes &lt;-<span class="st"> </span>now <span class="op">+</span><span class="st"> </span><span class="kw">minutes</span>(<span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb317-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb317-4" data-line-number="4"><span class="kw">print</span>(nowPlus5Minutes)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-19 16:16:40 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-20 00:25:31 EST&quot;</code></pre>
 <div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb319-1" data-line-number="1"><span class="co"># Adding five seconds.</span></a>
 <a class="sourceLine" id="cb319-2" data-line-number="2">nowPlus5Seconds &lt;-<span class="st"> </span>now <span class="op">+</span><span class="st"> </span><span class="kw">seconds</span>(<span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb319-3" data-line-number="3"><span class="co"># Printing.</span></a>
 <a class="sourceLine" id="cb319-4" data-line-number="4"><span class="kw">print</span>(nowPlus5Seconds)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-19 16:11:45 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-20 00:20:36 EST&quot;</code></pre>
 <p>I hope, you can see how intuitive lubridate is. These were just some functions that lubridate provides for us. However, this is more than enough for you to start with.</p>
 <p>You do not really need to see the benefit of using lubridate over other datetime packages in R, and I do not expect you too. After all, you do not have anything to compare it to at the moment.</p>
 <p>When I started, I experimented with bunch of differnt libraries designed to work with dates. A lot of times, I just got stuck due to the sheer number of them. Sometimes function names were the same and I did not understand why I was getting different results all the time. Sometimes, I would get a character string instead of a datetime and did not know why. I would spend hours figuring things out. I came to realization that, at least, for your first months, you should focus on lubridate for datetimes and then branch out once you are comfortable. For the final part of this section, lets pull our vehicles data from the database and see how we can use lubridate to play with it.</p>
@@ -1078,16 +1078,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb337-5" data-line-number="5"><span class="co"># fall asleep for 1 second </span></a>
 <a class="sourceLine" id="cb337-6" data-line-number="6">  <span class="kw">Sys.sleep</span>(<span class="dv">1</span>) </a>
 <a class="sourceLine" id="cb337-7" data-line-number="7">}</a></code></pre></div>
-<pre><code>## [1] &quot;2020-02-19 16:11:45 EST&quot;
-## [1] &quot;2020-02-19 16:11:46 EST&quot;
-## [1] &quot;2020-02-19 16:11:47 EST&quot;
-## [1] &quot;2020-02-19 16:11:48 EST&quot;
-## [1] &quot;2020-02-19 16:11:49 EST&quot;
-## [1] &quot;2020-02-19 16:11:50 EST&quot;
-## [1] &quot;2020-02-19 16:11:51 EST&quot;
-## [1] &quot;2020-02-19 16:11:52 EST&quot;
-## [1] &quot;2020-02-19 16:11:53 EST&quot;
-## [1] &quot;2020-02-19 16:11:54 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-20 00:20:33 EST&quot;
+## [1] &quot;2020-02-20 00:20:34 EST&quot;
+## [1] &quot;2020-02-20 00:20:35 EST&quot;
+## [1] &quot;2020-02-20 00:20:36 EST&quot;
+## [1] &quot;2020-02-20 00:20:37 EST&quot;
+## [1] &quot;2020-02-20 00:20:38 EST&quot;
+## [1] &quot;2020-02-20 00:20:39 EST&quot;
+## [1] &quot;2020-02-20 00:20:40 EST&quot;
+## [1] &quot;2020-02-20 00:20:41 EST&quot;
+## [1] &quot;2020-02-20 00:20:42 EST&quot;</code></pre>
 <p>In my opinion, it is a cool excercise. You can change 10 to a higher number and it will print for longer. You can make it sleep longer and intervals will be longer. You can change now() to ‘Trump’ and it will print ‘Trump’ many times. If you want it to print infinitely, you should look into the ‘while loops’ instead of ‘for loops’. Good luck.</p>
 </div>
 </div>
