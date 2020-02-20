@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>First Three Months (Noob) | R, Not the Best Practices</title>
+  <meta name="description" content="First Three Months (Noob) | R, Not the Best Practices (TLC version)." />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="First Three Months (Noob) | R, Not the Best Practices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="First Three Months (Noob) | R, Not the Best Practices (TLC version)." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="First Three Months (Noob) | R, Not the Best Practices" />
+  
+  <meta name="twitter:description" content="First Three Months (Noob) | R, Not the Best Practices (TLC version)." />
+  
+
+<meta name="author" content="Nikita Voevodin" />
+
+
+<meta name="date" content="2020-02-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="languages-infrastructure-and-myself.html"/>
+<link rel="next" href="your-code-basics.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R, Not the Best Practices</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#what-this-book-is-and-is-not"><i class="fa fa-check"></i><b>0.1</b> What This Book Is and Is Not</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#what-will-this-book-teach-you"><i class="fa fa-check"></i><b>0.2</b> What Will This Book Teach You</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html"><i class="fa fa-check"></i>Languages, Infrastructure, and Myself</a><ul>
+<li class="chapter" data-level="0.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#programming-languages-and-r-place-among-them"><i class="fa fa-check"></i><b>0.3</b> Programming Languages and R’ Place Among Them</a><ul>
+<li class="chapter" data-level="0.3.1" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#r"><i class="fa fa-check"></i><b>0.3.1</b> R</a></li>
+<li class="chapter" data-level="0.3.2" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#excel"><i class="fa fa-check"></i><b>0.3.2</b> Excel</a></li>
+<li class="chapter" data-level="0.3.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#stata-spss-and-sas"><i class="fa fa-check"></i><b>0.3.3</b> STATA, SPSS, and SAS</a></li>
+<li class="chapter" data-level="0.3.4" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#python"><i class="fa fa-check"></i><b>0.3.4</b> Python</a></li>
+<li class="chapter" data-level="0.3.5" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#diagram-and-related-languages"><i class="fa fa-check"></i><b>0.3.5</b> Diagram and Related Languages</a></li>
+<li class="chapter" data-level="0.3.6" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#sql"><i class="fa fa-check"></i><b>0.3.6</b> SQL</a></li>
+<li class="chapter" data-level="0.3.7" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#about-htmlcssjavascript"><i class="fa fa-check"></i><b>0.3.7</b> About HTML/CSS/JavaScript</a></li>
+<li class="chapter" data-level="0.3.8" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#using-the-htmlcssjavascript-in-this-book."><i class="fa fa-check"></i><b>0.3.8</b> Using the HTML/CSS/JavaScript in This Book.</a></li>
+</ul></li>
+<li class="chapter" data-level="0.4" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#about-infrastructure"><i class="fa fa-check"></i><b>0.4</b> About Infrastructure</a><ul>
+<li class="chapter" data-level="0.4.1" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#databases"><i class="fa fa-check"></i><b>0.4.1</b> Databases</a></li>
+<li class="chapter" data-level="0.4.2" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#hosting"><i class="fa fa-check"></i><b>0.4.2</b> Hosting</a></li>
+<li class="chapter" data-level="0.4.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#other-tools"><i class="fa fa-check"></i><b>0.4.3</b> Other tools</a></li>
+</ul></li>
+<li class="chapter" data-level="0.5" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#about-me"><i class="fa fa-check"></i><b>0.5</b> About Me</a><ul>
+<li class="chapter" data-level="0.5.1" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#tlc-datahub"><i class="fa fa-check"></i><b>0.5.1</b> TLC DataHub</a></li>
+<li class="chapter" data-level="0.5.2" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#tlc-vin-decoder"><i class="fa fa-check"></i><b>0.5.2</b> TLC VIN Decoder</a></li>
+<li class="chapter" data-level="0.5.3" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#tlc-datameetup-app"><i class="fa fa-check"></i><b>0.5.3</b> TLC DataMeetup App</a></li>
+<li class="chapter" data-level="0.5.4" data-path="languages-infrastructure-and-myself.html"><a href="languages-infrastructure-and-myself.html#flow-of-this-book"><i class="fa fa-check"></i><b>0.5.4</b> Flow of This Book</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="first-three-months-noob.html"><a href="first-three-months-noob.html"><i class="fa fa-check"></i>First Three Months (Noob)</a><ul>
+<li class="chapter" data-level="0.6" data-path="first-three-months-noob.html"><a href="first-three-months-noob.html#messing-around"><i class="fa fa-check"></i><b>0.6</b> Messing Around</a><ul>
+<li class="chapter" data-level="0.6.1" data-path="first-three-months-noob.html"><a href="first-three-months-noob.html#first-script"><i class="fa fa-check"></i><b>0.6.1</b> First Script</a></li>
+<li class="chapter" data-level="0.6.2" data-path="first-three-months-noob.html"><a href="first-three-months-noob.html#layout"><i class="fa fa-check"></i><b>0.6.2</b> Layout</a></li>
+<li class="chapter" data-level="0.6.3" data-path="first-three-months-noob.html"><a href="first-three-months-noob.html#saving-r-file"><i class="fa fa-check"></i><b>0.6.3</b> Saving R File</a></li>
+<li class="chapter" data-level="0.6.4" data-path="first-three-months-noob.html"><a href="first-three-months-noob.html#simulating-a-problem."><i class="fa fa-check"></i><b>0.6.4</b> Simulating a Problem.</a></li>
+<li class="chapter" data-level="0.6.5" data-path="first-three-months-noob.html"><a href="first-three-months-noob.html#re-installing-rstudio"><i class="fa fa-check"></i><b>0.6.5</b> Re-installing RStudio</a></li>
+<li class="chapter" data-level="0.6.6" data-path="first-three-months-noob.html"><a href="first-three-months-noob.html#messing-with-packages"><i class="fa fa-check"></i><b>0.6.6</b> Messing with Packages</a></li>
+<li class="chapter" data-level="0.6.7" data-path="first-three-months-noob.html"><a href="first-three-months-noob.html#dark-mode"><i class="fa fa-check"></i><b>0.6.7</b> Dark Mode</a></li>
+<li class="chapter" data-level="0.6.8" data-path="first-three-months-noob.html"><a href="first-three-months-noob.html#second-r-session."><i class="fa fa-check"></i><b>0.6.8</b> Second R Session.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="your-code-basics.html"><a href="your-code-basics.html"><i class="fa fa-check"></i>Your Code Basics</a><ul>
+<li class="chapter" data-level="0.7" data-path="your-code-basics.html"><a href="your-code-basics.html#data-types-structures"><i class="fa fa-check"></i><b>0.7</b> Data Types &amp; Structures</a><ul>
+<li class="chapter" data-level="0.7.1" data-path="your-code-basics.html"><a href="your-code-basics.html#characters"><i class="fa fa-check"></i><b>0.7.1</b> Characters</a></li>
+<li class="chapter" data-level="0.7.2" data-path="your-code-basics.html"><a href="your-code-basics.html#numbers"><i class="fa fa-check"></i><b>0.7.2</b> Numbers</a></li>
+<li class="chapter" data-level="0.7.3" data-path="your-code-basics.html"><a href="your-code-basics.html#booleans-or-logicals"><i class="fa fa-check"></i><b>0.7.3</b> Booleans or Logicals</a></li>
+<li class="chapter" data-level="0.7.4" data-path="your-code-basics.html"><a href="your-code-basics.html#factors"><i class="fa fa-check"></i><b>0.7.4</b> Factors</a></li>
+<li class="chapter" data-level="0.7.5" data-path="your-code-basics.html"><a href="your-code-basics.html#dates-times"><i class="fa fa-check"></i><b>0.7.5</b> Dates &amp; Times</a></li>
+<li class="chapter" data-level="0.7.6" data-path="your-code-basics.html"><a href="your-code-basics.html#type-conversions"><i class="fa fa-check"></i><b>0.7.6</b> Type Conversions</a></li>
+<li class="chapter" data-level="0.7.7" data-path="your-code-basics.html"><a href="your-code-basics.html#vectors"><i class="fa fa-check"></i><b>0.7.7</b> Vectors</a></li>
+<li class="chapter" data-level="0.7.8" data-path="your-code-basics.html"><a href="your-code-basics.html#lists"><i class="fa fa-check"></i><b>0.7.8</b> Lists</a></li>
+<li class="chapter" data-level="0.7.9" data-path="your-code-basics.html"><a href="your-code-basics.html#data-tables-data-frames"><i class="fa fa-check"></i><b>0.7.9</b> Data Tables (Data Frames)</a></li>
+</ul></li>
+<li class="chapter" data-level="0.8" data-path="your-code-basics.html"><a href="your-code-basics.html#coding-tools"><i class="fa fa-check"></i><b>0.8</b> Coding Tools</a><ul>
+<li class="chapter" data-level="0.8.1" data-path="your-code-basics.html"><a href="your-code-basics.html#functions"><i class="fa fa-check"></i><b>0.8.1</b> Functions</a></li>
+<li class="chapter" data-level="0.8.2" data-path="your-code-basics.html"><a href="your-code-basics.html#packages-libraries"><i class="fa fa-check"></i><b>0.8.2</b> Packages (Libraries)</a></li>
+<li class="chapter" data-level="0.8.3" data-path="your-code-basics.html"><a href="your-code-basics.html#data-formats"><i class="fa fa-check"></i><b>0.8.3</b> Data Formats</a></li>
+<li class="chapter" data-level="0.8.4" data-path="your-code-basics.html"><a href="your-code-basics.html#csv"><i class="fa fa-check"></i><b>0.8.4</b> CSV</a></li>
+<li class="chapter" data-level="0.8.5" data-path="your-code-basics.html"><a href="your-code-basics.html#xlsx-excel"><i class="fa fa-check"></i><b>0.8.5</b> XLSX (EXCEL)</a></li>
+<li class="chapter" data-level="0.8.6" data-path="your-code-basics.html"><a href="your-code-basics.html#fst"><i class="fa fa-check"></i><b>0.8.6</b> FST</a></li>
+<li class="chapter" data-level="0.8.7" data-path="your-code-basics.html"><a href="your-code-basics.html#sql-queries"><i class="fa fa-check"></i><b>0.8.7</b> SQL Queries</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="big-assignment.html"><a href="big-assignment.html"><i class="fa fa-check"></i>Big Assignment</a><ul>
+<li class="chapter" data-level="0.9" data-path="big-assignment.html"><a href="big-assignment.html#code-run-through"><i class="fa fa-check"></i><b>0.9</b> Code Run-Through</a><ul>
+<li class="chapter" data-level="0.9.1" data-path="big-assignment.html"><a href="big-assignment.html#step-1"><i class="fa fa-check"></i><b>0.9.1</b> Step 1</a></li>
+<li class="chapter" data-level="0.9.2" data-path="big-assignment.html"><a href="big-assignment.html#step-2"><i class="fa fa-check"></i><b>0.9.2</b> Step 2</a></li>
+<li class="chapter" data-level="0.9.3" data-path="big-assignment.html"><a href="big-assignment.html#step-3"><i class="fa fa-check"></i><b>0.9.3</b> Step 3</a></li>
+<li class="chapter" data-level="0.9.4" data-path="big-assignment.html"><a href="big-assignment.html#step-4"><i class="fa fa-check"></i><b>0.9.4</b> Step 4</a></li>
+<li class="chapter" data-level="0.9.5" data-path="big-assignment.html"><a href="big-assignment.html#step-5"><i class="fa fa-check"></i><b>0.9.5</b> Step 5</a></li>
+<li class="chapter" data-level="0.9.6" data-path="big-assignment.html"><a href="big-assignment.html#step-6"><i class="fa fa-check"></i><b>0.9.6</b> Step 6</a></li>
+</ul></li>
+<li class="chapter" data-level="0.10" data-path="big-assignment.html"><a href="big-assignment.html#figuring-it-out"><i class="fa fa-check"></i><b>0.10</b> Figuring It Out</a></li>
+<li class="chapter" data-level="0.11" data-path="big-assignment.html"><a href="big-assignment.html#tutorial-purgatory"><i class="fa fa-check"></i><b>0.11</b> Tutorial Purgatory</a></li>
+<li class="chapter" data-level="0.12" data-path="big-assignment.html"><a href="big-assignment.html#going-line-by-line"><i class="fa fa-check"></i><b>0.12</b> Going line by line</a><ul>
+<li class="chapter" data-level="0.12.1" data-path="big-assignment.html"><a href="big-assignment.html#step-1-1"><i class="fa fa-check"></i><b>0.12.1</b> Step 1</a></li>
+<li class="chapter" data-level="0.12.2" data-path="big-assignment.html"><a href="big-assignment.html#step-2-1"><i class="fa fa-check"></i><b>0.12.2</b> Step 2</a></li>
+<li class="chapter" data-level="0.12.3" data-path="big-assignment.html"><a href="big-assignment.html#step-3-1"><i class="fa fa-check"></i><b>0.12.3</b> Step 3</a></li>
+<li class="chapter" data-level="0.12.4" data-path="big-assignment.html"><a href="big-assignment.html#step-4-1"><i class="fa fa-check"></i><b>0.12.4</b> Step 4</a></li>
+<li class="chapter" data-level="0.12.5" data-path="big-assignment.html"><a href="big-assignment.html#step-5-1"><i class="fa fa-check"></i><b>0.12.5</b> Step 5</a></li>
+<li class="chapter" data-level="0.12.6" data-path="big-assignment.html"><a href="big-assignment.html#step-6-1"><i class="fa fa-check"></i><b>0.12.6</b> Step 6</a></li>
+</ul></li>
+<li class="chapter" data-level="0.13" data-path="big-assignment.html"><a href="big-assignment.html#working-with-dates"><i class="fa fa-check"></i><b>0.13</b> Working with dates</a><ul>
+<li class="chapter" data-level="0.13.1" data-path="big-assignment.html"><a href="big-assignment.html#as.date-sys.date-sys.time"><i class="fa fa-check"></i><b>0.13.1</b> as.Date(), Sys.Date() &amp; Sys.time()</a></li>
+<li class="chapter" data-level="0.13.2" data-path="big-assignment.html"><a href="big-assignment.html#lubridate"><i class="fa fa-check"></i><b>0.13.2</b> Lubridate</a></li>
+<li class="chapter" data-level="0.13.3" data-path="big-assignment.html"><a href="big-assignment.html#bonus"><i class="fa fa-check"></i><b>0.13.3</b> Bonus</a></li>
+</ul></li>
+<li class="chapter" data-level="0.14" data-path="big-assignment.html"><a href="big-assignment.html#rewriting-our-code"><i class="fa fa-check"></i><b>0.14</b> Rewriting our code</a><ul>
+<li class="chapter" data-level="0.14.1" data-path="big-assignment.html"><a href="big-assignment.html#step-1-2"><i class="fa fa-check"></i><b>0.14.1</b> Step 1</a></li>
+<li class="chapter" data-level="0.14.2" data-path="big-assignment.html"><a href="big-assignment.html#step-2-2"><i class="fa fa-check"></i><b>0.14.2</b> Step 2</a></li>
+<li class="chapter" data-level="0.14.3" data-path="big-assignment.html"><a href="big-assignment.html#step-3-2"><i class="fa fa-check"></i><b>0.14.3</b> Step 3</a></li>
+<li class="chapter" data-level="0.14.4" data-path="big-assignment.html"><a href="big-assignment.html#step-4-2"><i class="fa fa-check"></i><b>0.14.4</b> Step 4</a></li>
+<li class="chapter" data-level="0.14.5" data-path="big-assignment.html"><a href="big-assignment.html#step-5-2"><i class="fa fa-check"></i><b>0.14.5</b> Step 5</a></li>
+<li class="chapter" data-level="0.14.6" data-path="big-assignment.html"><a href="big-assignment.html#step-6-2"><i class="fa fa-check"></i><b>0.14.6</b> Step 6</a></li>
+</ul></li>
+<li class="chapter" data-level="0.15" data-path="big-assignment.html"><a href="big-assignment.html#adding-mpg"><i class="fa fa-check"></i><b>0.15</b> Adding MPG</a></li>
+<li class="chapter" data-level="0.16" data-path="big-assignment.html"><a href="big-assignment.html#charts-reports"><i class="fa fa-check"></i><b>0.16</b> Charts &amp; Reports</a><ul>
+<li class="chapter" data-level="0.16.1" data-path="big-assignment.html"><a href="big-assignment.html#the-setup"><i class="fa fa-check"></i><b>0.16.1</b> The setup</a></li>
+<li class="chapter" data-level="0.16.2" data-path="big-assignment.html"><a href="big-assignment.html#r-markdown"><i class="fa fa-check"></i><b>0.16.2</b> R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="0.17" data-path="big-assignment.html"><a href="big-assignment.html#bonus-1"><i class="fa fa-check"></i><b>0.17</b> Bonus</a></li>
+<li class="chapter" data-level="0.18" data-path="big-assignment.html"><a href="big-assignment.html#you-are-not-an-r-maggot-anymore"><i class="fa fa-check"></i><b>0.18</b> You are not an R maggot anymore</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="maps.html"><a href="maps.html"><i class="fa fa-check"></i>Maps</a><ul>
+<li class="chapter" data-level="0.19" data-path="maps.html"><a href="maps.html#maps-different-libraries"><i class="fa fa-check"></i><b>0.19</b> Maps, Different Libraries</a><ul>
+<li class="chapter" data-level="0.19.1" data-path="maps.html"><a href="maps.html#ggplot2"><i class="fa fa-check"></i><b>0.19.1</b> ggplot2</a></li>
+<li class="chapter" data-level="0.19.2" data-path="maps.html"><a href="maps.html#ggmap"><i class="fa fa-check"></i><b>0.19.2</b> ggmap</a></li>
+<li class="chapter" data-level="0.19.3" data-path="maps.html"><a href="maps.html#leaflet"><i class="fa fa-check"></i><b>0.19.3</b> Leaflet</a></li>
+</ul></li>
+<li class="chapter" data-level="0.20" data-path="maps.html"><a href="maps.html#leaflet-deeper-dive"><i class="fa fa-check"></i><b>0.20</b> Leaflet, Deeper Dive</a></li>
+<li class="chapter" data-level="0.21" data-path="maps.html"><a href="maps.html#leaflet-with-real-data"><i class="fa fa-check"></i><b>0.21</b> Leaflet with Real Data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="flexdahsboard.html"><a href="flexdahsboard.html"><i class="fa fa-check"></i>FlexDahsboard</a><ul>
+<li class="chapter" data-level="0.22" data-path="flexdahsboard.html"><a href="flexdahsboard.html#data"><i class="fa fa-check"></i><b>0.22</b> Data</a></li>
+<li class="chapter" data-level="0.23" data-path="flexdahsboard.html"><a href="flexdahsboard.html#layouts"><i class="fa fa-check"></i><b>0.23</b> Layouts</a><ul>
+<li class="chapter" data-level="0.23.1" data-path="flexdahsboard.html"><a href="flexdahsboard.html#column-based"><i class="fa fa-check"></i><b>0.23.1</b> Column based</a></li>
+<li class="chapter" data-level="0.23.2" data-path="flexdahsboard.html"><a href="flexdahsboard.html#row-based"><i class="fa fa-check"></i><b>0.23.2</b> Row based</a></li>
+</ul></li>
+<li class="chapter" data-level="0.24" data-path="flexdahsboard.html"><a href="flexdahsboard.html#conclusion"><i class="fa fa-check"></i><b>0.24</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="shiny-bonus.html"><a href="shiny-bonus.html"><i class="fa fa-check"></i>Shiny (Bonus)</a></li>
+<li class="chapter" data-level="" data-path="final-thoughts.html"><a href="final-thoughts.html"><i class="fa fa-check"></i>Final Thoughts</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R, Not the Best Practices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="first-three-months-noob" class="section level1 unnumbered">
+<h1>First Three Months (Noob)</h1>
+<p>Congratulations, you’ve accepted that job offer and are just waiting for that first day. The job description mentioned the need for some experience working with data and some good excel knowledge. But during your interviews you noticed something; your interviews were more on the technical side and a lot of people in the office were using those dark screen hacking terminals that you’ve only seen on TV. Nobody told you that you needed to learn programming, but you’re suspecting that you just might have to.</p>
+<div class="infobox note" data-latex="{note}">
+<p>Disclaimer: I don’t expect your situation to be similar. It doesn’t have to be. You might be looking for a job and just trying to improve your chances, or you already have a job and want to acquire a new skill. To keep this book somewhat interesting, as I mentioned before, we will follow my path to R proficiency. Hopefully, you can relate to my story.</p>
+</div>
+<p>Anyway, you sit home and google some R tutorials and don’t really know where to start. Before I list some good resources that I used to start, we’re going to need to install R and R Studio on your computer. First, what is the difference between R and Rstudio? R is a programming language just like any other language; before you start using it, it has to be installed. If you ever played video games on your computer, you should be familiar with those damn messages: install the latest C++ dll something. Basically, when you see this message, it means that the programming language that your game runs on is not there or is outdated. Once you install that update, your game runs. Games are built using computer languages (usually, something like C++ or C# for big games and Java or Python for small ones). When you are playing a game, there are scripts running in the background that you do not even see. Same is needed to start coding. In our case, we need to install R. What is Rstudio then? Rstudio is basically a notepad (also called text editor) that understands the R language and makes it run. There are many text editors out there, but Rstudio is built specifically for R and it’s the one you should use. Once you develop your skills a bit more, you can start looking at other text editors. For example, the most popular general use text editor right now is Visual Studio Code. You can use it for R, but it’s not built for data analysis so don’t worry about it right now. Let’s jump straight into the Rstudio installation process.</p>
+<div class="infobox caution" data-latex="{caution}">
+<p>I won’t hold your hand too much during the installation process. If you want to actually learn to code, some things you’ll have to figure out on your own. Both R and Rstudio will run on every major operation system. For example, I am using Linux Ubuntu, but I also have them installed on my windows PC at work, and I previously used them on MAC as well. Once installed, everything will run just the same on any platform. So, go to <a href="https://mirror.las.iastate.edu/CRAN/">one of R repositories</a> to install R.</p>
+</div>
+<center>
+<div class="figure">
+<img src="rInstaller.png" alt="Downloading R." />
+<p class="caption">Downloading R.</p>
+</div>
+</center>
+<p>After that is done, go to the <a href="https://rstudio.com/products/rstudio/download/">Rstudio page</a> and install the latest Rstudio for your system.</p>
+<center>
+<div class="figure">
+<img src="rstudioInstall.png" alt="Downloading RStudio." />
+<p class="caption">Downloading RStudio.</p>
+</div>
+</center>
+<p>That’s it. We are ready to start coding. Well, in your case, let the horrible grind of the first few weeks begin!</p>
+<div id="messing-around" class="section level2">
+<h2><span class="header-section-number">0.6</span> Messing Around</h2>
+<p>Your boss sits you down and tells you: play with R for a while, I’ll give you your first task in a couple of days. Your first few days at the job are slow and encouraging. You are meeting new people and everything is nice. Things are being installed on your computer and, for now, you’re just reading some literature about your organization and some of the latest initiatives. Your boss gives you some space to settle down and play around with your new setup. He tells you that your first task will be cleaning some of his old code. Your naive ears hear, take your time, your first assignment will be easy, you will just add some commas and some narrative to my code. Nothing to worry about.</p>
+<div id="first-script" class="section level3">
+<h3><span class="header-section-number">0.6.1</span> First Script</h3>
+<p>First thing to do is to open the Rstudio. When you open it for the first time you should see something like this:</p>
+<center>
+<div class="figure">
+<img src="rstudio.png" alt="RStudio." />
+<p class="caption">RStudio.</p>
+</div>
+</center>
+<p>Go ahead and create your first script. For that, go to the upper left corner, click on the + icon, and chose the R script option, which should be first. You should see something similar to the picture below. Get used to this view as it will be the one you will be seeing a lot from now on.</p>
+<center>
+<div class="figure">
+<img src="rstudio1.png" alt="RStudio." />
+<p class="caption">RStudio.</p>
+</div>
+</center>
+</div>
+<div id="layout" class="section level3">
+<h3><span class="header-section-number">0.6.2</span> Layout</h3>
+<p>Rstudio is quite a complicated text editor. It has a shit ton of advanced features and settings. I myself don’t even know most of them, and absolutely encourage you to look into them once you know what the hell you’re doing. And since right now you probably don’t know what the hell you’re doing, you will only focus on the things you need to start. There are only four areas of the screen that you need to know about now. And I also drew it for you on the screenshot (see below). The first screen is where you’ll write your code. This is your main area. Go ahead and write this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">myFirstLineOfCode &lt;-<span class="st"> &#39;This is my first line of code!&#39;</span></a></code></pre></div>
+<center>
+<div class="figure">
+<img src="rstudio2.png" alt="RStudio." />
+<p class="caption">RStudio.</p>
+</div>
+</center>
+<p>Click ‘Run’ (the upper right side of the main area) (see below). Instead of clicking ‘Run’ every time, you can just highlight the chunk of code that you’d like to run and press ‘Ctrl + Enter’. Also, you can just click anywhere on the code that you want to run and press ‘Ctrl + Enter’, same thing. Go ahead, and try all three. A couple of things just happened. In the area number two, you should now see the variable ‘myFirstLineOfCode’ as well as what is inside of that variable - ‘This is my first line of code!’ In this window, you will be seeing all the variables, tables, and other data that you created or imported. Whatever is available at the moment.</p>
+<center>
+<div class="figure">
+<img src="rstudio3.png" alt="RStudio." />
+<p class="caption">RStudio.</p>
+</div>
+</center>
+<p>What else happened? In the view number three, you can see the code that you ran (see below). If you ran it three times, you would see it three times. The main use case of this area for us to check if our code is running, finished running, or generated errors or warnings. Let’s generate an error. Type your name without parentheses in the view number one and run it. It should generate an error in the view number three (something like: ‘Error: object ’Nikita’ not found’).</p>
+<center>
+<div class="figure">
+<img src="rstudio4.png" alt="RStudio." />
+<p class="caption">RStudio.</p>
+</div>
+</center>
+<p>Just like this, we know something is wrong with our code. This is not all the third view can do, but this is how we’re going to be using it. Just for the sake of awareness, I would like to show you what else it can do. Type this in the third view (see below):</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">  test &lt;-<span class="st"> &#39;testing the third view&#39;</span></a></code></pre></div>
+<center>
+<div class="figure">
+<img src="rstudio5.png" alt="RStudio." />
+<p class="caption">RStudio.</p>
+</div>
+</center>
+<p>Hit ‘Enter’. Same as the main view, it ran this code without clicking Run or ‘Ctrl + Enter’ and stored the result in the second view. The difference is the code is now gone. It’s useful to test your code or to run something quickly, but we won’t be using it now. Just wanted to show you. Now, let’s look at the view number four (see below).</p>
+<center>
+<div class="figure">
+<img src="rstudio6.png" alt="RStudio." />
+<p class="caption">RStudio.</p>
+</div>
+</center>
+<p>This view won’t be super useful for us now so don’t worry about it right now. Basically you should be seeing the folder that you are currently in. Also, when we create graphs and maps, they will appear there. That is about all you need to know about the fourth view right now. In fact, this is about all you need to know about the layout. Let’s move on</p>
+</div>
+<div id="saving-r-file" class="section level3">
+<h3><span class="header-section-number">0.6.3</span> Saving R File</h3>
+<p>Now, let’s save this file and see where it goes. When you’re new, there’s always that fear that you’ll break something and won’t be able to get it to work again. One thing I want to do right from the start is kick that fear out of you. To do that, in this and the next few sections, we’ll try to do some things that will seem damaging to your setup. I’ll show you that you can’t really do much damage or lose a lot of data by doing routine operations, and if something really goes wrong, you can restore things. So, go ahead and save our script by clicking the floppy disk icon on top (I hope, I do not need to explain to you how to save files. This operation is pretty universal) (see below).</p>
+<center>
+<div class="figure">
+<img src="rstudio7.png" alt="RStudio." />
+<p class="caption">RStudio.</p>
+</div>
+</center>
+<p>Now, close the Rstudio. Go to the folder where you saved your file and open it. You should be where you left off.</p>
+</div>
+<div id="simulating-a-problem." class="section level3">
+<h3><span class="header-section-number">0.6.4</span> Simulating a Problem.</h3>
+<p>Now, let’s simulate a problem. Let’s see what happens if your Rstudio session freezes or your computer just crashes. So, lets add another line of code to our script and see what happens if we forget to save it and windows messes up again. Go ahead and add this line of code right under the first one:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">mySecondLineOfCode &lt;-<span class="st"> &#39;This is my second line of code!&#39;</span></a></code></pre></div>
+<p>Run it. I hope you remember how. Now, do me a favor, open the activity monitor by pressing ‘ctrl + alt + del’ and selecting it if you are on windows. Kill the Rstudio process (see below).</p>
+<center>
+<div class="figure">
+<img src="rstudio8.png" alt="RStudio." />
+<p class="caption">RStudio.</p>
+</div>
+</center>
+<p>We never saved our code; imagine you had hundreds of lines of code that you never saved (obviously, that would be stupid, but happens).</p>
+<div class="infobox note" data-latex="{note}">
+<p>It happened to me a few times with excel and word, and I did not have auto-save enabled and I lost hours of my life rewriting things, because windows decided to mess me up.</p>
+</div>
+<p>Fortunately, this won’t happen to you with Rstudio. Now, do not open the file that you saved, instead just open Rstudio again. Yes, you need to open a completely new Rstudio session. If you are on Windows for example, go to start, find Rstudio and click on it; if it is on your desktop, open from there. It should open with that second line there.</p>
+<p>We just simulated a hard stop of your Rstudio session. That should eliminate some portion of the fear about losing your progress. Things like that happen more often than you think. If you’re loading more data than you RAM can handle or if you have a weak CPU, chances are you will see freezes quite often. You will deal with this a lot; restarting your computer and reopening R sessions. Your code in most situations will still be there.</p>
+<div class="infobox tip" data-latex="{tip}">
+<p>Tip: 8 gigs of RAM is absolute minimum for working with data, 16 is OK. I have 16 at home and 64 at work, for example. That is in 2019-2020.</p>
+</div>
+</div>
+<div id="re-installing-rstudio" class="section level3">
+<h3><span class="header-section-number">0.6.5</span> Re-installing RStudio</h3>
+<p>When you are just starting, you are going to end up experimenting with your setup quite a bit. That might or might not lead to breaking things, or, at least, to having them work in a way you didn’t expect. What do you do? Just not experiment? Not really. It is just like with learning to ski or snowboard; first thing you need to know is how to stop. If you learn how to stop first, then, no matter what, you’re safe and probably won’t break your neck. Same here, when you know that you can always start from scratch, you’re in control, and you learn faster. So, let’s imagine that we did something that made our Rstudio setup really unusable. There is nobody to help us. What do we do?</p>
+<div class="infobox tip" data-latex="{tip}">
+<p>Sage Tip: Delete and reinstall. Proven method, patented by myself.</p>
+</div>
+<p>Go to your control panel if you are on windows and delete Rstudio. If you are on MAC, just drag it to trash. If you are on Linux, I expect you to know what to do. Now, just follow the steps that we used to install it. When you open it, you will have a clean Rstudio; but you’ll still be able to easily access all the code scripts that you saved so far. Go ahead and open your new Rstudio. Once opened, go and open that script that we saved. You should see the same line of code that we had (see below):</p>
+<center>
+<div class="figure">
+<img src="rstudio9.png" alt="RStudio." />
+<p class="caption">RStudio.</p>
+</div>
+</center>
+</div>
+<div id="messing-with-packages" class="section level3">
+<h3><span class="header-section-number">0.6.6</span> Messing with Packages</h3>
+<p>As a final step of kicking the fear of screwing up your setup, we are going to install a few packages and remove them. Packages and Libraries are used interchangeably in R; they mean the same thing. Any Joe Shmoe can write and publish a package in R, given enough knowledge. A package is just a collection of functions that make your life easier. It can even be just one function. For example, R has a number of built-in functions like read.csv() for reading csv files. Some guy thought that he could do better and wrote his own function that reads CSVs faster and gives you more options. That function is called fread(), and it is a part of the data.table package. In order to use it, you first need to install the data.table package. There are tons of packages out there, and we’ll be using a lot of them. Packages for files, maps, aggregations, graphs, web apps, etc. I hope you’re getting it so far; we are going to dive deeper into packages a bit later. For now, let’s just install a few. Go to the top of our script, even above our first line of code. Yes, just move it a few lines down. Write this:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&#39;data.table&#39;</span>)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="st">&#39;dplyr&#39;</span>)</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw">install.packages</span>(<span class="st">&#39;shiny&#39;</span>)</a></code></pre></div>
+<p>Highlight all three entries and ether press ctrl + Enter or just click Run. You’ll see a bunch of cool looking installs going on. Wait till everything is done. Now, how do I tell that it’s done? In the top right corner of the third view you should notice a red circle with sign ‘stop’ on it. You will only see it when RStudio is busy, in other words, when something is running. Once that red button goes away, that means it’s done. Now, these three packages are installed and you don’t need that code there anymore. Erase those three lines and instead write these:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">library</span>(data.table)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">library</span>(shiny)</a></code></pre></div>
+<p>Highlight these three now and run them. And that’s it, you installed and loaded your first three packages/libraries. Your session should look like this now:</p>
+<center>
+<div class="figure">
+<img src="rstudio10.png" alt="RStudio." />
+<p class="caption">RStudio.</p>
+</div>
+</center>
+<p>Now, it is time to uninstall these. You would ask, why? Why the hell not? But seriously, there are two reasons. First of all, I want you to know how, and secondly, sometimes a package may conflict with another package resulting in your code messing up. Sometimes a package just won’t update and will start kicking errors. It’s not always straightforward and obvious what’s happening. We’ll be installing so many different packages that one day everything might be working smoothly and the next day your code is just not running.</p>
+<div class="infobox note" data-latex="{note}">
+<p>Then, you end up just like Nicholas Cage in ‘Gone in 60 Seconds’ talking to your code just like he did to his car Eleanor - ‘Come on baby, do not be like that, please work’.</p>
+</div>
+<p>To make sure you don’t sit there for too long, like I did, figuring that stuff out, I’ll teach you a few troubleshooting tricks. Let’s come back to uninstalling our packages. Run the following:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">uninstall.package</span>(<span class="st">&#39;data.table&#39;</span>)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw">uninstall.package</span>(<span class="st">&#39;dplyr&#39;</span>)</a></code></pre></div>
+<p>Erase these two lines. If it worked, running the following will not work, because the packages are not there anymore:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">library</span>(data.table)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">library</span>(dplyr)</a></code></pre></div>
+<p>Good. What about the third one? Let’s simulate another problem. At some point, eventually, you will encounter a strange piece of work error – you will be trying to load a library, but it will say that there is no such package or something. You will then try to install that package and it will either install it or will tell you that that package is already installed. You will then try to load the library, but the same annoying stuff will happen again and again and again. You will be like, ‘WHAT DA HELL?!. You’ll then try to do what we have just done and will try to uninstall that package. It might say something like: package is not there and cannot be uninstalled or it will uninstall it but when you repeat the whole circle again, same result. What’s happening? You might have opened a second RStudio session at some point, and it started installing packages to different folders. You don’t have to completely follow this logic. Just remember. If something of this nature is happening to you, here is how to fix it. We are going to locate the folder where our packages are getting installed into. Then, just find the package folder in question and freaking delete it. It might tell you that the folder is in use and cannot be deleted, just restart your computer and delete. After that, open your script that you had the problem with, install that package, and load the library, everything should work fine now.</p>
+<div class="infobox note" data-latex="{note}">
+<p>So, let’s do it for the Shiny package. Save your script, close RStudio. If you are on Windows, your R folder should be in the Documents. So, go to Documents/R/R-…/ and delete the ‘shiny’ folder. If it is in use, restart your PC, come back and try deleting again.</p>
+</div>
+<p>Let’s confirm. Open your script again and try:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">library</span>(data.table)</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw">library</span>(shiny)</a></code></pre></div>
+<p>Non should work, because we uninstalled the first two libraries in the previous steps and the ‘shiny’ library manually. That’s it. This is how you do a soft and hard delete of your packages. This concludes our R-fear exorcism ritual.</p>
+</div>
+<div id="dark-mode" class="section level3">
+<h3><span class="header-section-number">0.6.7</span> Dark Mode</h3>
+<div class="infobox caution" data-latex="{caution}">
+<p>One thing that you must do, and I can’t emphasize ‘must’ here enough, is to switch your RStudio color theme to a dark mode. If you don’t do this, your code will not work. On top of that, people will think that you’re a noob. The darker your screen is the better coder you are. Proven by scientists. This is a joke, of course, but I do want you to change to the dark mode. From experience, it helps you focus better and keeps your eyes more relaxed. Also, it does look like you know what you’re doing if your screen is dark. It shows that you’re advanced enough to tinker with the text editor settings. When others see you as advanced, you’re automatically creating that level of expectation for yourself to get better, which, in turn, speeds up your progress. Every time that I helped some of my colleagues at work with their code, by far the most painful part of the experience for me was looking at their bright noob screens. Therefore, go to the ‘Tools’ on top of the Rstudio → Global Options → Appearance and in the editor theme pick ‘cobalt’.</p>
+<center>
+<div class="figure">
+<img src="rstudio11.png" alt="RStudio." />
+<p class="caption">RStudio.</p>
+</div>
+</center>
+<p>That’s it. All that ranting was just for this. Now, this book will have the white theme. Why? Because when I will decide to publish, I do not want to spend a fortune on color, that would be stupid. But you should know, I will be creating illustrations for this book wearing sunglasses. What a hypocrite, right? Maybe I will switch to cobalt as well later. You will notice if I do.</p>
+</div>
+</div>
+<div id="second-r-session." class="section level3">
+<h3><span class="header-section-number">0.6.8</span> Second R Session.</h3>
+<p>Another trick I want to show to you is using multiple Rstudio sessions at the same time. You see, R is a single process language, which means that it can only tackle one command at a time. Commands are the lines of code that we were just running. The following is a command:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">mySecondLineOfCode &lt;-<span class="st"> &#39;This is my second line of code!&#39;</span></a></code></pre></div>
+<p>Each assignment like this, or a call to a function (like install.packages() or library()) is a command and is processed one at a time in the order that you have written it. In most cases, you will never even notice or it will not be a problem, because it is so quick.</p>
+<div class="infobox note" data-latex="{note}">
+<p>However, there are going to be many many many cases when a command will be taking an insane amount of time, and you will have to sit there like a steaming piece of work and wait for that command to run before you can execute the next one. In most cases, a command that would take a long time to run is something like a SQL call to some old and slow or just overloaded database. I have wasted some good hours of my life interacting with such piece of work databases. Sometimes, I waited for one to four hours at a time for my SQL command to run before I could continue. In the most extreme cases, I had to leave the script running overnight to come back in the morning to see that It has not finished, and be like: ‘NOOOOO!!!’. API calls will give you similar issues, but less often.</p>
+</div>
+<p>Anyway, do not be super afraid as it does not happen all the time, especially in a modern setup, and when it does, it’s not really your fault. There is not much we can do to make a process run faster. When you become a little bit more advanced, you’ll be able to, maybe, break your database pulls into segments to speed them up a bit and to have more control over them. You can also, sometimes, use parallel processing to assign tasks to different cores of your computer processor. These are more advanced topics and you don’t need to worry about them for now. The simplest solution right now is to just let that long process run for as long as it needs to, but at the same time doing something else in another Rstudio session. Yes, just open a second Rstudio and create a new script in there. Before, I mentioned that you can run into some issues with your packages if you are working in two sessions at the same time. Yes, you can, but it’s not worth worrying about it. You will not learn anything unless you run into the issues like that. You live, you learn. And you already know how to fix them if you do, right? Most of the time, I have three to five sessions opened at the same time. It is helpful not only to hack around a slow code, but also as a point of reference when working on a new project. You will be reusing your code a lot and having it opened and available for copying and pasting in front of you is very useful.</p>
+<p>I do not want to be an all talk but no-show kind of guy, so I want to actually show you how all this works. We’re not pulling big and long data from databases yet, but I do want to show you what a busy session looks like. I will write a loop that prints a piece of text every few seconds. You are not ready to learn loops yet, but basically, a loop will make my text print for as many times as I tell it too, and until it is done, the Rstudio will be busy, and we will not be able to use it. So, you can stay on the same script or you can open a new one. You don’t have to save anything, we are just practicing. Type the following in the view number one:</p>
+<p>This line creates a sequence of numbers from 1 to 25 and stores them in the variable ‘sequence’.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">sequence &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">25</span>)</a></code></pre></div>
+<p>This loop reads like this: for each thing inside of the variable ‘sequence’ (so, for 1,2,3,4,5….25) print ‘im busy’, then wait for four seconds and do it for the next thing in the ‘sequence’. Once it is done going through the sequence, it will continue. In our case, it will print ‘done’.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="cf">for</span> (i <span class="cf">in</span> sequence){</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">  <span class="kw">print</span>(<span class="st">&#39;im busy&#39;</span>)</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">  <span class="kw">Sys.sleep</span>(<span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="kw">print</span>(<span class="st">&#39;done&#39;</span>)</a></code></pre></div>
+<p>Here, I’m just trying to simulate a busy Rstudio session. I am using a loop for this. In the real world, the place of that loop will be taken, let’s say, by a lengthy database pull, and the place of the print(‘done’) will be taken by some other functions, which, let’s say, will do something to the data that the pull will return. I hope that it is clear, but it does not have to be. You should not be looking into loops just yet. The only purpose of this loop is to keep Rstudio busy. Now, let’s do it again. Run all three. Notice how things are being printed in the view number three. Also, notice the red stop button in the corner of this view. This means that the session is busy, right? Now, open another Rstudio. Create a new script and write a command there. You can write:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">something &lt;-<span class="st">  &#39;I can do whatever here&#39;</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">print</span>(something)</a></code></pre></div>
+<p>Now, run these two lines. As you can see, they ran even as the other Rstudio is still executing its loop. There you go.</p>
+<p>This is all you need to know about the layout and working with Rstudio in general . . . for now.</p>
+<hr />
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">R, Not the Best Practices</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Nikita Voevodin</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="languages-infrastructure-and-myself.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="your-code-basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-application.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

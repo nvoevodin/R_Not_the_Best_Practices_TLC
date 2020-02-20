@@ -1,4 +1,4 @@
-# First Three Months (Maggot) {-}
+# First Three Months (Noob) {-}
 
 Congratulations, you’ve accepted that job offer and are just waiting for that first day. The job description mentioned the need for some experience working with data and some good excel knowledge. But during your interviews you noticed something; your interviews were more on the technical side and a lot of people in the office were using those dark screen hacking terminals that you’ve only seen on TV. Nobody told you that you needed to learn programming, but you’re suspecting that you just might have to.
 
